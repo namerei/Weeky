@@ -28,6 +28,7 @@
 		FA5E3BD42BC6749D0045E290 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BD32BC6749D0045E290 /* SignUpView.swift */; };
 		FA5E3BD62BC674E10045E290 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BD52BC674E10045E290 /* LoginView.swift */; };
 		FA5E3BD92BC6871F0045E290 /* SignUpView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BD82BC6871F0045E290 /* SignUpView2.swift */; };
+		FA5E3BDD2BC6A6BA0045E290 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BDC2BC6A6BA0045E290 /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		FA5E3BD32BC6749D0045E290 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		FA5E3BD52BC674E10045E290 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FA5E3BD82BC6871F0045E290 /* SignUpView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView2.swift; sourceTree = "<group>"; };
+		FA5E3BDC2BC6A6BA0045E290 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				062DCF0F2B50889F005C209A /* List.swift */,
 				062DCF112B5088A9005C209A /* User.swift */,
 				060F5AC92B5167FE00D1CF39 /* Item.swift */,
+				FA5E3BDC2BC6A6BA0045E290 /* Task.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -171,7 +174,6 @@
 				062DCF0A2B5086BC005C209A /* Rest */,
 				062DCF082B508651005C209A /* ViewModels */,
 				0645E7182B2899850081EE15 /* Views */,
-				062DCF092B508666005C209A /* Models */,
 				0645E7192B2899C30081EE15 /* Styles */,
 				06F3EA5A2B27661A000B5C71 /* Preview Content */,
 			);
@@ -208,6 +210,7 @@
 			children = (
 				FA5E3BD02BC672630045E290 /* Authorization */,
 				FA5E3BD12BC6729E0045E290 /* WeekPage */,
+				062DCF092B508666005C209A /* Models */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -224,8 +227,8 @@
 		FA5E3BD12BC6729E0045E290 /* WeekPage */ = {
 			isa = PBXGroup;
 			children = (
-				062DCF152B508920005C209A /* WeekPageViewModel.swift */,
-				062DCF0B2B50880C005C209A /* WeekPageView.swift */,
+				FA5E3BDB2BC6A20D0045E290 /* View */,
+				FA5E3BDA2BC6A2040045E290 /* ViewModel */,
 			);
 			path = WeekPage;
 			sourceTree = "<group>";
@@ -247,6 +250,22 @@
 				062DCF132B5088F6005C209A /* AuthorizationViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FA5E3BDA2BC6A2040045E290 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				062DCF152B508920005C209A /* WeekPageViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FA5E3BDB2BC6A20D0045E290 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				062DCF0B2B50880C005C209A /* WeekPageView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,6 +417,7 @@
 				062DCF1E2B508AE9005C209A /* NewTaskViewViewModel.swift in Sources */,
 				062DCF122B5088A9005C209A /* User.swift in Sources */,
 				062DCF142B5088F6005C209A /* AuthorizationViewModel.swift in Sources */,
+				FA5E3BDD2BC6A6BA0045E290 /* Task.swift in Sources */,
 				FA5E3BD92BC6871F0045E290 /* SignUpView2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
