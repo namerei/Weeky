@@ -8,26 +8,26 @@
 import SwiftUI
 
 //struct WeekPageView: View {
-//    
+//
 //    @ObservedObject var viewModel = WeekPageViewModel()
 //    @State var name = ""
-//    
+//
 //    var body: some View {
 //        NavigationView {
 //            VStack {
-//              
+//
 //              Text("Список задач")
 //              .padding(.all, 30)
 //              .foregroundColor(Color("Blue dark"))
 //              .font(.system(.title, design: .monospaced))
-//              
-//              
+//
+//
 //                TextField("Новая задача", text: $name)
 //                .padding(.all)
 //                    .onSubmit {
 //                        viewModel.add(name: name)
 //                        name = ""
-//                      
+//
 //                    }
 //                    .border(Color("Orange dark"))
 //                    .frame(width: 360, height: 20)
@@ -49,13 +49,13 @@ import SwiftUI
 //                            }
 //                            .background(Color("Yellow xlight"))
 //
-//                            
+//
 //                        }
-//                      
+//
 //                    }
 //                    .onDelete(perform: viewModel.delete(index:))
 //                }
-//              
+//
 //            }
 //
 //
@@ -72,58 +72,60 @@ struct WeekPageView: View {
     @Namespace var animation
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false){
-            //Lazy with pinned header
-            LazyVStack(spacing: 12, pinnedViews: [.sectionHeaders]){
-                Section {
-                    //Week View
-                    ScrollView(.horizontal, showsIndicators: false){
-                        
-                        HStack(spacing: 10){
-                            ForEach(taskModel.currentWeek,id: \.self){ day in
-                                VStack(spacing: 10){
-                                    Text(taskModel.extractDate(date: day, format: "dd"))
-                                        .font(.system(size: 15))
-                                        .fontWeight(.semibold)
-                                    
-                                    Text(taskModel.extractDate(date: day, format: "EEE"))
-                                        .font(.system(size: 14))
-                                    
-                                    Circle()
-                                        .fill(.white)
-                                        .frame(width: 8, height: 8)
-                                        .opacity(taskModel.isToday(date: day) ? 1 : 0)
-                                    
-                                }
-                                .foregroundStyle(taskModel.isToday(date: day) ? .primary : .secondary)
-                                .foregroundColor(taskModel.isToday(date: day) ? .white : .black)
-                                .frame(width: 45, height: 90)
-                                .background(
-                                    ZStack{
-                                        if taskModel.isToday(date: day){
-                                            Capsule()
-                                                .fill(.black)
-                                                .matchedGeometryEffect(id: "CURRENTDAY", in: animation)
-                                        }
+        NavigationView {
+            ScrollView(.vertical, showsIndicators: false){
+                //Lazy with pinned header
+                LazyVStack(spacing: 12, pinnedViews: [.sectionHeaders]){
+                    Section {
+                        //Week View
+                        ScrollView(.horizontal, showsIndicators: false){
+                            
+                            HStack(spacing: 10){
+                                ForEach(taskModel.currentWeek,id: \.self){ day in
+                                    VStack(spacing: 10){
+                                        Text(taskModel.extractDate(date: day, format: "dd"))
+                                            .font(.system(size: 15))
+                                            .fontWeight(.semibold)
+                                        
+                                        Text(taskModel.extractDate(date: day, format: "EEE"))
+                                            .font(.system(size: 14))
+                                        
+                                        Circle()
+                                            .fill(.white)
+                                            .frame(width: 8, height: 8)
+                                            .opacity(taskModel.isToday(date: day) ? 1 : 0)
+                                        
                                     }
-                                )
-                                .contentShape(Capsule())
-                                .onTapGesture {
-                                    withAnimation{
-                                        taskModel.currentDay = day
+                                    .foregroundStyle(taskModel.isToday(date: day) ? .primary : .secondary)
+                                    .foregroundColor(taskModel.isToday(date: day) ? .white : .black)
+                                    .frame(width: 45, height: 90)
+                                    .background(
+                                        ZStack{
+                                            if taskModel.isToday(date: day){
+                                                Capsule()
+                                                    .fill(.black)
+                                                    .matchedGeometryEffect(id: "CURRENTDAY", in: animation)
+                                            }
+                                        }
+                                    )
+                                    .contentShape(Capsule())
+                                    .onTapGesture {
+                                        withAnimation{
+                                            taskModel.currentDay = day
+                                        }
                                     }
                                 }
                             }
+                            
+                            TasksView()
                         }
-                        
-                        TasksView()
+                    } header: {
+                        HeaderView()
                     }
-                } header: {
-                    HeaderView()
                 }
             }
+            .ignoresSafeArea(.container, edges: .top)
         }
-        .ignoresSafeArea(.container, edges: .top)
     }
     
     func TasksView()-> some View{
@@ -133,7 +135,7 @@ struct WeekPageView: View {
                     Text("No Tasks Found!!!")
                         .font(.system(size: 16))
                         .fontWeight(.light)
-//                        .offset(y: 100)
+                    //                        .offset(y: 100)
                 }else{
                     ForEach(tasks){ task in
                         TaskCardView(task: task)
@@ -225,9 +227,13 @@ struct WeekPageView: View {
     
     func HeaderView()-> some View{
         HStack(spacing: 10){
+            //            Spacer()
+            ShowSideMenuButton()
+            Spacer()
             DateTitleView()
-            
+            Spacer()
             ShowCalendarButton()
+            //            Spacer()
         }
         .padding()
         .padding(.top, getSafeArea().top)
@@ -246,7 +252,6 @@ struct WeekPageView: View {
 //}
 
 
-
 #Preview {
     WeekPageView()
 }
@@ -256,9 +261,10 @@ struct WeekPageView: View {
 struct DateTitleView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10){
-            Text(Date().formatted(date: .abbreviated, time: .omitted)).foregroundColor(.gray)
+            //            Text(Date().formatted(date: .abbreviated, time: .omitted)).foregroundColor(.gray)
+            Text(Date().formatted(date: .abbreviated, time: .omitted)).font(.title)
             
-            Text("Today").font(.largeTitle.bold())
+            //            Text("Today").font(.largeTitle.bold())
         }.hLeading()
     }
 }
@@ -272,9 +278,31 @@ struct ShowCalendarButton: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 45, height: 45)
-            //                    .clipShape(Circle())
+            //                                .clipShape(Circle())
         }
     }
 }
 
-
+struct ShowSideMenuButton: View {
+    @State private var isShowingSideMenu = false
+    //MARK: - something
+    
+    var body: some View {
+        Button(action: {
+            withAnimation {
+                isShowingSideMenu.toggle()
+            }
+        }, label: {
+            Image(systemName: "list.bullet")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 25, height: 25)
+                .foregroundColor(.black)
+        })
+        .fullScreenCover(isPresented: $isShowingSideMenu, content: {
+            SideMenuView()
+                .transition(.move(edge: .leading))
+        })
+        .transition(.move(edge: .trailing))
+    }
+}

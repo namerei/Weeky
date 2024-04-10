@@ -7,7 +7,7 @@ struct AuthorizationView: View {
   
  
   var body: some View {
-    NavigationView {
+//    NavigationView {
       GeometryReader { _ in
         
         VStack {
@@ -33,7 +33,7 @@ struct AuthorizationView: View {
       .background(Color("Blue xlight").edgesIgnoringSafeArea(.all))
     }
   }
-}
+//}
 
 
 #Preview {

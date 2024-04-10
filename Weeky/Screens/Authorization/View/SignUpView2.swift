@@ -16,7 +16,6 @@ struct SignUpView : View {
             VStack {
                 HStack {
                     Spacer()
-//                    Spacer()
                     VStack(spacing: 10) {
                         Text("Регистрация")
                             .foregroundColor(self.index == 1 ? .white : .gray)
@@ -28,7 +27,6 @@ struct SignUpView : View {
                             .fill(self.index == 1 ? Color("Yellow light") : Color.clear)
                             .frame(width: 100, height: 5)
                     }
-//                    Spacer()
                 }
                 .padding(.top, 30)
                 
@@ -68,8 +66,23 @@ struct SignUpView : View {
                 .cornerRadius(35)
                 .padding(.horizontal, 20)
             
-            
-            NavigationLink("Зарегестрироваться", destination: WeekPageView())
+            RegistrationButton()
+                .opacity(self.index == 1 ? 1 : 0)
+        }
+    }
+}
+
+//MARK: - Views
+struct RegistrationButton: View {
+    @State private var isShowingWeekPageView = false
+    
+    var body: some View {
+        Button(action: {
+            withAnimation {
+                isShowingWeekPageView.toggle()
+            }
+        }, label: {
+            Text("Зарегестрироваться")
                 .foregroundColor(Color("Gray"))
                 .fontWeight(.bold)
                 .padding(.vertical)
@@ -77,10 +90,12 @@ struct SignUpView : View {
                 .background(Color("Yellow xlight"))
                 .clipShape(Capsule())
                 .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
-            
                 .offset(y: 25)
-                .opacity(self.index == 1 ? 1 : 0)
-        }
+        })
+        .fullScreenCover(isPresented: $isShowingWeekPageView, content: {
+            WeekPageView()
+                .transition(.move(edge: .leading))
+        })
     }
 }
 
@@ -96,5 +111,5 @@ struct CShape1: Shape {
             path.addLine(to: CGPoint(x: rect.width, y: 0))
         }
     }
-
+    
 }
