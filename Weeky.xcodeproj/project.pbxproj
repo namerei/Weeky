@@ -29,6 +29,8 @@
 		FA5E3BD62BC674E10045E290 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BD52BC674E10045E290 /* LoginView.swift */; };
 		FA5E3BD92BC6871F0045E290 /* SignUpView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BD82BC6871F0045E290 /* SignUpView2.swift */; };
 		FA5E3BDD2BC6A6BA0045E290 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BDC2BC6A6BA0045E290 /* Task.swift */; };
+		FA5E3BE02BC6AD410045E290 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BDF2BC6AD410045E290 /* ViewExtensions.swift */; };
+		FA5E3BE22BC6AD600045E290 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BE12BC6AD600045E290 /* DateExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		FA5E3BD52BC674E10045E290 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FA5E3BD82BC6871F0045E290 /* SignUpView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView2.swift; sourceTree = "<group>"; };
 		FA5E3BDC2BC6A6BA0045E290 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		FA5E3BDF2BC6AD410045E290 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		FA5E3BE12BC6AD600045E290 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,13 +125,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		062DCF0A2B5086BC005C209A /* Rest */ = {
+		062DCF0A2B5086BC005C209A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				06F3EA582B27661A000B5C71 /* Assets.xcassets */,
 				06F3EA542B276619000B5C71 /* WeekyApp.swift */,
 			);
-			path = Rest;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		0645E7182B2899850081EE15 /* Views */ = {
@@ -170,8 +174,9 @@
 		06F3EA532B276619000B5C71 /* Weeky */ = {
 			isa = PBXGroup;
 			children = (
+				FA5E3BDE2BC6AD300045E290 /* Extensions */,
 				FA5E3BCF2BC672560045E290 /* Screens */,
-				062DCF0A2B5086BC005C209A /* Rest */,
+				062DCF0A2B5086BC005C209A /* Resources */,
 				062DCF082B508651005C209A /* ViewModels */,
 				0645E7182B2899850081EE15 /* Views */,
 				0645E7192B2899C30081EE15 /* Styles */,
@@ -266,6 +271,15 @@
 				062DCF0B2B50880C005C209A /* WeekPageView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FA5E3BDE2BC6AD300045E290 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA5E3BDF2BC6AD410045E290 /* ViewExtensions.swift */,
+				FA5E3BE12BC6AD600045E290 /* DateExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,7 +420,9 @@
 				06F3EA552B276619000B5C71 /* WeekyApp.swift in Sources */,
 				062DCF0C2B50880C005C209A /* WeekPageView.swift in Sources */,
 				FA5E3BD62BC674E10045E290 /* LoginView.swift in Sources */,
+				FA5E3BE02BC6AD410045E290 /* ViewExtensions.swift in Sources */,
 				0645E7172B28997A0081EE15 /* AuthorizationView.swift in Sources */,
+				FA5E3BE22BC6AD600045E290 /* DateExtensions.swift in Sources */,
 				062DCF182B508AA9005C209A /* OneTaskView.swift in Sources */,
 				062DCF162B508920005C209A /* WeekPageViewModel.swift in Sources */,
 				062DCF1A2B508ABB005C209A /* NewTaskView.swift in Sources */,

@@ -12,9 +12,3 @@ struct TextTitle: ViewModifier {
     content.font(.system(size:20)).foregroundColor(Color.blue)
   }
 }
-
-extension View {
-  func textTitle() -> some View {
-    self.modifier(TextTitle())
-  }
-}
