@@ -127,29 +127,36 @@ struct WeekPageView: View {
                             HeaderView()
                         }
                     }
+                    
                 }
                 .ignoresSafeArea(.container, edges: .top)
-            }
-            
-            SideMenuView()
-                .offset(x: isShowingSideMenu ? 0 : -270)
-                .gesture(
-                    DragGesture()
-                        .onEnded({ value in
-                            let shoulsShow = value.translation.width > self.mindarg
-                            withAnimation {
-                                isShowingSideMenu = shoulsShow
-                            }
-                        })
-                )
-//            .navigationBarItems(leading:
-//                                    Button(action: {
-//                isShowingSideMenu.toggle()
-//            }, label: {
-//                Image(systemName: "line.horizontal.3")
-//                    .imageScale(.large)
-//            })
-//            )
+                }
+                .onTapGesture {
+                    withAnimation {
+                        isShowingSideMenu = false
+                    }
+                }
+                
+                
+                SideMenuView()
+                    .offset(x: isShowingSideMenu ? 0 : -270)
+                    .gesture(
+                        DragGesture()
+                            .onEnded({ value in
+                                let shoulsShow = value.translation.width > self.mindarg
+                                withAnimation {
+                                    isShowingSideMenu = shoulsShow
+                                }
+                            })
+                    )
+                //            .navigationBarItems(leading:
+                //                                    Button(action: {
+                //                isShowingSideMenu.toggle()
+                //            }, label: {
+                //                Image(systemName: "line.horizontal.3")
+                //                    .imageScale(.large)
+                //            })
+                //            )
 //            .navigationTitle("Home")
         }
         
@@ -323,7 +330,7 @@ struct ShowSideMenuButton: View {
 //        ZStack {
             Button(action: {
                 withAnimation {
-                    isShowingSideMenu.toggle()
+                    isShowingSideMenu = true
                 }
             }, label: {
                 Image(systemName: "list.bullet")
