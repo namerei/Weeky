@@ -77,7 +77,7 @@ struct WeekPageView: View {
     var body: some View {
             ZStack {
                 NavigationView {
-                ScrollView(.vertical, showsIndicators: false){
+                ScrollView(.vertical, showsIndicators: false) {
                     //Lazy with pinned header
                     LazyVStack(spacing: 12, pinnedViews: [.sectionHeaders]){
                         Section {
@@ -120,7 +120,6 @@ struct WeekPageView: View {
                                         }
                                     }
                                 }
-                                
                                 TasksView()
                             }
                         } header: {
@@ -129,14 +128,14 @@ struct WeekPageView: View {
                     }
                     
                 }
-                .ignoresSafeArea(.container, edges: .top)
-                }
+                //MARK: - hide side menu
                 .onTapGesture {
                     withAnimation {
                         isShowingSideMenu = false
                     }
                 }
-                
+                .ignoresSafeArea(.container, edges: .top)
+                }
                 
                 SideMenuView()
                     .offset(x: isShowingSideMenu ? 0 : -270)
@@ -269,6 +268,12 @@ struct WeekPageView: View {
         HStack(spacing: 10){
             //            Spacer()
             ShowSideMenuButton(isShowingSideMenu: $isShowingSideMenu)
+                .onTapGesture {
+                    withAnimation {
+                        isShowingSideMenu = true
+                    }
+                }
+            
             Spacer()
             DateTitleView()
             Spacer()
@@ -328,7 +333,7 @@ struct ShowSideMenuButton: View {
     
     
     var body: some View {
-//        ZStack {
+        ZStack {
             Button(action: {
                 withAnimation {
                     isShowingSideMenu = true
@@ -349,6 +354,6 @@ struct ShowSideMenuButton: View {
         
         
         
-//    }
+    }
     //    }
 }
