@@ -140,6 +140,7 @@ struct WeekPageView: View {
                 
                 SideMenuView()
                     .offset(x: isShowingSideMenu ? 0 : -270)
+                //MARK: - swipe side menu
                     .gesture(
                         DragGesture()
                             .onEnded({ value in

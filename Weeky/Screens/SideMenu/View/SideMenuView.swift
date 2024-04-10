@@ -32,7 +32,7 @@ enum tabIcon: String{
     case Notification
 }
 
-struct sidebar: Identifiable {
+struct SideBar: Identifiable {
     var id = UUID()
     var icon: String
     var title: String
@@ -41,12 +41,13 @@ struct sidebar: Identifiable {
 }
 
 let sidebarItems = [
-    sidebar(icon: "house.fill", title: "Home", index: 0, tab: .Home),
-    sidebar(icon: "creditcard.fill", title: "Card", index: 1, tab: .Card),
-    sidebar(icon: "heart.fill", title: "Favorite", index: 2, tab: .Favorite),
-    sidebar(icon: "cart.fill.badge.plus", title: "Purchases", index: 3, tab: .Purchases),
-    sidebar(icon: "bell.badge.fill", title: "Notification", index: 4, tab: .Notification)
+    SideBar(icon: "house.fill", title: "Home", index: 0, tab: .Home),
+    SideBar(icon: "creditcard.fill", title: "Card", index: 1, tab: .Card),
+    SideBar(icon: "heart.fill", title: "Favorite", index: 2, tab: .Favorite),
+    SideBar(icon: "cart.fill.badge.plus", title: "Purchases", index: 3, tab: .Purchases),
+    SideBar(icon: "bell.badge.fill", title: "Notification", index: 4, tab: .Notification)
 ]
+ 
 
 struct SideMenuView: View {
     
@@ -55,7 +56,7 @@ struct SideMenuView: View {
     
     var body: some View {
         ZStack{
-            Color("bgSlide")
+            Color("Blue light")
                 .frame(width: 266)
                 .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
             VStack(alignment: .leading){
@@ -74,14 +75,14 @@ struct SideMenuView: View {
                         .padding(.leading)
                     Image(systemName: "questionmark.circle")
                 }
-                .foregroundColor(.white)
+                .foregroundColor(.blue)
                 .padding(.top, 5)
                 Spacer()
                 HStack{
                     Bicon(icon: "moon.zzz.fill")
                     Spacer()
                     Text("Shoping")
-                        .foregroundColor(.white)
+                        .foregroundColor(.green)
                     Spacer()
                     Bicon(icon: "gearshape.fill")
                 }
@@ -109,7 +110,7 @@ struct userProfile: View {
         HStack{
             Circle()
                 .frame(width: 65, height: 65)
-                .foregroundColor(.white)
+                .foregroundColor(.purple)
             VStack{
                 RoundedRectangle(cornerRadius: 3, style: .continuous)
                     .frame(width: 100, height: 14)
@@ -121,7 +122,7 @@ struct userProfile: View {
                     .opacity(0.5)
                 
             }
-        }.foregroundColor(.white)
+        }.foregroundColor(.brown)
             .padding(.top, 60)
     }
 }
@@ -136,7 +137,7 @@ struct tabView: View {
         ZStack(alignment: .leading){
             Rectangle()
                 .frame(width: isAnimation ? 7 : 230, height: 45)
-                .foregroundColor(Color("selectTab"))
+                .foregroundColor(Color("Blue dark"))
                 .cornerRadius(7)
                 .offset(y: yOffset)
                 .padding(.vertical, 8)
@@ -172,12 +173,12 @@ struct tabView: View {
                                     .frame(width: 39, height: 40)
                                     .foregroundStyle(.ultraThinMaterial)
                                 Image(systemName: item.icon)
-                                    .foregroundColor(.white)
+                                    .foregroundColor(.green)
                             }
                             Text(item.title)
                                 .bold()
                                 .font(.title3)
-                                .foregroundColor(.white)
+                                .foregroundColor(.blue)
                                 .padding(.leading, 10)
                             Spacer()
                         }
@@ -198,7 +199,7 @@ struct divider: View {
     var body: some View{
         Rectangle()
             .frame(width: 266, height: 1)
-            .foregroundColor(.gray.opacity(0.4))
+            .foregroundColor(.gray.opacity(0.7))
             .padding(.top,30)
     }
     
@@ -214,8 +215,23 @@ struct Bicon: View{
                 .frame(width: 48, height: 48)
                 .foregroundStyle(.ultraThinMaterial)
             Image(systemName: icon)
-                .foregroundColor(.white)
+                .foregroundColor(.cyan)
         }
     }
     
 }
+
+
+//struct SideMenuView: View {
+//    var body: some View {
+//        VStack {
+//            Text("Parameter 1")
+//            Text("Parameter 2")
+//            Text("Parameter 3")
+//            Text("Parameter 4")
+//            Text("Parameter 5")
+//        }
+//        .frame(width: 240, height: 330)
+//        .background(Color.blue)
+//    }
+//}
