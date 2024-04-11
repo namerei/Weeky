@@ -34,6 +34,7 @@
 		FA5E3BEA2BC6D7870045E290 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BE92BC6D7870045E290 /* CalendarView.swift */; };
 		FA5E3BEE2BC700940045E290 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BED2BC700940045E290 /* Slider.swift */; };
 		FA5E3BF02BC7BB550045E290 /* WPV.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BEF2BC7BB550045E290 /* WPV.swift */; };
+		FA5E3BF22BC7D6C00045E290 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BF12BC7D6C00045E290 /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		FA5E3BE92BC6D7870045E290 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		FA5E3BED2BC700940045E290 /* Slider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
 		FA5E3BEF2BC7BB550045E290 /* WPV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPV.swift; sourceTree = "<group>"; };
+		FA5E3BF12BC7D6C00045E290 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				062DCF0B2B50880C005C209A /* WeekPageView.swift */,
+				FA5E3BF12BC7D6C00045E290 /* HeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				062DCF122B5088A9005C209A /* User.swift in Sources */,
 				062DCF142B5088F6005C209A /* AuthorizationViewModel.swift in Sources */,
 				FA5E3BDD2BC6A6BA0045E290 /* Task.swift in Sources */,
+				FA5E3BF22BC7D6C00045E290 /* HeaderView.swift in Sources */,
 				FA5E3BD92BC6871F0045E290 /* SignUpView2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
