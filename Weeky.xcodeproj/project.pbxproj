@@ -35,6 +35,7 @@
 		FA5E3BEE2BC700940045E290 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BED2BC700940045E290 /* Slider.swift */; };
 		FA5E3BF02BC7BB550045E290 /* WPV.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BEF2BC7BB550045E290 /* WPV.swift */; };
 		FA5E3BF22BC7D6C00045E290 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BF12BC7D6C00045E290 /* HeaderView.swift */; };
+		FA5E3BF42BC7D8840045E290 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BF32BC7D8830045E290 /* TaskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		FA5E3BED2BC700940045E290 /* Slider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
 		FA5E3BEF2BC7BB550045E290 /* WPV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPV.swift; sourceTree = "<group>"; };
 		FA5E3BF12BC7D6C00045E290 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		FA5E3BF32BC7D8830045E290 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +281,7 @@
 			children = (
 				062DCF0B2B50880C005C209A /* WeekPageView.swift */,
 				FA5E3BF12BC7D6C00045E290 /* HeaderView.swift */,
+				FA5E3BF32BC7D8830045E290 /* TaskView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				060F5ACA2B5167FE00D1CF39 /* Item.swift in Sources */,
 				FA5E3BEE2BC700940045E290 /* Slider.swift in Sources */,
 				062DCF102B50889F005C209A /* List.swift in Sources */,
+				FA5E3BF42BC7D8840045E290 /* TaskView.swift in Sources */,
 				FA5E3BF02BC7BB550045E290 /* WPV.swift in Sources */,
 				062DCF1C2B508ADD005C209A /* OneTaskViewViewModel.swift in Sources */,
 				062DCF1E2B508AE9005C209A /* NewTaskViewViewModel.swift in Sources */,
