@@ -82,7 +82,7 @@ struct Login : View {
             
             NavigationLink("Войти", destination: WeekPageView())
                 .foregroundColor(Color("Gray"))
-                .fontWeight(.bold)
+//                .fontWeight(.bold)
                 .padding(.vertical)
                 .padding(.horizontal, 50)
                 .background(Color("Yellow xlight"))

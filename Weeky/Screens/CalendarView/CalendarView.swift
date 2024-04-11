@@ -2,7 +2,7 @@
 //  CalendarView.swift
 //  Weeky
 //
-//  Created by Nikita Evdokimov on 10.04.24.
+//  Created by namerei on 10.04.24.
 //
 
 import SwiftUI

@@ -202,7 +202,6 @@ struct divider: View {
             .foregroundColor(.gray.opacity(0.7))
             .padding(.top,30)
     }
-    
 }
 
 struct Bicon: View{
