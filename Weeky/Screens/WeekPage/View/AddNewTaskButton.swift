@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct AddNewTaskButton: View {
+    @Binding var isShowingNewTaskView: Bool
+    
     var body: some View {
         Button {
             print("button add new task")
+            
+            isShowingNewTaskView.toggle()
 //            viewModel.openEditTask = true
         } label: {
             Label {
@@ -27,14 +31,18 @@ struct AddNewTaskButton: View {
                 Capsule()
                     .fill(Color("Blue dark"))
                     .shadow(color: Color(UIColor.label), radius: 0.9, x: 0.5, y: 0.5)
-                
             }
+            .sheet(isPresented: $isShowingNewTaskView, content: {
+//                MySideMenuView()
+                ModalView()
+            })
+            //            }
         }
 //        .padding(.top, 30)
 //        .frame(maxWidth: .infinity)
     }
 }
 
-#Preview {
-    AddNewTaskButton()
-}
+//#Preview {
+//    AddNewTaskButton(isShowingNewTaskView: isShowingNewTaskView)
+//}

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		060F5ACA2B5167FE00D1CF39 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F5AC92B5167FE00D1CF39 /* Item.swift */; };
-		062DCF0C2B50880C005C209A /* WeekPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062DCF0B2B50880C005C209A /* WeekPageView.swift */; };
 		062DCF102B50889F005C209A /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062DCF0F2B50889F005C209A /* List.swift */; };
 		062DCF122B5088A9005C209A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062DCF112B5088A9005C209A /* User.swift */; };
 		062DCF142B5088F6005C209A /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062DCF132B5088F6005C209A /* AuthorizationViewModel.swift */; };
@@ -33,12 +32,13 @@
 		FA5E3BE62BC6B2640045E290 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BE52BC6B2640045E290 /* SideMenuView.swift */; };
 		FA5E3BEA2BC6D7870045E290 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BE92BC6D7870045E290 /* CalendarView.swift */; };
 		FA5E3BEE2BC700940045E290 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BED2BC700940045E290 /* Slider.swift */; };
-		FA5E3BF02BC7BB550045E290 /* WPV.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BEF2BC7BB550045E290 /* WPV.swift */; };
+		FA5E3BF02BC7BB550045E290 /* WeekPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BEF2BC7BB550045E290 /* WeekPageView.swift */; };
 		FA5E3BF22BC7D6C00045E290 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BF12BC7D6C00045E290 /* HeaderView.swift */; };
 		FA5E3BF42BC7D8840045E290 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BF32BC7D8830045E290 /* TaskView.swift */; };
 		FA5E3BF72BC7F16B0045E290 /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BF62BC7F16B0045E290 /* NewTaskView.swift */; };
 		FA5E3BF92BC7F1B90045E290 /* NewTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BF82BC7F1B90045E290 /* NewTaskViewModel.swift */; };
 		FA6233402BC91DED008CBD84 /* MySideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62333F2BC91DED008CBD84 /* MySideMenuView.swift */; };
+		FA6233422BC92A42008CBD84 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6233412BC92A42008CBD84 /* ModalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +60,6 @@
 
 /* Begin PBXFileReference section */
 		060F5AC92B5167FE00D1CF39 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		062DCF0B2B50880C005C209A /* WeekPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekPageView.swift; sourceTree = "<group>"; };
 		062DCF0F2B50889F005C209A /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		062DCF112B5088A9005C209A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		062DCF132B5088F6005C209A /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
@@ -88,12 +87,13 @@
 		FA5E3BE52BC6B2640045E290 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		FA5E3BE92BC6D7870045E290 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		FA5E3BED2BC700940045E290 /* Slider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
-		FA5E3BEF2BC7BB550045E290 /* WPV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPV.swift; sourceTree = "<group>"; };
+		FA5E3BEF2BC7BB550045E290 /* WeekPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekPageView.swift; sourceTree = "<group>"; };
 		FA5E3BF12BC7D6C00045E290 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		FA5E3BF32BC7D8830045E290 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		FA5E3BF62BC7F16B0045E290 /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
 		FA5E3BF82BC7F1B90045E290 /* NewTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewModel.swift; sourceTree = "<group>"; };
 		FA62333F2BC91DED008CBD84 /* MySideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySideMenuView.swift; sourceTree = "<group>"; };
+		FA6233412BC92A42008CBD84 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,7 +251,6 @@
 			children = (
 				FA5E3BDB2BC6A20D0045E290 /* View */,
 				FA5E3BDA2BC6A2040045E290 /* ViewModel */,
-				FA5E3BEF2BC7BB550045E290 /* WPV.swift */,
 			);
 			path = WeekPage;
 			sourceTree = "<group>";
@@ -285,10 +284,11 @@
 		FA5E3BDB2BC6A20D0045E290 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				062DCF0B2B50880C005C209A /* WeekPageView.swift */,
+				FA5E3BEF2BC7BB550045E290 /* WeekPageView.swift */,
 				FA5E3BF12BC7D6C00045E290 /* HeaderView.swift */,
 				FA5E3BF32BC7D8830045E290 /* TaskView.swift */,
 				FA46939D2BC7F86F0092430D /* AddNewTaskButton.swift */,
+				FA6233412BC92A42008CBD84 /* ModalView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -500,7 +500,6 @@
 				0645E71B2B2899F80081EE15 /* TextModifiers.swift in Sources */,
 				06F3EA552B276619000B5C71 /* WeekyApp.swift in Sources */,
 				FA5E3BE62BC6B2640045E290 /* SideMenuView.swift in Sources */,
-				062DCF0C2B50880C005C209A /* WeekPageView.swift in Sources */,
 				FA5E3BD62BC674E10045E290 /* LoginView.swift in Sources */,
 				FA5E3BE02BC6AD410045E290 /* ViewExtensions.swift in Sources */,
 				FA5E3BF72BC7F16B0045E290 /* NewTaskView.swift in Sources */,
@@ -514,8 +513,9 @@
 				060F5ACA2B5167FE00D1CF39 /* Item.swift in Sources */,
 				FA5E3BEE2BC700940045E290 /* Slider.swift in Sources */,
 				062DCF102B50889F005C209A /* List.swift in Sources */,
+				FA6233422BC92A42008CBD84 /* ModalView.swift in Sources */,
 				FA5E3BF42BC7D8840045E290 /* TaskView.swift in Sources */,
-				FA5E3BF02BC7BB550045E290 /* WPV.swift in Sources */,
+				FA5E3BF02BC7BB550045E290 /* WeekPageView.swift in Sources */,
 				062DCF1C2B508ADD005C209A /* OneTaskViewViewModel.swift in Sources */,
 				062DCF1E2B508AE9005C209A /* NewTaskViewViewModel.swift in Sources */,
 				062DCF122B5088A9005C209A /* User.swift in Sources */,

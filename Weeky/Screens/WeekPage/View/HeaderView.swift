@@ -81,6 +81,9 @@ struct ShowSideMenuButton: View {
                     .frame(width: 25, height: 25)
                     .foregroundColor(.black)
             })
+            .sheet(isPresented: $isShowingSideMenu, content: {
+                MySideMenuView()
+            })
         }
     }
 }
