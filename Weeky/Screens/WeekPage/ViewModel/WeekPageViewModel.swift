@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import SwiftUI
 
 class WeekPageViewModel: ObservableObject {
     
@@ -43,9 +43,9 @@ class WeekPageViewModel: ObservableObject {
             }
             
             DispatchQueue.main.async {
-//                withAnimation{
+                withAnimation{
                     self.filteredTasks = filtered
-//                }
+                }
             }
         }
     }

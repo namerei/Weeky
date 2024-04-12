@@ -9,22 +9,43 @@ import SwiftUI
 
 struct WeekPageView: View {
     @StateObject var taskModel = WeekPageViewModel()
-    //    @Namespace var animation
-    @State var isShowingSideMenu = false
+    @Namespace var animation
+    @State private var isShowingSideMenu = false
     @State private var isCalendarViewShowed = false
     
     var body: some View {
         ZStack {
-            NavigationView {
+//            NavigationView {
                 VStack {
                     HeaderView(isShowingSideMenu: $isShowingSideMenu, isCalendarViewShowed: $isCalendarViewShowed)
+//                        .vTop()
                     //                    WeekView()
-//                    TaskView()
+                    //                    TaskView()
                     MainScrollView()
                 }
+//                .vTop()
+//            }
+//            Spacer()
+//            VStack {
+//                Spacer()
+//                HStack {
+            AddNewTaskButton()
+                .vBottom()
+                .hTrailing()
+                .padding(30)
+//                    Spacer()
+//                }
             }
-            SideMenu(isShowingSideMenu: $isShowingSideMenu)
-        }
+//            SideMenu(isShowingSideMenu: $isShowingSideMenu)
+            
+//            VStack{
+//                Spacer()
+//                HStack {
+//                    Spacer()
+//                        .padding(30)
+//                }
+//            }
+//        }
     }
     
     
@@ -132,45 +153,18 @@ struct WeekPageView: View {
             )
         }.hLeading()
     }
-}
+//}
 
 
-#Preview {
-    WeekPageView()
-}
-
-
-
-//MARK: - Views
-struct SideMenu: View {
-    @Binding var isShowingSideMenu: Bool
-    let mindarg : CGFloat = 100
+func WeekView()->some View {
+//    @StateObject var taskModel = WeekPageViewModel()
+//    @Namespace var animation
     
-    var body: some View {
-        SideMenuView()
-            .offset(x: isShowingSideMenu ? 0 : -270)
-            .gesture(
-                DragGesture()
-                    .onEnded({ value in
-                        let shouldShow = value.translation.width > self.mindarg
-                        withAnimation {
-                            isShowingSideMenu = shouldShow
-                        }
-                    })
-            )
-    }
-}
-
-
-struct WeekView: View {
-    @StateObject var taskModel = WeekPageViewModel()
-    @Namespace var animation
-    
-    var body: some View {
+//    var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 10){
                 ForEach(taskModel.currentWeek,id: \.self){ day in
-                    VStack(spacing: 10){
+                    VStack(spacing: 5){
                         Text(taskModel.extractDate(date: day, format: "dd"))
                             .font(.system(size: 15))
                             .fontWeight(.semibold)
@@ -207,6 +201,27 @@ struct WeekView: View {
 }
 
 
+//MARK: - Views
+//struct SideMenu: View {
+//    @Binding var isShowingSideMenu: Bool
+//    let mindarg : CGFloat = 100
+//    
+//    var body: some View {
+//        SideMenuView()
+//            .offset(x: isShowingSideMenu ? 0 : -270)
+//            .gesture(
+//                DragGesture()
+//                    .onEnded({ value in
+//                        let shouldShow = value.translation.width > self.mindarg
+//                        withAnimation {
+//                            isShowingSideMenu = shouldShow
+//                        }
+//                    })
+//            )
+//    }
+//}
 
-
+#Preview {
+    WeekPageView()
+}
 
