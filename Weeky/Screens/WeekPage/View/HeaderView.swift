@@ -28,7 +28,33 @@ struct HeaderView: View {
         .padding()
         .background(Color.white)
     }
+    
 }
+
+//struct CustomNavigationLink<Label: View, Destination: View>: View {
+//    
+//    let destination: Destination
+//    let label: Label
+//    @State private var isActive = false
+//    
+//    var body: some View {
+//        Button(action: {
+//            isActive = true
+//        }) {
+//            label
+//        }
+//        .background(
+//            NavigationLink(
+//                destination: destination,
+//                isActive: $isActive,
+//                label: { EmptyView() }
+//            ).hidden()
+//        )
+//    }
+//    
+//    
+//}
+
 
 struct DateTitleView: View {
     var body: some View {
@@ -65,26 +91,55 @@ struct ShowCalendarButton: View {
     
 }
 
+
 struct ShowSideMenuButton: View {
     @Binding var isShowingSideMenu : Bool
     
     var body: some View {
-        ZStack {
-            Button(action: {
-                withAnimation {
-                    isShowingSideMenu = true
-                }
-            }, label: {
-                Image(systemName: "list.bullet")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 25, height: 25)
-                    .foregroundColor(.black)
-            })
-            .sheet(isPresented: $isShowingSideMenu, content: {
-                MySideMenuView()
-            })
-        }
+//        ZStack {
+//            Button(action: {
+//                withAnimation {
+//                    isShowingSideMenu = true
+//                }
+//            }, label: {
+//                Image(systemName: "list.bullet")
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fill)
+//                    .frame(width: 25, height: 25)
+//                    .foregroundColor(.black)
+//            })
+////            .sheet(isPresented: $isShowingSideMenu, content: {
+////                MySideMenuView()
+////                SideMenuView()
+////            })
+//            .fullScreenCover(isPresented: $isShowingSideMenu, content: {
+//                withAnimation(nil) {
+//                    SideMenuView()
+//                }
+////                    .interactiveDismissDisabled(true)
+//            })
+//        }
+        
+        
+//        withAnimation(nil) {
+//            NavigationLink("Войти", destination: SideMenuView())
+//                .foregroundColor(Color("Gray"))
+//            //                .fontWeight(.bold)
+//                .padding(.vertical)
+//                .padding(.horizontal, 50)
+//                .background(Color("Yellow xlight"))
+//                .clipShape(Capsule())
+//                .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
+//            
+//                .offset(y: 25)
+//        }
+        NavigationLink(destination: SideMenuView(), label: {
+            Image(systemName: "list.bullet")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 25, height: 25)
+                .foregroundColor(.black)
+        })
     }
 }
 

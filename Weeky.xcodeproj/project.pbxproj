@@ -13,8 +13,6 @@
 		062DCF142B5088F6005C209A /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062DCF132B5088F6005C209A /* AuthorizationViewModel.swift */; };
 		062DCF162B508920005C209A /* WeekPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062DCF152B508920005C209A /* WeekPageViewModel.swift */; };
 		062DCF182B508AA9005C209A /* OneTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062DCF172B508AA9005C209A /* OneTaskView.swift */; };
-		062DCF1C2B508ADD005C209A /* OneTaskViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062DCF1B2B508ADD005C209A /* OneTaskViewViewModel.swift */; };
-		062DCF1E2B508AE9005C209A /* NewTaskViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062DCF1D2B508AE9005C209A /* NewTaskViewViewModel.swift */; };
 		0645E7172B28997A0081EE15 /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F3EA562B276619000B5C71 /* AuthorizationView.swift */; };
 		0645E71B2B2899F80081EE15 /* TextModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0645E71A2B2899F80081EE15 /* TextModifiers.swift */; };
 		06F3EA552B276619000B5C71 /* WeekyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F3EA542B276619000B5C71 /* WeekyApp.swift */; };
@@ -35,10 +33,12 @@
 		FA5E3BF02BC7BB550045E290 /* WeekPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BEF2BC7BB550045E290 /* WeekPageView.swift */; };
 		FA5E3BF22BC7D6C00045E290 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BF12BC7D6C00045E290 /* HeaderView.swift */; };
 		FA5E3BF42BC7D8840045E290 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BF32BC7D8830045E290 /* TaskView.swift */; };
-		FA5E3BF72BC7F16B0045E290 /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BF62BC7F16B0045E290 /* NewTaskView.swift */; };
+		FA5E3BF72BC7F16B0045E290 /* NewTaskView0.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BF62BC7F16B0045E290 /* NewTaskView0.swift */; };
 		FA5E3BF92BC7F1B90045E290 /* NewTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BF82BC7F1B90045E290 /* NewTaskViewModel.swift */; };
 		FA6233402BC91DED008CBD84 /* MySideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62333F2BC91DED008CBD84 /* MySideMenuView.swift */; };
 		FA6233422BC92A42008CBD84 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6233412BC92A42008CBD84 /* ModalView.swift */; };
+		FA6233452BC92C8F008CBD84 /* ElegantCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = FA6233442BC92C8F008CBD84 /* ElegantCalendar */; };
+		FA6233472BC92DC9008CBD84 /* NewTascView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6233462BC92DC9008CBD84 /* NewTascView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +65,6 @@
 		062DCF132B5088F6005C209A /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
 		062DCF152B508920005C209A /* WeekPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekPageViewModel.swift; sourceTree = "<group>"; };
 		062DCF172B508AA9005C209A /* OneTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTaskView.swift; sourceTree = "<group>"; };
-		062DCF1B2B508ADD005C209A /* OneTaskViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTaskViewViewModel.swift; sourceTree = "<group>"; };
-		062DCF1D2B508AE9005C209A /* NewTaskViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewViewModel.swift; sourceTree = "<group>"; };
 		0645E71A2B2899F80081EE15 /* TextModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifiers.swift; sourceTree = "<group>"; };
 		06F3EA512B276619000B5C71 /* Weeky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weeky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06F3EA542B276619000B5C71 /* WeekyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekyApp.swift; sourceTree = "<group>"; };
@@ -90,10 +88,11 @@
 		FA5E3BEF2BC7BB550045E290 /* WeekPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekPageView.swift; sourceTree = "<group>"; };
 		FA5E3BF12BC7D6C00045E290 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		FA5E3BF32BC7D8830045E290 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
-		FA5E3BF62BC7F16B0045E290 /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
+		FA5E3BF62BC7F16B0045E290 /* NewTaskView0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView0.swift; sourceTree = "<group>"; };
 		FA5E3BF82BC7F1B90045E290 /* NewTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewModel.swift; sourceTree = "<group>"; };
 		FA62333F2BC91DED008CBD84 /* MySideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySideMenuView.swift; sourceTree = "<group>"; };
 		FA6233412BC92A42008CBD84 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
+		FA6233462BC92DC9008CBD84 /* NewTascView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTascView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6233452BC92C8F008CBD84 /* ElegantCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,15 +121,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		062DCF082B508651005C209A /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				062DCF1B2B508ADD005C209A /* OneTaskViewViewModel.swift */,
-				062DCF1D2B508AE9005C209A /* NewTaskViewViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		062DCF092B508666005C209A /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,18 +135,11 @@
 		062DCF0A2B5086BC005C209A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				06F3EA5A2B27661A000B5C71 /* Preview Content */,
 				06F3EA582B27661A000B5C71 /* Assets.xcassets */,
 				06F3EA542B276619000B5C71 /* WeekyApp.swift */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		0645E7182B2899850081EE15 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				062DCF172B508AA9005C209A /* OneTaskView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		0645E7192B2899C30081EE15 /* Styles */ = {
@@ -193,9 +177,6 @@
 				FA5E3BCF2BC672560045E290 /* Screens */,
 				062DCF092B508666005C209A /* Models */,
 				062DCF0A2B5086BC005C209A /* Resources */,
-				062DCF082B508651005C209A /* ViewModels */,
-				0645E7182B2899850081EE15 /* Views */,
-				06F3EA5A2B27661A000B5C71 /* Preview Content */,
 			);
 			path = Weeky;
 			sourceTree = "<group>";
@@ -228,10 +209,10 @@
 		FA5E3BCF2BC672560045E290 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				FA5E3BF52BC7F1560045E290 /* NewTaskView */,
-				FA5E3BE82BC6D7790045E290 /* CalendarView */,
 				FA5E3BD02BC672630045E290 /* Authorization */,
 				FA5E3BD12BC6729E0045E290 /* WeekPage */,
+				FA5E3BF52BC7F1560045E290 /* NewTaskView */,
+				FA5E3BE82BC6D7790045E290 /* CalendarView */,
 				FA5E3BE42BC6B2580045E290 /* SideMenu */,
 			);
 			path = Screens;
@@ -349,7 +330,9 @@
 		FA5E3BFA2BC7F21D0045E290 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FA5E3BF62BC7F16B0045E290 /* NewTaskView.swift */,
+				FA5E3BF62BC7F16B0045E290 /* NewTaskView0.swift */,
+				062DCF172B508AA9005C209A /* OneTaskView.swift */,
+				FA6233462BC92DC9008CBD84 /* NewTascView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -379,6 +362,7 @@
 			);
 			name = Weeky;
 			packageProductDependencies = (
+				FA6233442BC92C8F008CBD84 /* ElegantCalendar */,
 			);
 			productName = Weeky;
 			productReference = 06F3EA512B276619000B5C71 /* Weeky.app */;
@@ -453,6 +437,7 @@
 			);
 			mainGroup = 06F3EA482B276619000B5C71;
 			packageReferences = (
+				FA6233432BC92C8F008CBD84 /* XCRemoteSwiftPackageReference "ElegantCalendar" */,
 			);
 			productRefGroup = 06F3EA522B276619000B5C71 /* Products */;
 			projectDirPath = "";
@@ -502,7 +487,7 @@
 				FA5E3BE62BC6B2640045E290 /* SideMenuView.swift in Sources */,
 				FA5E3BD62BC674E10045E290 /* LoginView.swift in Sources */,
 				FA5E3BE02BC6AD410045E290 /* ViewExtensions.swift in Sources */,
-				FA5E3BF72BC7F16B0045E290 /* NewTaskView.swift in Sources */,
+				FA5E3BF72BC7F16B0045E290 /* NewTaskView0.swift in Sources */,
 				FA6233402BC91DED008CBD84 /* MySideMenuView.swift in Sources */,
 				0645E7172B28997A0081EE15 /* AuthorizationView.swift in Sources */,
 				FA46939E2BC7F86F0092430D /* AddNewTaskButton.swift in Sources */,
@@ -516,10 +501,9 @@
 				FA6233422BC92A42008CBD84 /* ModalView.swift in Sources */,
 				FA5E3BF42BC7D8840045E290 /* TaskView.swift in Sources */,
 				FA5E3BF02BC7BB550045E290 /* WeekPageView.swift in Sources */,
-				062DCF1C2B508ADD005C209A /* OneTaskViewViewModel.swift in Sources */,
-				062DCF1E2B508AE9005C209A /* NewTaskViewViewModel.swift in Sources */,
 				062DCF122B5088A9005C209A /* User.swift in Sources */,
 				062DCF142B5088F6005C209A /* AuthorizationViewModel.swift in Sources */,
+				FA6233472BC92DC9008CBD84 /* NewTascView.swift in Sources */,
 				FA5E3BDD2BC6A6BA0045E290 /* Task.swift in Sources */,
 				FA5E3BF22BC7D6C00045E290 /* HeaderView.swift in Sources */,
 				FA5E3BD92BC6871F0045E290 /* SignUpView2.swift in Sources */,
@@ -685,7 +669,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Weeky/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Weeky/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = AFAAV4M63Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -714,7 +698,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Weeky/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Weeky/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = AFAAV4M63Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -852,6 +836,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FA6233432BC92C8F008CBD84 /* XCRemoteSwiftPackageReference "ElegantCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ThasianX/ElegantCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FA6233442BC92C8F008CBD84 /* ElegantCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA6233432BC92C8F008CBD84 /* XCRemoteSwiftPackageReference "ElegantCalendar" */;
+			productName = ElegantCalendar;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 06F3EA492B276619000B5C71 /* Project object */;
 }

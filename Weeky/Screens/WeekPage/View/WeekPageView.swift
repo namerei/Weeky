@@ -16,15 +16,17 @@ struct WeekPageView: View {
     @State private var isShowingNewTaskView = false
     
     var body: some View {
-        ZStack {
-            VStack {
-                HeaderView(isShowingSideMenu: $isShowingSideMenu, isCalendarViewShowed: $isCalendarViewShowed)
-                MainScrollView()
+        NavigationView {
+            ZStack {
+                VStack {
+                    HeaderView(isShowingSideMenu: $isShowingSideMenu, isCalendarViewShowed: $isCalendarViewShowed)
+                    MainScrollView()
+                }
+                AddNewTaskButton(isShowingNewTaskView: $isShowingNewTaskView)
+                    .vBottom()
+                    .hTrailing()
+                    .padding(30)
             }
-            AddNewTaskButton(isShowingNewTaskView: $isShowingNewTaskView)
-                .vBottom()
-                .hTrailing()
-                .padding(30)
         }
     }
     

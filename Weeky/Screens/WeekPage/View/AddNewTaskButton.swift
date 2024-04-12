@@ -34,7 +34,8 @@ struct AddNewTaskButton: View {
             }
             .sheet(isPresented: $isShowingNewTaskView, content: {
 //                MySideMenuView()
-                ModalView()
+//                ModalView()
+                NewTaskView()
             })
             //            }
         }
