@@ -18,7 +18,7 @@ struct AddNewTaskButton: View {
 //            viewModel.openEditTask = true
         } label: {
             Label {
-                Text("Добавить задачу")
+                Text("")
             } icon: {
                 Image(systemName: "plus.app.fill")
             }

@@ -133,13 +133,14 @@ struct ShowSideMenuButton: View {
 //            
 //                .offset(y: 25)
 //        }
-        NavigationLink(destination: SideMenuView(), label: {
+        NavigationLink(destination: SideMenuView().transition(.scale), label: {
             Image(systemName: "list.bullet")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 25, height: 25)
                 .foregroundColor(.black)
         })
+//        .transition(.scale)
     }
 }
 

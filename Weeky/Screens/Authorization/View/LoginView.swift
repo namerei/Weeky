@@ -97,7 +97,6 @@ struct Login : View {
 
 
 struct CShape: Shape {
-    
     func path(in rect: CGRect) -> Path {
         
         return Path { path in

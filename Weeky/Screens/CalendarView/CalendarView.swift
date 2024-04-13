@@ -16,6 +16,21 @@ struct CalendarView: View {
     }
 }
 
+
+struct Previews_Container: PreviewProvider {
+    struct Container: View {
+        @State var show = true
+        
+        var body: some View {
+            CalendarView(isCalendarViewShowed: $show)
+        }
+    }
+
+    static var previews: some View {
+        Container()
+    }
+}
+
 //struct CalendarView: UIViewControllerRepresentable {
 //
 //    typealias UIViewControllerType = CalendarViewController

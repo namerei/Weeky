@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//@available(iOS 16.0, *)
 struct WeekPageView: View {
     @StateObject var taskModel = WeekPageViewModel()
     @Namespace var animation
@@ -16,7 +17,8 @@ struct WeekPageView: View {
     @State private var isShowingNewTaskView = false
     
     var body: some View {
-        NavigationView {
+//        NavigationView {
+        NavigationStack {
             ZStack {
                 VStack {
                     HeaderView(isShowingSideMenu: $isShowingSideMenu, isCalendarViewShowed: $isCalendarViewShowed)
