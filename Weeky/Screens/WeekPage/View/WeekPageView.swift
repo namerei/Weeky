@@ -35,18 +35,30 @@ struct WeekPageView: View {
     
     private func AddNewTaskButtonView()-> some View {
         HStack {
-//            VStack {
-//                Spacer()
-//                Label("Tak я сдышаasdfj alksjdfk jalksdjfkj as;ldkjf lkajs;dlkjf ;lkasjd;lkf j;al skj;dflkj ;asjdf;l kjas;ldfj ajsd;hf ;aljs;l л", image: "circle")
-//                    .background(Color(.blue))
-//                    .padding(20)
-//            }
+            QuoteVStack()
             Spacer()
             VStack {
                 Spacer()
                 AddNewTaskButton(isShowingNewTaskView: $isShowingNewTaskView)
                     .padding(20)
             }
+        }
+    }
+    
+    func QuoteVStack()->some View {
+        var qouet = "Что разум человека может постигнуть и во что он может поверить, того он способен достичь"
+        var author = "Наполеон Хилл"
+        
+        return VStack {
+            Spacer()
+            VStack {
+                Text(qouet)
+                    .font(.footnote)
+                    .foregroundColor(Color(.white))
+            }
+                .background(Color(.gray))
+                .frame(height: 90)
+                .padding(20)
         }
     }
     
