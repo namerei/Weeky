@@ -17,7 +17,7 @@ struct WeekPageView: View {
     
     var body: some View {
 //        NavigationView {
-        NavigationStack {
+        NavigationView {
             ZStack {
                 MainVStack()
                 AddNewTaskButtonView()
@@ -35,11 +35,12 @@ struct WeekPageView: View {
     
     private func AddNewTaskButtonView()-> some View {
         HStack {
-            QuoteVStack()
+//            QuoteVStack()
             Spacer()
             VStack {
                 Spacer()
                 AddNewTaskButton(isShowingNewTaskView: $isShowingNewTaskView)
+                    .shadow(color: Color.black.opacity(0.3), radius: 5, x: -5, y: 5)
                     .padding(20)
             }
         }
@@ -58,6 +59,8 @@ struct WeekPageView: View {
             }
                 .background(Color(.gray))
                 .frame(height: 90)
+                .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: -5)
+                .cornerRadius(30)
                 .padding(20)
         }
     }
@@ -123,7 +126,7 @@ struct WeekPageView: View {
                         ZStack{
                             if taskModel.isToday(date: day){
                                 Capsule()
-                                    .fill(.black)
+                                    .fill(Color("Blue dark"))
                                     .matchedGeometryEffect(id: "CURRENTDAY", in: animation)
                             }
                         })
