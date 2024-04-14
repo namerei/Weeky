@@ -132,7 +132,7 @@ struct TaskCardView: View {
                 }) {
                     Image(systemName: taskIsDone ? "checkmark.square" : "square")
                         .font(.title)
-                        .foregroundColor(.b)
+                        .foregroundColor(.black)
                 }
                 Button(action: {
                     // Handle edit button action
