@@ -9,6 +9,7 @@ import SwiftUI
 
 import SwiftUI
 
+/*
 struct SideMenuView: View {
 //    @Binding var sideMenuParameters : SideMenuParameters
 //    var newPassword = String()
@@ -100,5 +101,95 @@ struct SideMenuView: View {
             })
             .foregroundColor(.red)
         }
+    }
+}
+*/
+
+
+struct SettingsView: View {
+    @State private var darkModeOn = false
+    @State private var notificationsOn = false
+    @State private var selectedDayIndex = 0
+    let daysOfWeek = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"]
+    
+    var body: some View {
+        ScrollView {
+            HStack {
+                Image(systemName: "person.circle")
+                    .resizable()
+                    .frame(width: 50, height: 50)
+                VStack(alignment: .leading) {
+                    Text("Логин")
+                        .font(.title)
+                    Text("Имя")
+                        .font(.subheadline)
+                }
+                //                Spacer()
+            }
+            .padding()
+            
+            Divider()
+            
+            VStack {
+                Button(action: {
+                    // Change password
+                }) {
+                    Text("Изменить пароль")
+                }
+                .padding()
+                
+                Button(action: {
+                    // Change username
+                }) {
+                    Text("Изменить имя")
+                }
+            }
+            Divider()
+            //            .padding()
+            
+            VStack {
+                Toggle(isOn: $darkModeOn) {
+                    Text("Темная тема")
+                }
+                .padding()
+                
+                Toggle(isOn: $notificationsOn) {
+                    Text("Уведомления")
+                }
+                .padding()
+                
+                
+                HStack {
+                    Text("День начала недели")
+                        .padding()
+                    Spacer()
+                    Picker(selection: $selectedDayIndex, label: Text("Выберите день")) {
+                        ForEach(0..<daysOfWeek.count) { index in
+                            Text(daysOfWeek[index])
+                        }
+                    }
+                    .padding()
+                }
+                //                .pickerStyle(WheelPickerStyle())
+                .pickerStyle(DefaultPickerStyle())
+            }
+            //                .padding()
+        }
+            Spacer()
+            
+            Button(action: {
+                // Logout action
+            }) {
+                Text("Выйти из аккаунта")
+                    .foregroundColor(.red)
+            }
+//            .padding()
+//        }
+    }
+}
+
+struct SettingsView_Previews: PreviewProvider {
+    static var previews: some View {
+        SettingsView()
     }
 }
