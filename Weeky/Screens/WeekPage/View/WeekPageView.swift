@@ -113,6 +113,7 @@ struct WeekPageView: View {
 struct TaskCardView: View {
     var taskTitle: String
     var taskTime: String
+    @State var taskIsDone = false
     
     var body: some View {
         HStack {
@@ -125,11 +126,13 @@ struct TaskCardView: View {
             Spacer()
             HStack(spacing: 20) {
                 Button(action: {
-                    // Handle checkmark button action
+                    withAnimation {
+                        taskIsDone.toggle()
+                    }
                 }) {
-                    Image(systemName: "checkmark")
+                    Image(systemName: taskIsDone ? "checkmark.square" : "square")
                         .font(.title)
-                        .foregroundColor(.green)
+                        .foregroundColor(.b)
                 }
                 Button(action: {
                     // Handle edit button action
