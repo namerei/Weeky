@@ -68,6 +68,7 @@ struct DateTitleView: View {
 }
 
 struct ShowCalendarButton: View {
+    @State var date = Date()
     @Binding var isCalendarViewShowed: Bool
     
     var body: some View {
@@ -83,10 +84,11 @@ struct ShowCalendarButton: View {
                 .foregroundColor(.black)
         })
         //        .fullScreenCover(isPresented: $isShowingSideMenu, content: {
-        .sheet(isPresented: $isCalendarViewShowed, content: {
-            CalendarView(isCalendarViewShowed: $isCalendarViewShowed)
-        })
         
+        
+        .sheet(isPresented: $isCalendarViewShowed, content: {
+            CalendarView(isCalendarViewShowed: $isCalendarViewShowed, date: $date)
+        })
     }
     
 }
