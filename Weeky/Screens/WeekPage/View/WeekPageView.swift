@@ -24,10 +24,14 @@ struct WeekPageView: View {
                     HeaderView(isShowingSideMenu: $isShowingSideMenu, isCalendarViewShowed: $isCalendarViewShowed)
                     MainScrollView()
                 }
-                AddNewTaskButton(isShowingNewTaskView: $isShowingNewTaskView)
-                    .vBottom()
-                    .hTrailing()
-                    .padding(30)
+                HStack {
+                    Spacer()
+                    VStack {
+                        Spacer()
+                        AddNewTaskButton(isShowingNewTaskView: $isShowingNewTaskView)
+                            .padding(20)
+                    }
+                }
             }
         }
     }

@@ -16,8 +16,8 @@ class WeekPageViewModel: ObservableObject {
         Task(taskTitle: "Медитация", taskDescription: "Matkul Programming", taskDate: Date()),
         Task(taskTitle: "Завтрак", taskDescription: "Nasi padang", taskDate: Date()),
         Task(taskTitle: "Накидать дизайн приложения в Figma", taskDescription: "ndomblong", taskDate: Date()),
-        Task(taskTitle: "Встреча с Женей в Surf", taskDescription: "Matkul Programming", taskDate: .init(timeIntervalSince1970: 1654588970899)),
-        Task(taskTitle: "Заказать продукты", taskDescription: "Matkul Programming", taskDate: .init(timeIntervalSince1970: 1654588970899))
+        Task(taskTitle: "Встреча с Женей в Surf", taskDescription: "Matkul Programming", taskDate: Date()),
+        Task(taskTitle: "Заказать продукты", taskDescription: "Matkul Programming", taskDate: Date())
     ]
     
     //Current Week Days
