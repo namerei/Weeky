@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-//@available(iOS 16.0, *)
 struct WeekPageView: View {
     @StateObject var taskModel = WeekPageViewModel()
     @Namespace var animation
@@ -20,34 +19,48 @@ struct WeekPageView: View {
 //        NavigationView {
         NavigationStack {
             ZStack {
-                VStack {
-                    HeaderView(isShowingSideMenu: $isShowingSideMenu, isCalendarViewShowed: $isCalendarViewShowed)
-                    MainScrollView()
-                }
-                HStack {
-                    Spacer()
-                    VStack {
-                        Spacer()
-                        AddNewTaskButton(isShowingNewTaskView: $isShowingNewTaskView)
-                            .padding(20)
-                    }
-                }
+                MainVStack()
+                AddNewTaskButtonView()
             }
         }
     }
     
+    //MARK: - Views
+    private func MainVStack()->some View {
+        VStack {
+            HeaderView(isShowingSideMenu: $isShowingSideMenu, isCalendarViewShowed: $isCalendarViewShowed)
+            MainScrollView()
+        }
+    }
+    
+    private func AddNewTaskButtonView()-> some View {
+        HStack {
+//            VStack {
+//                Spacer()
+//                Label("Tak я сдышаasdfj alksjdfk jalksdjfkj as;ldkjf lkajs;dlkjf ;lkasjd;lkf j;al skj;dflkj ;asjdf;l kjas;ldfj ajsd;hf ;aljs;l л", image: "circle")
+//                    .background(Color(.blue))
+//                    .padding(20)
+//            }
+            Spacer()
+            VStack {
+                Spacer()
+                AddNewTaskButton(isShowingNewTaskView: $isShowingNewTaskView)
+                    .padding(20)
+            }
+        }
+    }
     
     func MainScrollView()->some View {
         ScrollView(.vertical, showsIndicators: false) {
             WeekView()
             
-            VStack(spacing: 18){
+            VStack(spacing: 5){
                 if let tasks = taskModel.filteredTasks{
                     if tasks.isEmpty{
                         Text("No Tasks Found!!!")
                             .font(.system(size: 16))
                             .fontWeight(.light)
-                        //                        .offset(y: 100)
+
                     }else{
                         ForEach(tasks){ task in
                             TaskCardView(taskTitle: task.taskTitle, taskTime: "16:20")
@@ -123,7 +136,7 @@ struct TaskCardView: View {
         HStack {
             VStack(alignment: .leading) {
                 Text(taskTitle)
-                    .font(.title)
+                    .font(.title2)
                 Text(taskTime)
                     .font(.subheadline)
             }

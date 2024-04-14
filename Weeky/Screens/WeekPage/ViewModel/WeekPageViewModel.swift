@@ -11,7 +11,6 @@ import SwiftUI
 class WeekPageViewModel: ObservableObject {
     
     @Published var storedTask: [Task] = [
-//        Task(taskTitle: "Kuliah", taskDescription: "Matkul Programming", taskDate: .init(timeIntervalSince1970: 1654588970899)),
         Task(taskTitle: "Сходить на пробежку", taskDescription: "Matkul Programming", taskDate: Date()),
         Task(taskTitle: "Медитация", taskDescription: "Matkul Programming", taskDate: Date()),
         Task(taskTitle: "Завтрак", taskDescription: "Nasi padang", taskDate: Date()),
