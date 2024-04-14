@@ -20,17 +20,12 @@ struct AddNewTaskButton: View {
             Label {
                 Text("")
             } icon: {
-                Image(systemName: "plus.app.fill")
-            }
-            .font(.title3.bold())
-            .foregroundColor(.white)
-            .padding(.vertical, 12)
-            .padding(.horizontal, 20)
-            .shadow(color: .black, radius: 0.5, x: 0.8, y: 0.5)
-            .background {
-                Capsule()
-                    .fill(Color("Blue dark"))
-                    .shadow(color: Color(UIColor.label), radius: 0.9, x: 0.5, y: 0.5)
+                Image(systemName: "plus")
+                    .font(.largeTitle)
+                    .foregroundColor(.black)
+                    .frame(width: 90, height: 90)
+                    .background(Color("Yellow light"))
+                    .clipShape(Circle())
             }
             .sheet(isPresented: $isShowingNewTaskView, content: {
 //                MySideMenuView()

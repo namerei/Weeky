@@ -69,20 +69,20 @@ struct WeekPageView: View {
     
     func TaskCardView(task: Task)->some View{
         HStack(alignment: .top, spacing: 30){
-            VStack(spacing: 10){
-                Circle()
-                    .fill(.black)
-                    .frame(width: 15, height: 15)
-                    .background(
-                        Circle()
-                            .stroke(.black, lineWidth: 1)
-                            .padding(-3)
-                    )
-                Rectangle()
-                    .fill(.black)
-                    .frame(width: 3)
-                
-            }
+//            VStack(spacing: 10){
+//                Circle()
+//                    .fill(.black)
+//                    .frame(width: 15, height: 15)
+//                    .background(
+//                        Circle()
+//                            .stroke(.black, lineWidth: 1)
+//                            .padding(-3)
+//                    )
+//                Rectangle()
+//                    .fill(.black)
+//                    .frame(width: 3)
+//                
+//            }
             VStack{
                 HStack(alignment: .top, spacing: 10){
                     VStack(alignment: .leading, spacing: 12){
@@ -165,7 +165,7 @@ struct WeekPageView: View {
                                     .matchedGeometryEffect(id: "CURRENTDAY", in: animation)
                             }
                         })
-                    .contentShape(Capsule())
+//                    .contentShape(Capsule())
                     .onTapGesture {
                         withAnimation{
                             taskModel.currentDay = day
