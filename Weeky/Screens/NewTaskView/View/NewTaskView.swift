@@ -13,6 +13,8 @@ struct NewTaskView: View {
     @State private var taskName = ""
     @State private var isImportant = false
     
+    @Environment(\.presentationMode) var presentationMode
+    
     let availableColors: [Color] = [.red, .blue, .green, .yellow, .orange, .purple]
     
     var body: some View {
@@ -23,7 +25,7 @@ struct NewTaskView: View {
                 VStack {
                     Button(action: {
                         withAnimation(.smooth) {
-                            //                        editData.toggle()
+                            presentationMode.wrappedValue.dismiss()
                         }
                     }, label: {
                         Image(systemName: "x.circle")

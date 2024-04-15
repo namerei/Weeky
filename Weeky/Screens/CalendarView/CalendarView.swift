@@ -16,7 +16,7 @@ struct CalendarView: View {
     
     var body: some View {
         VStack {
-            BackwordArrow(isCalendarViewShowed: $isCalendarViewShowed)
+            BackwordArrow(isCalendarViewShowed: $isCalendarViewShowed, isShowingNewTaskView: $isShowingNewTaskView)
             if !isShowingNewTaskView {
                 VStack {
                     DatePicker("j", selection: $date)
@@ -51,13 +51,18 @@ struct CalendarView: View {
 
 struct BackwordArrow: View {
     @Binding var isCalendarViewShowed: Bool
+    @Binding var isShowingNewTaskView: Bool
     
     var body: some View {
         HStack {
             Button(action: {
                 withAnimation(.smooth) {
                     withAnimation {
-                        isCalendarViewShowed.toggle()
+                        if isShowingNewTaskView {
+                            isShowingNewTaskView.toggle()
+                        } else {
+                            isCalendarViewShowed.toggle()
+                        }
                     }
                 }
             }, label: {
