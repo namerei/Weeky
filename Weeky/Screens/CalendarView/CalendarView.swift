@@ -17,21 +17,35 @@ struct CalendarView: View {
     var body: some View {
         VStack {
             BackwordArrow(isCalendarViewShowed: $isCalendarViewShowed)
-            DatePicker("j", selection: $date)
-                .datePickerStyle(GraphicalDatePickerStyle())
-            //        }
-            Spacer()
-            Button(action: {
-            }, label: {
-                Text("New Task")
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .foregroundColor(.white)
-                    .background(Color.blue)
-                    .cornerRadius(10)
-            })
-            .padding(50)
+            if !isShowingNewTaskView {
+                VStack {
+                    DatePicker("j", selection: $date)
+                        .datePickerStyle(GraphicalDatePickerStyle())
+                    Spacer()
+                    NewTaskButton()
+                }
+            } else {
+                VStack {
+                    NewTaskView()
+                }
+            }
         }
+    }
+    
+    func NewTaskButton()->some View {
+        Button(action: {
+            withAnimation {
+                isShowingNewTaskView.toggle()
+            }
+        }, label: {
+            Text("New Task")
+                .padding()
+                .frame(maxWidth: .infinity)
+                .foregroundColor(.white)
+                .background(Color.blue)
+                .cornerRadius(10)
+        })
+        .padding(50)
     }
 }
 
