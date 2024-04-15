@@ -89,6 +89,8 @@ struct CustomColorPicker: View {
     }
 }
 
+
+
 //struct EditTaskView: View {
 //    @State private var selectedColor: Color = .blue
 //    let availableColors: [Color] = [.red, .blue, .green, .yellow, .orange, .purple]

@@ -99,8 +99,6 @@ struct WeekPageView: View {
     }
     //}
     
-        
-    
     
     func WeekView()->some View {
         ScrollView(.horizontal, showsIndicators: false) {

@@ -38,7 +38,7 @@
 		FA6233402BC91DED008CBD84 /* MySideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62333F2BC91DED008CBD84 /* MySideMenuView.swift */; };
 		FA6233422BC92A42008CBD84 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6233412BC92A42008CBD84 /* ModalView.swift */; };
 		FA6233452BC92C8F008CBD84 /* ElegantCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = FA6233442BC92C8F008CBD84 /* ElegantCalendar */; };
-		FA6233472BC92DC9008CBD84 /* NewTascView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6233462BC92DC9008CBD84 /* NewTascView.swift */; };
+		FA6233472BC92DC9008CBD84 /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6233462BC92DC9008CBD84 /* NewTaskView.swift */; };
 		FACE0FB72BCD009F00CD178B /* MijickCalendarView in Frameworks */ = {isa = PBXBuildFile; productRef = FACE0FB62BCD009F00CD178B /* MijickCalendarView */; };
 /* End PBXBuildFile section */
 
@@ -93,7 +93,7 @@
 		FA5E3BF82BC7F1B90045E290 /* NewTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewModel.swift; sourceTree = "<group>"; };
 		FA62333F2BC91DED008CBD84 /* MySideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySideMenuView.swift; sourceTree = "<group>"; };
 		FA6233412BC92A42008CBD84 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
-		FA6233462BC92DC9008CBD84 /* NewTascView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTascView.swift; sourceTree = "<group>"; };
+		FA6233462BC92DC9008CBD84 /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,7 +334,7 @@
 			children = (
 				FA5E3BF62BC7F16B0045E290 /* NewTaskView0.swift */,
 				062DCF172B508AA9005C209A /* OneTaskView.swift */,
-				FA6233462BC92DC9008CBD84 /* NewTascView.swift */,
+				FA6233462BC92DC9008CBD84 /* NewTaskView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -507,7 +507,7 @@
 				FA5E3BF02BC7BB550045E290 /* WeekPageView.swift in Sources */,
 				062DCF122B5088A9005C209A /* User.swift in Sources */,
 				062DCF142B5088F6005C209A /* AuthorizationViewModel.swift in Sources */,
-				FA6233472BC92DC9008CBD84 /* NewTascView.swift in Sources */,
+				FA6233472BC92DC9008CBD84 /* NewTaskView.swift in Sources */,
 				FA5E3BDD2BC6A6BA0045E290 /* Task.swift in Sources */,
 				FA5E3BF22BC7D6C00045E290 /* HeaderView.swift in Sources */,
 				FA5E3BD92BC6871F0045E290 /* SignUpView2.swift in Sources */,
