@@ -13,6 +13,16 @@ struct TaskCardView: View {
     
     var body: some View {
         HStack {
+            TaskCell()
+            Spacer()
+            ButtonsHStack()
+        }
+        .padding()
+    }
+    
+    //MARK: - Views
+    func TaskCell()->some View {
+        HStack {
             RoundedRectangle(cornerRadius: 5)
                 .fill(task.color)
                 .frame(width: 10, height: 30)
@@ -25,8 +35,11 @@ struct TaskCardView: View {
                 Text("\(task.date.showOnlyTimeString())")
                     .font(.subheadline)
             }
-//            .padding()
-            Spacer()
+        }
+    }
+    
+    func ButtonsHStack()->some View {
+        VStack {
             HStack(spacing: 20) {
                 Button(action: {
                     withAnimation {
@@ -40,7 +53,7 @@ struct TaskCardView: View {
                 }
                 Button(action: {
                     withAnimation {
-                        isEditing = true
+                        isEditing.toggle()
                     }
                 }) {
                     Image(systemName: "pencil")
@@ -58,7 +71,7 @@ struct TaskCardView: View {
                     }
                 }
             }
+            Spacer()
         }
-        .padding()
     }
 }
