@@ -42,9 +42,9 @@ struct NewTaskView: View {
                 .padding(.bottom, 20)
             
             //MARK: - color picker
-            ColorPicker("Select Color", selection: $selectedColor)
+//            ColorPicker("Select Color", selection: $selectedColor)
 //                .padding(.bottom, 20)
-//                        CustomColorPicker(selectedColor: $selectedColor, colors: availableColors)
+                        CustomColorPicker(selectedColor: $selectedColor, colors: availableColors)
 //                            .padding(.bottom, 20)
             
             DatePicker("Select Date", selection: $selectedDate, displayedComponents: .date)
@@ -75,20 +75,24 @@ struct NewTaskView: View {
 
 struct CustomColorPicker: View {
     @Binding var selectedColor: Color
-    let colors: [Color]
-    
-    var body: some View {
-        HStack {
-            ForEach(colors, id: \.self) { color in
-                Circle()
-                    .fill(color)
-                    .frame(width: 30, height: 30)
-                    .onTapGesture {
-                        selectedColor = color
-                    }
+        let colors: [Color]
+        
+        var body: some View {
+            HStack {
+                ForEach(colors, id: \.self) { color in
+                    Circle()
+                        .fill(color)
+                        .frame(width: 30, height: 30)
+                        .overlay(
+                            Circle()
+                                .stroke(Color(.gray), lineWidth: selectedColor == color ? 3 : 0)
+                        )
+                        .onTapGesture {
+                            selectedColor = color
+                        }
+                }
             }
         }
-    }
 }
 
 
@@ -96,17 +100,17 @@ struct CustomColorPicker: View {
 //struct EditTaskView: View {
 //    @State private var selectedColor: Color = .blue
 //    let availableColors: [Color] = [.red, .blue, .green, .yellow, .orange, .purple]
-//    
+//
 //    var body: some View {
 //        VStack(alignment: .leading) {
 //            Text("Edit Task")
 //                .font(.title)
 //                .fontWeight(.bold)
 //                .padding(.bottom, 20)
-//            
+//
 //            CustomColorPicker(selectedColor: $selectedColor, colors: availableColors)
 //                .padding(.bottom, 20)
-//            
+//
 //            // Остальной код...
 //        }
 //        .padding()
