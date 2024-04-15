@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TaskCardView: View {
     @State var task: Task
+    @State var isEditing: Bool = false
     
     var body: some View {
         HStack {
@@ -38,11 +39,23 @@ struct TaskCardView: View {
                         .foregroundColor(.black)
                 }
                 Button(action: {
-                    // Handle edit button action
+                    withAnimation {
+                        isEditing = true
+                    }
                 }) {
                     Image(systemName: "pencil")
                         .font(.title)
                         .foregroundColor(.blue)
+                }
+                if isEditing {
+                    Button(action: {
+                        //MARK: Remove Task
+                        // Handle edit button action
+                    }) {
+                        Image(systemName: "trash")
+                            .font(.title3)
+                            .foregroundColor(.red)
+                    }
                 }
             }
         }

@@ -25,7 +25,7 @@ class WeekPageViewModel: ObservableObject {
     //Current Day
     @Published var currentDay: Date = Date()
     
-    // Filtering Toda Task
+    // Filtering Task
     @Published var filteredTasks: [Task]?
     
     init(){
