@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class WeekPageViewModel: ObservableObject {
+class HomeViewModel: ObservableObject {
     
     @Published var storedTask: [Task] = [
         Task(title: "Сходить на пробежку", date: Date().addingTimeInterval(TimeInterval(60 * 3 * 60)), color: Color(.blue)),
