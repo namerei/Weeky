@@ -49,6 +49,7 @@ struct CalendarView: View {
     }
 }
 
+
 struct BackwordArrow: View {
     @Binding var isCalendarViewShowed: Bool
     @Binding var isShowingNewTaskView: Bool

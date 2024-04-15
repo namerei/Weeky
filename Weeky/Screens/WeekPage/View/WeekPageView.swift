@@ -128,7 +128,6 @@ struct WeekPageView: View {
                                     .matchedGeometryEffect(id: "CURRENTDAY", in: animation)
                             }
                         })
-                    //                    .contentShape(Capsule())
                     .onTapGesture {
                         withAnimation{
                             taskModel.currentDay = day

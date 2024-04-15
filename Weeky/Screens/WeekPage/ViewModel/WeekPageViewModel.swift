@@ -31,7 +31,7 @@ class WeekPageViewModel: ObservableObject {
     init(){
         fetchCurrentWeek()
         filteringTodayTask()
-        print("date nya dan", Date().millisecondsSince1970)
+//        print("", Date().millisecondsSince1970)
     }
     
     func filteringTodayTask(){
@@ -60,7 +60,7 @@ class WeekPageViewModel: ObservableObject {
             return
         }
         
-        (1...7).forEach{ day in
+        (0..<7).forEach{ day in
             if let weekday = calendar.date(byAdding: .day, value: day, to: firstWeekDay){
                 currentWeek.append(weekday)
             }

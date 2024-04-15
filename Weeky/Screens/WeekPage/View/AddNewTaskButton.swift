@@ -13,13 +13,9 @@ struct AddNewTaskButton: View {
     var body: some View {
         Button {
             print("button add new task")
-            
             isShowingNewTaskView.toggle()
-//            viewModel.openEditTask = true
         } label: {
-            Label {
-                Text("")
-            } icon: {
+            Label { Text("") } icon: {
                 Image(systemName: "plus")
                     .font(.largeTitle)
                     .foregroundColor(.black)
@@ -28,14 +24,9 @@ struct AddNewTaskButton: View {
                     .clipShape(Circle())
             }
             .sheet(isPresented: $isShowingNewTaskView, content: {
-//                MySideMenuView()
-//                ModalView()
                 NewTaskView()
             })
-            //            }
         }
-//        .padding(.top, 30)
-//        .frame(maxWidth: .infinity)
     }
 }
 
