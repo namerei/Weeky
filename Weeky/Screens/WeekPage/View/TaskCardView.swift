@@ -40,7 +40,7 @@ struct TaskCardView: View {
     
     func ButtonsHStack()->some View {
         VStack {
-            HStack(spacing: 20) {
+            HStack(spacing: 15) {
                 Button(action: {
                     withAnimation {
                         task.isCompleted.toggle()

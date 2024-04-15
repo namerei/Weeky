@@ -9,11 +9,12 @@ import Foundation
 import CoreData
 
 //class NewTaskViewModel: ObservableObject {
-//    @Published var taskTitle: String = ""
+//    @Published var task =
 //    @Published var taskColor: String = "Yellow"
 //    @Published var taskType: String = "Basic"
 //    @Published var taskDeadline: Date = Date()
 //    @Published var showDatePicker = false
+//    
 //    var editTask: Task?
 //
 //    init(editTask: Task?) {
@@ -62,3 +63,5 @@ import CoreData
 ////        taskDeadline = task.deadline ?? Date()
 //    }
 //}
+
+//class NewTaskViewModel

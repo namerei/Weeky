@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct NewTaskView: View {
-    @State private var selectedColor: Color = .blue
-    @State private var selectedDate = Date()
-    @State private var taskName = ""
-    @State private var isImportant = false
+//    @State private var selectedColor: Color = .blue
+//    @State private var selectedDate = Date()
+//    @State private var taskName = ""
+//    @State private var isImportant = false
+    
+    @State private var task = Task(title: "", date: Date())
     
     @Environment(\.presentationMode) var presentationMode
     
+    //MARK: - set my Colors
     let availableColors: [Color] = [.red, .blue, .green, .yellow, .orange, .purple]
     
     var body: some View {
@@ -44,20 +47,21 @@ struct NewTaskView: View {
             //MARK: - color picker
 //            ColorPicker("Select Color", selection: $selectedColor)
 //                .padding(.bottom, 20)
-                        CustomColorPicker(selectedColor: $selectedColor, colors: availableColors)
+            CustomColorPicker(selectedColor: $task.color, colors: availableColors)
 //                            .padding(.bottom, 20)
             
-            DatePicker("Select Date", selection: $selectedDate, displayedComponents: .date)
+            DatePicker("Select Date", selection: $task.date, displayedComponents: .date)
                 .padding(.bottom, 20)
             
-            TextField("Описание задачи", text: $taskName)
+            TextField("Описание задачи", text: $task.title)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding(.bottom, 20)
             
-            Toggle("Is Important", isOn: $isImportant)
-                .padding(.bottom, 20)
+//            Toggle("Is Important", isOn: $isImportant)
+//                .padding(.bottom, 20)
             
             Button(action: {
+                print(task)
                 // Add action to save the task
             }, label: {
                 Text("Save Task")
