@@ -21,10 +21,8 @@ class HomeViewModel: ObservableObject {
     
     //Current Week Days
     @Published var currentWeek: [Date] = []
-    
     //Current Day
     @Published var currentDay: Date = Date()
-    
     // Filtering Task
     @Published var filteredTasks: [Task]?
     
@@ -34,6 +32,7 @@ class HomeViewModel: ObservableObject {
 //        print("", Date().millisecondsSince1970)
     }
     
+    //MARK: - HomePage UI functions
     func filteringTodayTask(){
         DispatchQueue.global(qos: .userInteractive).async {
             let calendar = Calendar.current
@@ -93,5 +92,8 @@ class HomeViewModel: ObservableObject {
         
         return hour == currentDate
     }
+    
+    //MARK: - write / read functions
+    
 }
 

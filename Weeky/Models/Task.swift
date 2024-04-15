@@ -9,8 +9,8 @@ import SwiftUI
 
 struct Task: Identifiable{
     var id = UUID().uuidString
-    var title: String
-    var date: Date
+    var title: String = ""
+    var date: Date = Date()
     var color: Color = Color("Blue light")
     var isCompleted: Bool = false
 }

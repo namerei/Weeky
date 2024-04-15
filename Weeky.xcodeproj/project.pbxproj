@@ -10,7 +10,7 @@
 		062DCF102B50889F005C209A /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062DCF0F2B50889F005C209A /* List.swift */; };
 		062DCF122B5088A9005C209A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062DCF112B5088A9005C209A /* User.swift */; };
 		062DCF142B5088F6005C209A /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062DCF132B5088F6005C209A /* AuthorizationViewModel.swift */; };
-		062DCF162B508920005C209A /* WeekPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062DCF152B508920005C209A /* WeekPageViewModel.swift */; };
+		062DCF162B508920005C209A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062DCF152B508920005C209A /* HomeViewModel.swift */; };
 		062DCF182B508AA9005C209A /* OneTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062DCF172B508AA9005C209A /* OneTaskView.swift */; };
 		0645E7172B28997A0081EE15 /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F3EA562B276619000B5C71 /* AuthorizationView.swift */; };
 		0645E71B2B2899F80081EE15 /* TextModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0645E71A2B2899F80081EE15 /* TextModifiers.swift */; };
@@ -63,7 +63,7 @@
 		062DCF0F2B50889F005C209A /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		062DCF112B5088A9005C209A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		062DCF132B5088F6005C209A /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
-		062DCF152B508920005C209A /* WeekPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekPageViewModel.swift; sourceTree = "<group>"; };
+		062DCF152B508920005C209A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		062DCF172B508AA9005C209A /* OneTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTaskView.swift; sourceTree = "<group>"; };
 		0645E71A2B2899F80081EE15 /* TextModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifiers.swift; sourceTree = "<group>"; };
 		06F3EA512B276619000B5C71 /* Weeky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weeky.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -259,7 +259,7 @@
 		FA5E3BDA2BC6A2040045E290 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				062DCF152B508920005C209A /* WeekPageViewModel.swift */,
+				062DCF152B508920005C209A /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -498,7 +498,7 @@
 				FA46939E2BC7F86F0092430D /* AddNewTaskButton.swift in Sources */,
 				FA5E3BE22BC6AD600045E290 /* DateExtensions.swift in Sources */,
 				062DCF182B508AA9005C209A /* OneTaskView.swift in Sources */,
-				062DCF162B508920005C209A /* WeekPageViewModel.swift in Sources */,
+				062DCF162B508920005C209A /* HomeViewModel.swift in Sources */,
 				FA5E3BEA2BC6D7870045E290 /* CalendarView.swift in Sources */,
 				FA5E3BEE2BC700940045E290 /* Slider.swift in Sources */,
 				062DCF102B50889F005C209A /* List.swift in Sources */,

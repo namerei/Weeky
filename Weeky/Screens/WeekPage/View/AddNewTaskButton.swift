@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddNewTaskButton: View {
     @Binding var isShowingNewTaskView: Bool
-    
+    @State var date = Date()
     var body: some View {
         Button {
             print("button add new task")
@@ -24,7 +24,7 @@ struct AddNewTaskButton: View {
                     .clipShape(Circle())
             }
             .sheet(isPresented: $isShowingNewTaskView, content: {
-                NewTaskView()
+                NewTaskView(dateFromCalendar: $date)
             })
         }
     }

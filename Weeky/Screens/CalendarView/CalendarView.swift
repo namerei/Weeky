@@ -10,7 +10,7 @@ import SwiftUI
 //MARK: - My versions
 struct CalendarView: View {
     @Binding var isCalendarViewShowed : Bool
-    @Binding var date : Date
+    @State var date : Date
     
     @State var isShowingNewTaskView = false
     
@@ -21,7 +21,6 @@ struct CalendarView: View {
                 VStack {
                     DatePicker("j", selection: $date)
                         .datePickerStyle(GraphicalDatePickerStyle())
-//                        .background(Color("Blue xlight"))
                         .foregroundColor(.black)
                         .accentColor(Color("Blue dark"))
                     Spacer()
@@ -29,7 +28,7 @@ struct CalendarView: View {
                 }
             } else {
                 VStack {
-                    NewTaskView()
+                    NewTaskView(dateFromCalendar: $date)
                 }
             }
         }

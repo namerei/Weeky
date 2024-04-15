@@ -64,4 +64,22 @@ import CoreData
 //    }
 //}
 
-//class NewTaskViewModel
+class NewTaskViewModel: ObservableObject {
+//    @Published var dateFromCalendar: Date?
+    @Published var task : Task
+//    @Published var myTasks = [Task]()
+//    @Published var homeViewModel: HomeViewModel
+    
+    init(task: Task = Task()) {
+        self.task = task
+//        self.homeViewModel = viewModel
+        
+        //MARK: - write in DB
+//        myTasks.append(task)
+//        print("Mytasks: \(myTasks)")
+    }
+    
+    func taskIsCorrect()->Bool {
+        !task.title.isEmpty
+    }
+}

@@ -8,12 +8,10 @@
 import SwiftUI
 
 struct NewTaskView: View {
-//    @State private var selectedColor: Color = .blue
-//    @State private var selectedDate = Date()
-//    @State private var taskName = ""
-//    @State private var isImportant = false
+    @Binding var dateFromCalendar: Date
     
-    @State private var task = Task(title: "", date: Date())
+    @State private var task = Task()
+    @State private var newTaskViewModel = NewTaskViewModel()
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -27,9 +25,7 @@ struct NewTaskView: View {
                 Spacer()
                 VStack {
                     Button(action: {
-                        withAnimation(.smooth) {
-                            presentationMode.wrappedValue.dismiss()
-                        }
+                        backToHomeView()
                     }, label: {
                         Image(systemName: "x.circle")
                             .foregroundColor(.black)
@@ -42,27 +38,25 @@ struct NewTaskView: View {
             Text("Edit Task")
                 .font(.title)
                 .fontWeight(.bold)
-                .padding(.bottom, 20)
+                .padding(.bottom, 30)
             
             //MARK: - color picker
 //            ColorPicker("Select Color", selection: $selectedColor)
-//                .padding(.bottom, 20)
             CustomColorPicker(selectedColor: $task.color, colors: availableColors)
-//                            .padding(.bottom, 20)
+                            .padding(.bottom, 20)
             
-            DatePicker("Select Date", selection: $task.date, displayedComponents: .date)
-                .padding(.bottom, 20)
+            DatePickerView()
             
-            TextField("Описание задачи", text: $task.title)
+            TextField("описание задачи", text: $task.title)
+                .font(.title2)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding(.bottom, 20)
             
-//            Toggle("Is Important", isOn: $isImportant)
-//                .padding(.bottom, 20)
-            
             Button(action: {
-                print(task)
-                // Add action to save the task
+                newTaskViewModel = NewTaskViewModel(task: task)
+                if newTaskViewModel.taskIsCorrect() {
+                    backToHomeView()
+                }
             }, label: {
                 Text("Save Task")
                     .padding()
@@ -74,6 +68,25 @@ struct NewTaskView: View {
         }
         .padding()
 //        Spacer()
+    }
+    
+    func backToHomeView() {
+        withAnimation(.smooth) {
+            presentationMode.wrappedValue.dismiss()
+        }
+    }
+    
+    func DatePickerView()->some View {
+//        print("DATE")
+//        print("\(task.date)")
+//        task.title = "her"
+//        print("Task title: \(task.title)")
+//        if dateFromCalendar != nil {
+//            print("NOT NIL")
+//            task.date = dateFromCalendar!
+//        }
+        return DatePicker("Select Date", selection: $dateFromCalendar, displayedComponents: [.date, .hourAndMinute])
+            .padding(.bottom, 20)
     }
 }
 
@@ -122,8 +135,8 @@ struct CustomColorPicker: View {
 //}
 
 
-struct EditTaskView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewTaskView()
-    }
-}
+//struct EditTaskView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NewTaskView(dateFromCalendar: <#Date#>)
+//    }
+//}

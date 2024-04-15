@@ -13,7 +13,7 @@ struct TaskCardView: View {
     
     var body: some View {
         HStack {
-            TaskCell()
+                TaskCell()
             Spacer()
             ButtonsHStack()
         }
