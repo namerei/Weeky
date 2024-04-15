@@ -8,26 +8,27 @@
 import SwiftUI
 
 struct TaskCardView: View {
-    var taskTitle: String
-    var taskTime: String
-    @State var taskIsDone = false
+    @State var task: Task
+//    @State var taskIsDone = false
     
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text(taskTitle)
+                Text(task.title)
                     .font(.title2)
-                Text(taskTime)
+                
+                Text("\(task.date.showOnlyTimeString())")
                     .font(.subheadline)
             }
             Spacer()
             HStack(spacing: 20) {
                 Button(action: {
                     withAnimation {
-                        taskIsDone.toggle()
+                        task.isCompleted.toggle()
+                        print(task)
                     }
                 }) {
-                    Image(systemName: taskIsDone ? "checkmark.square" : "square")
+                    Image(systemName: task.isCompleted ? "checkmark.square" : "square")
                         .font(.title)
                         .foregroundColor(.black)
                 }

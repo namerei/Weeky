@@ -75,9 +75,9 @@ struct HomeView: View {
                             .font(.system(size: 16))
                             .fontWeight(.light)
 
-                    }else{
+                    } else {
                         ForEach(tasks){ task in
-                            TaskCardView(taskTitle: task.title, taskTime: "16:20")
+                            TaskCardView(task: task)
                         }
                     }
                 }else{
@@ -86,17 +86,11 @@ struct HomeView: View {
                         .offset(y: 100)
                 }
             }
-            //Updating Task
             .onChange(of: taskModel.currentDay){ newValue in
                 taskModel.filteringTodayTask()
             }
-//            .padding()
-//            .padding(.top)
         }
-        //            TaskCardView(task: Task(id: nil, taskTitle: "kjdkf", taskDescription: "lkjdfkgj", taskDate: nil))
-        //Lazy with pinned header
     }
-    //}
     
     
     func WeekView()->some View {
