@@ -21,6 +21,9 @@ struct CalendarView: View {
                 VStack {
                     DatePicker("j", selection: $date)
                         .datePickerStyle(GraphicalDatePickerStyle())
+//                        .background(Color("Blue xlight"))
+//                        .foregroundColor(.black)
+                        .accentColor(Colors.blue)
                     Spacer()
                     NewTaskButton()
                 }

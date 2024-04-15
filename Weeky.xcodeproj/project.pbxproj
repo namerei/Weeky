@@ -39,6 +39,7 @@
 		FA6233472BC92DC9008CBD84 /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6233462BC92DC9008CBD84 /* NewTaskView.swift */; };
 		FACE0FB72BCD009F00CD178B /* MijickCalendarView in Frameworks */ = {isa = PBXBuildFile; productRef = FACE0FB62BCD009F00CD178B /* MijickCalendarView */; };
 		FACE0FCB2BCD4FBA00CD178B /* TaskCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE0FCA2BCD4FBA00CD178B /* TaskCardView.swift */; };
+		FACE0FCD2BCD5A6400CD178B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE0FCC2BCD5A6400CD178B /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		FA62333F2BC91DED008CBD84 /* MySideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySideMenuView.swift; sourceTree = "<group>"; };
 		FA6233462BC92DC9008CBD84 /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
 		FACE0FCA2BCD4FBA00CD178B /* TaskCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCardView.swift; sourceTree = "<group>"; };
+		FACE0FCC2BCD5A6400CD178B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				0645E71A2B2899F80081EE15 /* TextModifiers.swift */,
+				FACE0FCC2BCD5A6400CD178B /* Colors.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				06F3EA552B276619000B5C71 /* WeekyApp.swift in Sources */,
 				FA5E3BE62BC6B2640045E290 /* SideMenuView.swift in Sources */,
 				FA5E3BD62BC674E10045E290 /* LoginView.swift in Sources */,
+				FACE0FCD2BCD5A6400CD178B /* Colors.swift in Sources */,
 				FA5E3BE02BC6AD410045E290 /* ViewExtensions.swift in Sources */,
 				FA5E3BF72BC7F16B0045E290 /* NewTaskView0.swift in Sources */,
 				FA6233402BC91DED008CBD84 /* MySideMenuView.swift in Sources */,

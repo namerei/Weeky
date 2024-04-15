@@ -11,7 +11,8 @@ import SwiftUI
 class WeekPageViewModel: ObservableObject {
     
     @Published var storedTask: [Task] = [
-        Task(title: "Сходить на пробежку", date: Date().addingTimeInterval(TimeInterval(60 * 10 * 60 * 24)), color: UIColor(.blue)),
+//        Task(title: "Сходить на пробежку", date: Date().addingTimeInterval(TimeInterval(60 * 10 * 60 * 24)), color: UIColor(.blue)),
+        Task(title: "Сходить на пробежку", date: Date().addingTimeInterval(TimeInterval(60 * 3 * 60)), color: UIColor(.blue)),
         Task(title: "Медитация", date: Date().addingTimeInterval(TimeInterval(0)), color: UIColor(.blue)),
         Task(title: "Накидать дизайн", date: Date().addingTimeInterval(TimeInterval(0)), color: UIColor(.blue)),
         Task(title: "Заказать продукты", date: Date().addingTimeInterval(TimeInterval(0)), color: UIColor(.blue)),
@@ -37,9 +38,10 @@ class WeekPageViewModel: ObservableObject {
         DispatchQueue.global(qos: .userInteractive).async {
             let calendar = Calendar.current
             
-            let filtered = self.storedTask.filter{
-                return calendar.isDate($0.date, inSameDayAs: self.currentDay)
+            var filtered = self.storedTask.filter{
+                calendar.isDate($0.date, inSameDayAs: self.currentDay)
             }
+            filtered.sort(by: {$0.date < $1.date})
             
             DispatchQueue.main.async {
                 withAnimation{
