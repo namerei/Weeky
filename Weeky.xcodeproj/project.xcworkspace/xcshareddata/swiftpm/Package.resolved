@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "calendarview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Mijick/CalendarView",
+      "state" : {
+        "revision" : "b347587ba39a023b61881158872db9d01a90a9a6",
+        "version" : "1.0.0"
+      }
+    },
+    {
       "identity" : "elegantcalendar",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ThasianX/ElegantCalendar.git",

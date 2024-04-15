@@ -39,6 +39,7 @@
 		FA6233422BC92A42008CBD84 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6233412BC92A42008CBD84 /* ModalView.swift */; };
 		FA6233452BC92C8F008CBD84 /* ElegantCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = FA6233442BC92C8F008CBD84 /* ElegantCalendar */; };
 		FA6233472BC92DC9008CBD84 /* NewTascView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6233462BC92DC9008CBD84 /* NewTascView.swift */; };
+		FACE0FB72BCD009F00CD178B /* MijickCalendarView in Frameworks */ = {isa = PBXBuildFile; productRef = FACE0FB62BCD009F00CD178B /* MijickCalendarView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FACE0FB72BCD009F00CD178B /* MijickCalendarView in Frameworks */,
 				FA6233452BC92C8F008CBD84 /* ElegantCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +365,7 @@
 			name = Weeky;
 			packageProductDependencies = (
 				FA6233442BC92C8F008CBD84 /* ElegantCalendar */,
+				FACE0FB62BCD009F00CD178B /* MijickCalendarView */,
 			);
 			productName = Weeky;
 			productReference = 06F3EA512B276619000B5C71 /* Weeky.app */;
@@ -438,6 +441,7 @@
 			mainGroup = 06F3EA482B276619000B5C71;
 			packageReferences = (
 				FA6233432BC92C8F008CBD84 /* XCRemoteSwiftPackageReference "ElegantCalendar" */,
+				FACE0FB52BCD009F00CD178B /* XCRemoteSwiftPackageReference "CalendarView" */,
 			);
 			productRefGroup = 06F3EA522B276619000B5C71 /* Products */;
 			projectDirPath = "";
@@ -848,6 +852,14 @@
 				minimumVersion = 4.3.2;
 			};
 		};
+		FACE0FB52BCD009F00CD178B /* XCRemoteSwiftPackageReference "CalendarView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Mijick/CalendarView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -855,6 +867,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA6233432BC92C8F008CBD84 /* XCRemoteSwiftPackageReference "ElegantCalendar" */;
 			productName = ElegantCalendar;
+		};
+		FACE0FB62BCD009F00CD178B /* MijickCalendarView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FACE0FB52BCD009F00CD178B /* XCRemoteSwiftPackageReference "CalendarView" */;
+			productName = MijickCalendarView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ElegantCalendar
+import MijickCalendarView
 
 
 //struct CalendarView: View, /*Equatable,*/ ElegantCalendarDelegate, ElegantCalendarDataSource {
@@ -127,12 +128,76 @@ import ElegantCalendar
 //
 
 
+//MARK: - My versions
 struct CalendarView: View {
     @Binding var isCalendarViewShowed : Bool
     @Binding var date : Date
     
     var body: some View {
-        DatePicker("j", selection: $date)
-            .datePickerStyle(GraphicalDatePickerStyle())
+        VStack {
+            VStack {
+                //                Spacer()
+                HStack {
+                    Button(action: {
+                        withAnimation(.smooth) {
+                            withAnimation {
+                                isCalendarViewShowed.toggle()
+                            }
+                            //                        editData.toggle()
+                        }
+                    }, label: {
+                        Image(systemName: "chevron.backward")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 17, height: 17)
+                            .foregroundColor(.black)
+                        Spacer()
+                    })
+                    //                    Spacer()
+                    //                }
+                }
+                .padding(30)
+                DatePicker("j", selection: $date)
+                    .datePickerStyle(GraphicalDatePickerStyle())
+            }
+//            .padding(10)
+            Spacer()
+            Button(action: {
+                // Add action to save the task
+            }, label: {
+                Text("Save Task")
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .foregroundColor(.white)
+                    .background(Color.blue)
+                    .cornerRadius(10)
+            })
+            .padding(50)
+        }
     }
 }
+
+//struct CalendarView: View {
+//    @Binding var isCalendarViewShowed : Bool
+//    @State private var selectedDate: Date? = nil
+//    @State private var selectedRange: MDateRange? = .init()
+//
+//    var body: some View {
+//        VStack {
+//            MCalendarView(selectedDate: nil, selectedRange: $selectedRange) {
+//                $0
+////                    .dayView(NewDayView.init)
+//                    .firstWeekday(.wednesday)
+//                    .monthLabelToDaysDistance(12)
+////                    .weekdaysView(NewWeekdaysView.init)
+//            }
+//            Text("Hello world")
+//        }
+//    }
+    
+//    var body: some View {
+        
+//        DatePicker("j", selection: $date)
+//            .datePickerStyle(GraphicalDatePickerStyle())
+//    }
+//}
