@@ -11,6 +11,6 @@ struct Task: Identifiable{
     var id = UUID().uuidString
     var title: String
     var date: Date
-    var color: UIColor
+    var color: Color = Color("Blue light")
     var isCompleted: Bool = false
 }

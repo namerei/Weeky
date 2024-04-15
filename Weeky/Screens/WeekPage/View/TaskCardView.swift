@@ -12,6 +12,11 @@ struct TaskCardView: View {
     
     var body: some View {
         HStack {
+            RoundedRectangle(cornerRadius: 5)
+                .fill(task.color)
+                .frame(width: 10, height: 30)
+                .padding(.top, 5)
+            
             VStack(alignment: .leading) {
                 Text(task.title)
                     .font(.title2)
@@ -19,6 +24,7 @@ struct TaskCardView: View {
                 Text("\(task.date.showOnlyTimeString())")
                     .font(.subheadline)
             }
+//            .padding()
             Spacer()
             HStack(spacing: 20) {
                 Button(action: {

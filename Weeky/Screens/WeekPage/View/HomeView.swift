@@ -68,7 +68,7 @@ struct HomeView: View {
         ScrollView(.vertical, showsIndicators: false) {
             WeekView()
             
-            VStack(spacing: 5){
+            VStack(spacing: 5) {
                 if let tasks = taskModel.filteredTasks{
                     if tasks.isEmpty{
                         Text("No Tasks Found!!!")

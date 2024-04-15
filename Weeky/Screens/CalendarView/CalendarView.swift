@@ -22,8 +22,8 @@ struct CalendarView: View {
                     DatePicker("j", selection: $date)
                         .datePickerStyle(GraphicalDatePickerStyle())
 //                        .background(Color("Blue xlight"))
-//                        .foregroundColor(.black)
-                        .accentColor(Colors.blue)
+                        .foregroundColor(.black)
+                        .accentColor(Color("Blue dark"))
                     Spacer()
                     NewTaskButton()
                 }
