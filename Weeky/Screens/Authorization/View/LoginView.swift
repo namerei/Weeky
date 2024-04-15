@@ -80,7 +80,7 @@ struct Login : View {
                 .padding(.horizontal, 20)
             
             
-            NavigationLink("Войти", destination: WeekPageView())
+            NavigationLink("Войти", destination: HomeView())
                 .foregroundColor(Color("Gray"))
 //                .fontWeight(.bold)
                 .padding(.vertical)

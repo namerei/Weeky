@@ -11,12 +11,11 @@ import SwiftUI
 class WeekPageViewModel: ObservableObject {
     
     @Published var storedTask: [Task] = [
-        Task(taskTitle: "Сходить на пробежку", taskDescription: "Matkul Programming", taskDate: Date()),
-        Task(taskTitle: "Медитация", taskDescription: "Matkul Programming", taskDate: Date()),
-        Task(taskTitle: "Завтрак", taskDescription: "Nasi padang", taskDate: Date()),
-        Task(taskTitle: "Накидать дизайн приложения в Figma", taskDescription: "ndomblong", taskDate: Date()),
-        Task(taskTitle: "Встреча с Женей в Surf", taskDescription: "Matkul Programming", taskDate: Date()),
-        Task(taskTitle: "Заказать продукты", taskDescription: "Matkul Programming", taskDate: Date())
+        Task(title: "Сходить на пробежку", date: Date().addingTimeInterval(TimeInterval(1)), color: UIColor(.blue)),
+        Task(title: "Медитация", date: Date().addingTimeInterval(TimeInterval(0)), color: UIColor(.blue)),
+        Task(title: "Накидать дизайн", date: Date().addingTimeInterval(TimeInterval(0)), color: UIColor(.blue)),
+        Task(title: "Заказать продукты", date: Date().addingTimeInterval(TimeInterval(0)), color: UIColor(.blue)),
+        Task(title: "Встреча с Женей в Surf", date: Date().addingTimeInterval(TimeInterval(3)), color: UIColor(.blue)),
     ]
     
     //Current Week Days
@@ -39,7 +38,7 @@ class WeekPageViewModel: ObservableObject {
             let calendar = Calendar.current
             
             let filtered = self.storedTask.filter{
-                return calendar.isDate($0.taskDate, inSameDayAs: self.currentDay)
+                return calendar.isDate($0.date, inSameDayAs: self.currentDay)
             }
             
             DispatchQueue.main.async {

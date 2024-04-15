@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WeekPageView: View {
+struct HomeView: View {
     @StateObject var taskModel = WeekPageViewModel()
     @Namespace var animation
     
@@ -16,7 +16,6 @@ struct WeekPageView: View {
     @State private var isShowingNewTaskView = false
     
     var body: some View {
-//        NavigationView {
         NavigationView {
             ZStack {
                 MainVStack()
@@ -46,24 +45,24 @@ struct WeekPageView: View {
         }
     }
     
-    func QuoteVStack()->some View {
-        var qouet = "Что разум человека может постигнуть и во что он может поверить, того он способен достичь"
-        var author = "Наполеон Хилл"
-        
-        return VStack {
-            Spacer()
-            VStack {
-                Text(qouet)
-                    .font(.footnote)
-                    .foregroundColor(Color(.white))
-            }
-                .background(Color(.gray))
-                .frame(height: 90)
-                .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: -5)
-                .cornerRadius(30)
-                .padding(20)
-        }
-    }
+//    func QuoteVStack()->some View {
+//        var qouet = "Что разум человека может постигнуть и во что он может поверить, того он способен достичь"
+//        var author = "Наполеон Хилл"
+//        
+//        return VStack {
+//            Spacer()
+//            VStack {
+//                Text(qouet)
+//                    .font(.footnote)
+//                    .foregroundColor(Color(.white))
+//            }
+//                .background(Color(.gray))
+//                .frame(height: 90)
+//                .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: -5)
+//                .cornerRadius(30)
+//                .padding(20)
+//        }
+//    }
     
     func MainScrollView()->some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -78,7 +77,7 @@ struct WeekPageView: View {
 
                     }else{
                         ForEach(tasks){ task in
-                            TaskCardView(taskTitle: task.taskTitle, taskTime: "16:20")
+                            TaskCardView(taskTitle: task.title, taskTime: "16:20")
                         }
                     }
                 }else{
@@ -135,49 +134,15 @@ struct WeekPageView: View {
                     }
                 }
             }
+            .padding()
         }
     }
+    
 }
 
-struct TaskCardView: View {
-    var taskTitle: String
-    var taskTime: String
-    @State var taskIsDone = false
-    
-    var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text(taskTitle)
-                    .font(.title2)
-                Text(taskTime)
-                    .font(.subheadline)
-            }
-            Spacer()
-            HStack(spacing: 20) {
-                Button(action: {
-                    withAnimation {
-                        taskIsDone.toggle()
-                    }
-                }) {
-                    Image(systemName: taskIsDone ? "checkmark.square" : "square")
-                        .font(.title)
-                        .foregroundColor(.black)
-                }
-                Button(action: {
-                    // Handle edit button action
-                }) {
-                    Image(systemName: "pencil")
-                        .font(.title)
-                        .foregroundColor(.blue)
-                }
-            }
-        }
-        .padding()
-    }
-}
 
 
 #Preview {
-    WeekPageView()
+    HomeView()
 }
 

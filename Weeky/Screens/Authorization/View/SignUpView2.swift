@@ -93,7 +93,7 @@ struct RegistrationButton: View {
                 .offset(y: 25)
         })
         .fullScreenCover(isPresented: $isShowingWeekPageView, content: {
-            WeekPageView()
+            HomeView()
                 .transition(.move(edge: .leading))
         })
     }

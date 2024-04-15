@@ -14,7 +14,7 @@ struct WeekyApp: App {
     var body: some Scene {
         WindowGroup {
 //            AuthorizationView()
-            WeekPageView()
+            HomeView()
         }
     }
     
