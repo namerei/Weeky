@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import CoreData
+import SwiftUI
 
 //class NewTaskViewModel: ObservableObject {
 //    @Published var task =
@@ -64,22 +64,25 @@ import CoreData
 //    }
 //}
 
-class NewTaskViewModel: ObservableObject {
+//class NewTaskViewModel: ObservableObject {
+//    @EnvironmentObject var homeViewModel: HomeViewModel
 //    @Published var dateFromCalendar: Date?
-    @Published var task : Task
+//    @Published var task : Task
 //    @Published var myTasks = [Task]()
 //    @Published var homeViewModel: HomeViewModel
     
-    init(task: Task = Task()) {
-        self.task = task
+//    init(task: Task = Task()) {
+//        self.task = task
+//        print(homeViewModel.storedTask)
 //        self.homeViewModel = viewModel
         
         //MARK: - write in DB
+//        if task != nil {
+//            homeViewModel.storedTask.append(task)
+//        }
 //        myTasks.append(task)
 //        print("Mytasks: \(myTasks)")
-    }
+//    }
     
-    func taskIsCorrect()->Bool {
-        !task.title.isEmpty
-    }
-}
+    
+//}

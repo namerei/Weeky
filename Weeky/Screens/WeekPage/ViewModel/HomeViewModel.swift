@@ -95,7 +95,21 @@ class HomeViewModel: ObservableObject {
         return hour == currentDate
     }
     
-    //MARK: - write / read functions
     
+    //MARK: - write / read functions
+//    func taskIsCorrect()->Bool {
+//    }
+    
+    func taskIsCorrect(_ task: Task)->Bool {
+        !task.title.isEmpty
+    }
+    
+    func taskAdded(_ task: Task)->Bool {
+        if taskIsCorrect(task) {
+            storedTask.append(task)
+            return true
+        }
+        return false
+    }
 }
 

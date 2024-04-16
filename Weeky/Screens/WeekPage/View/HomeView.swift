@@ -11,6 +11,7 @@ struct HomeView: View {
     @EnvironmentObject var taskModel: HomeViewModel
     @Namespace var animation
     
+    //MARK: - Navigation
     @State private var isShowingSideMenu = false
     @State private var isCalendarViewShowed = false
     @State private var isShowingNewTaskView = false
@@ -71,7 +72,7 @@ struct HomeView: View {
             VStack(spacing: 5) {
                 if let tasks = taskModel.filteredTasks{
                     if tasks.isEmpty{
-                        Text("No Tasks Found!!!")
+                        Text("Задач не найдено")
                             .font(.system(size: 16))
                             .fontWeight(.light)
 
