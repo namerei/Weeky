@@ -88,6 +88,25 @@ class HomeViewModel: ObservableObject {
         return hour == currentDate
     }
     
+    //MARK: - Calendar UIFuncions
+    func allTaskInDay(_ day: Date)->[Task] {
+        var result = [Task]()
+        DispatchQueue.global(qos: .userInteractive).async {
+            let calendar = Calendar.current
+            
+            var filtered = self.storedTasks.filter{
+                calendar.isDate($0.date, inSameDayAs: day)
+            }
+            filtered.sort(by: {$0.date < $1.date})
+            
+            DispatchQueue.main.async {
+                withAnimation{
+                    result = filtered
+                }
+            }
+        }
+        return result
+    }
     
     //MARK: - write / read functions
     
@@ -108,5 +127,7 @@ class HomeViewModel: ObservableObject {
         storedTasks.removeAll { $0.id == task.id }
         filteringTodayTask()
     }
+    
+    
 }
 

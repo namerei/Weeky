@@ -9,6 +9,7 @@ import SwiftUI
 
 //MARK: - My versions
 struct CalendarView: View {
+    @EnvironmentObject var viewModel : HomeViewModel
     @Binding var isCalendarViewShowed : Bool
     @State var date : Date
     
@@ -23,7 +24,10 @@ struct CalendarView: View {
                         .datePickerStyle(GraphicalDatePickerStyle())
                         .foregroundColor(.black)
                         .accentColor(Color("Blue dark"))
-                    Spacer()
+//                    Spacer()
+                    Divider()
+                    miniTaskScrollView()
+                    Divider()
                     NewTaskButton()
                 }
             } else {
@@ -47,7 +51,20 @@ struct CalendarView: View {
                 .background(Color.blue)
                 .cornerRadius(10)
         })
-        .padding(50)
+        .padding(30)
+    }
+    
+    func miniTaskScrollView()->some View {
+        ScrollView {
+            var tasks = viewModel.allTaskInDay(date)
+            ForEach(tasks) { task in
+                Text(task.title)
+            }
+            //            Text("her")
+            //            Text("her")
+            //            Text("her")
+            //            Text("her")
+        }
     }
 }
 
