@@ -10,12 +10,13 @@ import SwiftUI
 struct NewTaskView: View {
     @Binding var dateFromCalendar: Date
     @State private var task = Task()
+    @State private var taskColor: Color = Color(.green)
     @EnvironmentObject var viewModel : HomeViewModel
     
     @Environment(\.presentationMode) var presentationMode
     
     //MARK: - set my Colors
-    let availableColors: [Color] = [.red, .blue, .green, .yellow, .orange, .purple]
+    let availableColors: [Color] = [Color("Blue dark"), .blue, .green, .yellow, .orange, .purple]
     
     var body: some View {
         
@@ -41,7 +42,7 @@ struct NewTaskView: View {
             
             //MARK: - color picker
 //            ColorPicker("Select Color", selection: $selectedColor)
-            CustomColorPicker(selectedColor: $task.color, colors: availableColors)
+            CustomColorPicker(selectedColor: $taskColor, colors: availableColors)
                             .padding(.bottom, 20)
             
             DatePickerView()
@@ -53,6 +54,8 @@ struct NewTaskView: View {
             
             Button(action: {
                 task.date = dateFromCalendar
+                task.colorName = taskColor.description.extractedName
+                print(taskColor.description.extractedName)
                 if viewModel.taskAdded(task) {
                     backToHomeView()
                 }

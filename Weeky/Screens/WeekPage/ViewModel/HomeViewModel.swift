@@ -14,8 +14,8 @@ class HomeViewModel: ObservableObject {
 //    @State var authorized = false
     
     @Published var storedTasks: [Task] = [
-        Task(title: "Медитаця", date: Date(), color: .orange, isCompleted: false),
-        Task(title: "Спорт", date: Date(), color: .blue, isCompleted: false),
+        Task(title: "Медитаця", date: Date(), colorName: "Orange light", isCompleted: false),
+        Task(title: "Спорт", date: Date(), colorName: "Blue xlight", isCompleted: false),
     ]
     
     //Current Week Days

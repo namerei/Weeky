@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct Task: Identifiable{
+struct Task: Identifiable, Codable, Hashable {
     var id = UUID().uuidString
     var title: String = ""
     var date: Date = Date()
-    var color: Color = Color("Blue light")
+    var colorName = "Blue light"
     var isCompleted: Bool = false
 }

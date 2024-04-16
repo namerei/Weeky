@@ -22,6 +22,7 @@ extension Date {
         self = Date(timeIntervalSince1970: TimeInterval(milliseconds) / 1000)
     }
     
+   //MARK: = date to string
     func toString(withFormat format: String = "yyyy-MM-dd HH:mm:ss") -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
@@ -36,6 +37,15 @@ extension String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
         return dateFormatter.date(from: self)
+    }
+    
+    var extractedName: String {
+        let pattern = "\"([^\"]+)\""
+        if let range = self.range(of: pattern, options: .regularExpression) {
+            return String(self[range].dropFirst().dropLast())
+        }
+        return ""
+//        return nil
     }
 }
 

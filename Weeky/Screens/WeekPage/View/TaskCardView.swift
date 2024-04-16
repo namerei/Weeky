@@ -25,7 +25,7 @@ struct TaskCardView: View {
     func TaskCell()->some View {
         HStack {
             RoundedRectangle(cornerRadius: 5)
-                .fill(task.color)
+                .fill(Color(task.colorName))
                 .frame(width: 10, height: 30)
                 .padding(.top, 5)
             

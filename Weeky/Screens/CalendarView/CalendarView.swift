@@ -26,7 +26,7 @@ struct CalendarView: View {
                         .accentColor(Color("Blue dark"))
 //                    Spacer()
                     Divider()
-//                    MiniTaskScrollView()
+                    MiniTaskScrollView()
                     Divider()
                     NewTaskButton()
                 }
