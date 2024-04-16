@@ -126,19 +126,22 @@ class HomeViewModel: ObservableObject {
     
     func taskAdded(_ task: Task)->Bool {
         if taskIsCorrect(task) {
-            storedTasks.append(task)
-            //MARK: - addTask to Firebase
-            
-            firebaseManager.uploadTask(task) { error in
-                if error != nil {
-                    print(error!.localizedDescription)
-                }
-                self.filteringTodayTask()
-            }
-            
+            addTask(task)
             return true
         }
         return false
+    }
+    
+    func addTask(_ task: Task) {
+        storedTasks.append(task)
+        //MARK: - addTask to Firebase
+        
+        firebaseManager.uploadTask(task) { error in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+            self.filteringTodayTask()
+        }
     }
     
     func deleteTask(_ task: Task) {
