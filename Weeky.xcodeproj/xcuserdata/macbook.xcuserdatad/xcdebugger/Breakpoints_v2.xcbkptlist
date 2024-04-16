@@ -59,8 +59,8 @@
             filePath = "Weeky/Screens/WeekPage/ViewModel/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "taskAdded(_:)"
             landmarkType = "7">
          </BreakpointContent>

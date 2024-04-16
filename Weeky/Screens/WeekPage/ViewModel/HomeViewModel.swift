@@ -12,7 +12,10 @@ class HomeViewModel: ObservableObject {
     @State var authorized = true
 //    @State var authorized = false
     
-    @Published var storedTasks: [Task] = []
+    @Published var storedTasks: [Task] = [
+        Task(title: "Медитаця", date: Date(), color: .orange, isCompleted: false),
+        Task(title: "Спорт", date: Date(), color: .blue, isCompleted: false),
+    ]
     
     //Current Week Days
     @Published var currentWeek: [Date] = []
@@ -90,21 +93,23 @@ class HomeViewModel: ObservableObject {
     
     //MARK: - Calendar UIFuncions
     func allTaskInDay(_ day: Date)->[Task] {
+        print("ALLTASK: \(day)")
         var result = [Task]()
-        DispatchQueue.global(qos: .userInteractive).async {
+//        DispatchQueue.global(qos: .userInteractive).async {
             let calendar = Calendar.current
             
-            var filtered = self.storedTasks.filter{
+            result = self.storedTasks.filter{
                 calendar.isDate($0.date, inSameDayAs: day)
             }
-            filtered.sort(by: {$0.date < $1.date})
+            result.sort(by: {$0.date < $1.date})
             
-            DispatchQueue.main.async {
-                withAnimation{
-                    result = filtered
-                }
-            }
-        }
+//            DispatchQueue.main.async {
+//                withAnimation{
+//                    result = self.storedTasks
+//                }
+//            }
+//        }
+        print("ALLTASK: \(result)")
         return result
     }
     

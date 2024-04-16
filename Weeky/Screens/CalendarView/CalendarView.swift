@@ -26,7 +26,7 @@ struct CalendarView: View {
                         .accentColor(Color("Blue dark"))
 //                    Spacer()
                     Divider()
-                    miniTaskScrollView()
+//                    MiniTaskScrollView()
                     Divider()
                     NewTaskButton()
                 }
@@ -54,19 +54,20 @@ struct CalendarView: View {
         .padding(30)
     }
     
-    func miniTaskScrollView()->some View {
-        ScrollView {
-            var tasks = viewModel.allTaskInDay(date)
-            ForEach(tasks) { task in
-                Text(task.title)
+    func MiniTaskScrollView()->some View {
+            ScrollView {
+        let tasks = viewModel.allTaskInDay(date)
+                if !tasks.isEmpty {
+                    ForEach(tasks) { task in
+                        Text(task.title)
+                    }
+                } else {
+                    Text("Задачи не найдены")
+                        .foregroundColor(.gray)
+                }
             }
-            //            Text("her")
-            //            Text("her")
-            //            Text("her")
-            //            Text("her")
         }
     }
-}
 
 
 struct BackwordArrow: View {
