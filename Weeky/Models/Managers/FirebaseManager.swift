@@ -27,11 +27,22 @@ class FirebaseManager: ObservableObject {
         }
     }
     
-    func uploadData(data: [String: Any], completion: @escaping (Error?) -> Void) {
-        db.collection("Task").document("exampleDocument").setData(data) { error in
-            completion(error)
+    func uploadTask(_ task: Task, completion: @escaping (Error?) -> Void) {
+            // Ссылка на коллекцию задач пользователя
+            let tasksRef = db.collection("Tasks")
+            
+            // Добавление задачи в коллекцию
+        tasksRef.addDocument(data: ["id": task.id,
+                "title": task.title,
+                "dateString": task.dateString, "colorName": task.colorName, "isCompleted": task.isCompleted]
+            ) { error in
+                if let error = error {
+                    completion(error)
+                } else {
+                    completion(nil)
+                }
+            }
         }
-    }
     
     func fetchUserData(completion: @escaping ([User]?, Error?) -> Void) {
             db.collection("Users").getDocuments { (querySnapshot, error) in
@@ -62,7 +73,7 @@ class FirebaseManager: ObservableObject {
                         let taskData = document.data()
 //                        print(taskData)
                         // Парсинг данных задачи из taskData и создание объекта Task
-                        let task = Task(title: taskData["title"] as? String ?? "",
+                        let task = Task(id: taskData["id"] as? String ?? "", title: taskData["title"] as? String ?? "",
                                         dateString: taskData["dateString"] as? String ?? "",
                                         colorName: taskData["colorName"] as? String ?? "",
                                         isCompleted: taskData["isCompleted"]! as! Bool)

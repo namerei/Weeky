@@ -118,7 +118,7 @@ class HomeViewModel: ObservableObject {
         return result
     }
     
-    //MARK: - write / read functions
+    //MARK: - write/read Firebase
     
     func taskIsCorrect(_ task: Task)->Bool {
         !task.title.isEmpty
@@ -127,7 +127,15 @@ class HomeViewModel: ObservableObject {
     func taskAdded(_ task: Task)->Bool {
         if taskIsCorrect(task) {
             storedTasks.append(task)
-            filteringTodayTask()
+            //MARK: - addTask to Firebase
+            
+            firebaseManager.uploadTask(task) { error in
+                if error != nil {
+                    print(error!.localizedDescription)
+                }
+                self.filteringTodayTask()
+            }
+            
             return true
         }
         return false
