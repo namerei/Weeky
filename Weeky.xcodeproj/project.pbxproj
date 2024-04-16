@@ -35,11 +35,13 @@
 		FA5E3BF72BC7F16B0045E290 /* NewTaskView0.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BF62BC7F16B0045E290 /* NewTaskView0.swift */; };
 		FA5E3BF92BC7F1B90045E290 /* NewTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BF82BC7F1B90045E290 /* NewTaskViewModel.swift */; };
 		FA6233402BC91DED008CBD84 /* MySideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62333F2BC91DED008CBD84 /* MySideMenuView.swift */; };
-		FA6233452BC92C8F008CBD84 /* ElegantCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = FA6233442BC92C8F008CBD84 /* ElegantCalendar */; };
 		FA6233472BC92DC9008CBD84 /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6233462BC92DC9008CBD84 /* NewTaskView.swift */; };
-		FACE0FB72BCD009F00CD178B /* MijickCalendarView in Frameworks */ = {isa = PBXBuildFile; productRef = FACE0FB62BCD009F00CD178B /* MijickCalendarView */; };
 		FACE0FCB2BCD4FBA00CD178B /* TaskCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE0FCA2BCD4FBA00CD178B /* TaskCardView.swift */; };
 		FACE0FCD2BCD5A6400CD178B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE0FCC2BCD5A6400CD178B /* Colors.swift */; };
+		FACE0FD02BCE8D2600CD178B /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE0FCF2BCE8D2600CD178B /* FirebaseManager.swift */; };
+		FACE0FD42BCE915900CD178B /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = FACE0FD32BCE915900CD178B /* FirebaseAppCheck */; };
+		FACE0FD62BCE994400CD178B /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE0FD52BCE994400CD178B /* AuthViewModel.swift */; };
+		FACE0FD82BCE9AF600CD178B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FACE0FD72BCE9AF500CD178B /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,9 @@
 		FA6233462BC92DC9008CBD84 /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
 		FACE0FCA2BCD4FBA00CD178B /* TaskCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCardView.swift; sourceTree = "<group>"; };
 		FACE0FCC2BCD5A6400CD178B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		FACE0FCF2BCE8D2600CD178B /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		FACE0FD52BCE994400CD178B /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		FACE0FD72BCE9AF500CD178B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FACE0FB72BCD009F00CD178B /* MijickCalendarView in Frameworks */,
-				FA6233452BC92C8F008CBD84 /* ElegantCalendar in Frameworks */,
+				FACE0FD42BCE915900CD178B /* FirebaseAppCheck in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,9 +130,11 @@
 		062DCF092B508666005C209A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FACE0FCE2BCE8D1500CD178B /* Managers */,
 				062DCF0F2B50889F005C209A /* List.swift */,
 				062DCF112B5088A9005C209A /* User.swift */,
 				FA5E3BDC2BC6A6BA0045E290 /* Task.swift */,
+				FACE0FD52BCE994400CD178B /* AuthViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -136,6 +142,7 @@
 		062DCF0A2B5086BC005C209A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FACE0FD72BCE9AF500CD178B /* GoogleService-Info.plist */,
 				06F3EA5A2B27661A000B5C71 /* Preview Content */,
 				06F3EA582B27661A000B5C71 /* Assets.xcassets */,
 				06F3EA542B276619000B5C71 /* WeekyApp.swift */,
@@ -347,6 +354,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		FACE0FCE2BCE8D1500CD178B /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				FACE0FCF2BCE8D2600CD178B /* FirebaseManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -364,8 +379,7 @@
 			);
 			name = Weeky;
 			packageProductDependencies = (
-				FA6233442BC92C8F008CBD84 /* ElegantCalendar */,
-				FACE0FB62BCD009F00CD178B /* MijickCalendarView */,
+				FACE0FD32BCE915900CD178B /* FirebaseAppCheck */,
 			);
 			productName = Weeky;
 			productReference = 06F3EA512B276619000B5C71 /* Weeky.app */;
@@ -440,8 +454,7 @@
 			);
 			mainGroup = 06F3EA482B276619000B5C71;
 			packageReferences = (
-				FA6233432BC92C8F008CBD84 /* XCRemoteSwiftPackageReference "ElegantCalendar" */,
-				FACE0FB52BCD009F00CD178B /* XCRemoteSwiftPackageReference "CalendarView" */,
+				FACE0FD22BCE915900CD178B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 06F3EA522B276619000B5C71 /* Products */;
 			projectDirPath = "";
@@ -461,6 +474,7 @@
 			files = (
 				06F3EA5C2B27661A000B5C71 /* Preview Assets.xcassets in Resources */,
 				06F3EA592B27661A000B5C71 /* Assets.xcassets in Resources */,
+				FACE0FD82BCE9AF600CD178B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +502,7 @@
 				FA5E3BF92BC7F1B90045E290 /* NewTaskViewModel.swift in Sources */,
 				0645E71B2B2899F80081EE15 /* TextModifiers.swift in Sources */,
 				06F3EA552B276619000B5C71 /* WeekyApp.swift in Sources */,
+				FACE0FD02BCE8D2600CD178B /* FirebaseManager.swift in Sources */,
 				FA5E3BE62BC6B2640045E290 /* SideMenuView.swift in Sources */,
 				FA5E3BD62BC674E10045E290 /* LoginView.swift in Sources */,
 				FACE0FCD2BCD5A6400CD178B /* Colors.swift in Sources */,
@@ -508,6 +523,7 @@
 				062DCF142B5088F6005C209A /* AuthorizationViewModel.swift in Sources */,
 				FA6233472BC92DC9008CBD84 /* NewTaskView.swift in Sources */,
 				FA5E3BDD2BC6A6BA0045E290 /* Task.swift in Sources */,
+				FACE0FD62BCE994400CD178B /* AuthViewModel.swift in Sources */,
 				FA5E3BF22BC7D6C00045E290 /* HeaderView.swift in Sources */,
 				FA5E3BD92BC6871F0045E290 /* SignUpView2.swift in Sources */,
 				FACE0FCB2BCD4FBA00CD178B /* TaskCardView.swift in Sources */,
@@ -844,34 +860,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FA6233432BC92C8F008CBD84 /* XCRemoteSwiftPackageReference "ElegantCalendar" */ = {
+		FACE0FD22BCE915900CD178B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ThasianX/ElegantCalendar.git";
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.3.2;
-			};
-		};
-		FACE0FB52BCD009F00CD178B /* XCRemoteSwiftPackageReference "CalendarView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Mijick/CalendarView";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 10.24.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FA6233442BC92C8F008CBD84 /* ElegantCalendar */ = {
+		FACE0FD32BCE915900CD178B /* FirebaseAppCheck */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FA6233432BC92C8F008CBD84 /* XCRemoteSwiftPackageReference "ElegantCalendar" */;
-			productName = ElegantCalendar;
-		};
-		FACE0FB62BCD009F00CD178B /* MijickCalendarView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FACE0FB52BCD009F00CD178B /* XCRemoteSwiftPackageReference "CalendarView" */;
-			productName = MijickCalendarView;
+			package = FACE0FD22BCE915900CD178B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -10,6 +10,7 @@ import SwiftUI
 
 class HomeViewModel: ObservableObject {
     @State var authorized = true
+    @Published var firebaseManager = FirebaseManager()
 //    @State var authorized = false
     
     @Published var storedTasks: [Task] = [
@@ -133,6 +134,11 @@ class HomeViewModel: ObservableObject {
         filteringTodayTask()
     }
     
+    //MARK: - work with firebase
+    func fetchAllData() {
+        print("FETCH")
+        print(firebaseManager.fetchedData)
+    }
     
 }
 
