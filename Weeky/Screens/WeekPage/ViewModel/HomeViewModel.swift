@@ -13,6 +13,8 @@ class HomeViewModel: ObservableObject {
     @StateObject var firebaseManager = FirebaseManager()
 //    @State var authorized = false
     
+    @State var error : Error?
+    
     @Published var storedTasks: [Task] = [
         Task(title: "Медитаця", dateString: "2024-04-16 16:20:00", colorName: "Orange light", isCompleted: false),
         Task(title: "Спорт", dateString: "2024-04-16 18:20:00", colorName: "Blue xlight", isCompleted: false),
@@ -26,6 +28,8 @@ class HomeViewModel: ObservableObject {
     @Published var filteredTasks: [Task]?
     
     init(){
+        fetchAllData()
+        
         fetchCurrentWeek()
         filteringTodayTask()
 //        print("", Date().millisecondsSince1970)
@@ -137,6 +141,14 @@ class HomeViewModel: ObservableObject {
     //MARK: - work with firebase
     func fetchAllData() {
         print("FETCH")
+        
+        firebaseManager.fetchUserData { users, _ in
+            print(users)
+        }
+        
+        firebaseManager.fetchAllTasks { storedTasks, error in
+            print(storedTasks)
+        }
 //        print(firebaseManager.fetchedData)
     }
     

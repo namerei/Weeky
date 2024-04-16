@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct User: Identifiable, Hashable, Codable {
+    var id                  = UUID().uuidString
+    var name: String        = ""
+    var password: String    = ""
+    var isAuthorized: Bool  = false
+    
+    var tasks: [Task]
+}

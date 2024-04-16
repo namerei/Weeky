@@ -10,6 +10,7 @@ import SwiftUI
 struct AddNewTaskButton: View {
     @Binding var isShowingNewTaskView: Bool
     @State var date = Date()
+    
     var body: some View {
         Button {
             print("button add new task")

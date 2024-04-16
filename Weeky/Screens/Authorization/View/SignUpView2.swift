@@ -46,7 +46,7 @@ struct SignUpView : View {
                     HStack(spacing: 15) {
                         Image(systemName: "eye.slash.fill")
                             .foregroundColor(Color("Orange light"))
-                        SecureField("Пароль", text: $viewModel.pass)
+                        SecureField("Пароль", text: $viewModel.password)
                     }
                     
                     Divider()

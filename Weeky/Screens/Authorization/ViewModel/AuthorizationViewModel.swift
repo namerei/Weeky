@@ -9,7 +9,7 @@ import Foundation
 class AuthorizationViewModel: ObservableObject
 {
   @Published var email = ""
-  @Published var pass = ""
+  @Published var password = ""
   @Published var repass = ""
   @Published var errorMessage = ""
 
@@ -17,7 +17,7 @@ class AuthorizationViewModel: ObservableObject
   
   func login() {
     guard !email.trimmingCharacters(in: .whitespaces).isEmpty,
-          !pass.trimmingCharacters(in: .whitespaces).isEmpty  else {
+          !password.trimmingCharacters(in: .whitespaces).isEmpty  else {
       errorMessage = "Пожалуйста, заполните все поля"
       
       return
