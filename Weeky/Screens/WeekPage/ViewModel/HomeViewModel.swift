@@ -120,6 +120,38 @@ class HomeViewModel: ObservableObject {
     
     //MARK: - write/read Firebase
     
+  
+    
+    func addTask(_ task: Task) {
+        storedTasks.append(task)
+        filteringTodayTask()
+        
+        firebaseManager.uploadTask(task) { error in
+            self.checkFor(error)
+        }
+    }
+    
+    func deleteTask(_ task: Task) {
+        storedTasks.removeAll { $0.id == task.id }
+        filteringTodayTask()
+        
+        firebaseManager.deleteTask(task) { error in
+            self.checkFor(error)
+        }
+    }
+    
+    func fetchAllData() {
+        print("FETCH")
+        firebaseManager.fetchAllTasks { fetchedTasks, error in
+            self.checkFor(error)
+            
+            guard let fetchedTasks = fetchedTasks else { return }
+            self.storedTasks += fetchedTasks
+            self.filteringTodayTask()
+        }
+    }
+    
+    //MARK: - Helpers
     func taskIsCorrect(_ task: Task)->Bool {
         !task.title.isEmpty
     }
@@ -132,42 +164,10 @@ class HomeViewModel: ObservableObject {
         return false
     }
     
-    func addTask(_ task: Task) {
-        storedTasks.append(task)
-        //MARK: - addTask to Firebase
-        
-        firebaseManager.uploadTask(task) { error in
-            if error != nil {
-                print(error!.localizedDescription)
-            }
-            self.filteringTodayTask()
+    func checkFor(_ error: Error?) {
+        if error != nil {
+            print(error!.localizedDescription)
         }
     }
-    
-    func deleteTask(_ task: Task) {
-        storedTasks.removeAll { $0.id == task.id }
-        filteringTodayTask()
-    }
-    
-    //MARK: - work with firebase
-    func fetchAllData() {
-        print("FETCH")
-        
-//        firebaseManager.fetchUserData { users, _ in
-//            print(users)
-//        }
-//        
-        firebaseManager.fetchAllTasks { fetchedTasks, error in
-            if error != nil {
-                print(error)
-            }
-//            print(storedTasks)
-            guard let fetchedTasks = fetchedTasks else { return }
-            self.storedTasks += fetchedTasks
-            self.filteringTodayTask()
-        }
-//        print(firebaseManager.fetchedData)
-    }
-    
 }
 

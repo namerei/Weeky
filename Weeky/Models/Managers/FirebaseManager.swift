@@ -79,6 +79,22 @@ class FirebaseManager: ObservableObject {
         }
     }
     
+    func deleteTask(_ task: Task, completion: @escaping (Error?) -> Void) {
+            // Ссылка на документ задачи пользователя
+            let taskId = task.id
+            let userTaskRef = db.collection("Tasks").document("id")
+            
+            // Удаление задачи из коллекции
+            userTaskRef.delete { error in
+                if let error = error {
+                    completion(error)
+                } else {
+                    completion(nil)
+                }
+            }
+        }
+    
+    //MARK: - helpers
     func constructTask(from taskData: [String : Any])->Task {
         Task(id: taskData["id"] as? String ?? "", 
              title: taskData["title"] as? String ?? "",
