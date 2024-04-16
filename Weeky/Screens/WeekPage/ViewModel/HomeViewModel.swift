@@ -16,8 +16,8 @@ class HomeViewModel: ObservableObject {
     @State var error : Error?
     
     @Published var storedTasks: [Task] = [
-        Task(title: "Медитаця", dateString: "2024-04-16 16:20:00", colorName: "Orange light", isCompleted: false),
-        Task(title: "Спорт", dateString: "2024-04-16 18:20:00", colorName: "Blue xlight", isCompleted: false),
+//        Task(title: "Медитаця", dateString: "2024-04-16 16:20:00", colorName: "Orange light", isCompleted: false),
+//        Task(title: "Спорт", dateString: "2024-04-16 18:20:00", colorName: "Blue xlight", isCompleted: false),
     ]
     
     //Current Week Days
@@ -146,11 +146,14 @@ class HomeViewModel: ObservableObject {
 //            print(users)
 //        }
 //        
-        firebaseManager.fetchAllTasks { storedTasks, error in
+        firebaseManager.fetchAllTasks { fetchedTasks, error in
             if error != nil {
                 print(error)
             }
-            print(storedTasks)
+//            print(storedTasks)
+            guard let fetchedTasks = fetchedTasks else { return }
+            self.storedTasks += fetchedTasks
+            self.filteringTodayTask()
         }
 //        print(firebaseManager.fetchedData)
     }
