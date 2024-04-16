@@ -16,7 +16,7 @@ struct NewTaskView: View {
     @Environment(\.presentationMode) var presentationMode
     
     //MARK: - set my Colors
-    let availableColors: [Color] = [Color("Blue dark"), .blue, .green, .yellow, .orange, .purple]
+    let availableColors: [Color] = [Color("Blue dark"), Color("Blue xlight"), Color("Orange dark"), Color("Orange light"), Color("Yellow dark"), Color("Yellow light")]
     
     var body: some View {
         
