@@ -10,7 +10,7 @@ import SwiftUI
 struct NewTaskView: View {
     @Binding var dateFromCalendar: Date
     @State private var task = Task()
-    @State private var taskColor: Color = Color(.green)
+    @State private var taskColor: Color = Color("Blue xlight")
     @EnvironmentObject var viewModel : HomeViewModel
     
     @Environment(\.presentationMode) var presentationMode
