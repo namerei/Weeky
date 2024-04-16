@@ -53,15 +53,19 @@ class FirebaseManager: ObservableObject {
     }
         
         func fetchAllTasks(completion: @escaping ([Task]?, Error?) -> Void) {
-            db.collectionGroup("tasks").getDocuments { (querySnapshot, error) in
+            db.collectionGroup("Tasks").getDocuments { (querySnapshot, error) in
                 if let error = error {
                     completion(nil, error)
                 } else {
                     var tasks = [Task]()
                     for document in querySnapshot!.documents {
                         let taskData = document.data()
+                        print(taskData)
                         // Парсинг данных задачи из taskData и создание объекта Task
-                        let task = Task(title: "from FB", colorName: "Yellow light")
+                        let task = Task(title: taskData["title"] as? String ?? "",
+                                        dateString: taskData["dateString"] as? String ?? "",
+                                        colorName: taskData["colorName"] as? String ?? "",
+                                        isCompleted: taskData["isCompleted"]! as! Bool)
                         tasks.append(task)
                     }
                     completion(tasks, nil)

@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 class HomeViewModel: ObservableObject {
-    @State var authorized = true
+    @Published var authorized = true
     @StateObject var firebaseManager = FirebaseManager()
 //    @State var authorized = false
     
@@ -142,11 +142,14 @@ class HomeViewModel: ObservableObject {
     func fetchAllData() {
         print("FETCH")
         
-        firebaseManager.fetchUserData { users, _ in
-            print(users)
-        }
-        
+//        firebaseManager.fetchUserData { users, _ in
+//            print(users)
+//        }
+//        
         firebaseManager.fetchAllTasks { storedTasks, error in
+            if error != nil {
+                print(error)
+            }
             print(storedTasks)
         }
 //        print(firebaseManager.fetchedData)
