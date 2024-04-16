@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct TaskCardView: View {
+    @EnvironmentObject var viewModel : HomeViewModel
     @State var task: Task
     @State var isEditing: Bool = false
     
     var body: some View {
         HStack {
-                TaskCell()
+            TaskCell()
             Spacer()
             ButtonsHStack()
         }
@@ -63,6 +64,9 @@ struct TaskCardView: View {
                 if isEditing {
                     Button(action: {
                         //MARK: Remove Task
+                        withAnimation {
+                            viewModel.deleteTask(task)
+                        }
                         // Handle edit button action
                     }) {
                         Image(systemName: "trash")

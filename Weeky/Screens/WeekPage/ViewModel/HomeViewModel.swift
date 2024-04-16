@@ -12,7 +12,7 @@ class HomeViewModel: ObservableObject {
     @State var authorized = true
 //    @State var authorized = false
     
-    @Published var storedTask: [Task] = [
+    @Published var storedTasks: [Task] = [
 //        Task(title: "Сходить на пробежку", date: Date().addingTimeInterval(TimeInterval(60 * 3 * 60)), color: Color(.blue)),
 //        Task(title: "Сходить на пробежку", date: Date().addingTimeInterval(TimeInterval(60 * 12 * 60)), color: Color(.green)),
 //        Task(title: "Медитация", date: Date().addingTimeInterval(TimeInterval(0)), color: Color(.blue)),
@@ -39,7 +39,7 @@ class HomeViewModel: ObservableObject {
         DispatchQueue.global(qos: .userInteractive).async {
             let calendar = Calendar.current
             
-            var filtered = self.storedTask.filter{
+            var filtered = self.storedTasks.filter{
                 calendar.isDate($0.date, inSameDayAs: self.currentDay)
             }
             filtered.sort(by: {$0.date < $1.date})
@@ -106,10 +106,14 @@ class HomeViewModel: ObservableObject {
     
     func taskAdded(_ task: Task)->Bool {
         if taskIsCorrect(task) {
-            storedTask.append(task)
+            storedTasks.append(task)
             return true
         }
         return false
+    }
+    
+    func deleteTask(_ task: Task) {
+       storedTasks.removeAll { $0.id == task.id }
     }
 }
 
