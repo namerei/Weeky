@@ -6,8 +6,8 @@
 //
 
 import SwiftUI
+import Firebase
 import FirebaseCore
-import FirebaseFirestoreSwift
 
 class FirebaseManager: ObservableObject {
     private let db = Firestore.firestore()

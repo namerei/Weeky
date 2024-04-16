@@ -10,7 +10,7 @@ import SwiftUI
 
 class HomeViewModel: ObservableObject {
     @State var authorized = true
-    @Published var firebaseManager = FirebaseManager()
+//    @Published var firebaseManager = FirebaseManager()
 //    @State var authorized = false
     
     @Published var storedTasks: [Task] = [
@@ -137,7 +137,7 @@ class HomeViewModel: ObservableObject {
     //MARK: - work with firebase
     func fetchAllData() {
         print("FETCH")
-        print(firebaseManager.fetchedData)
+//        print(firebaseManager.fetchedData)
     }
     
 }

@@ -7,6 +7,8 @@
 
 import SwiftUI
 import FirebaseCore
+import FirebaseFirestore
+import FirebaseAuth
 
 @main
 struct WeekyApp: App {
@@ -15,7 +17,6 @@ struct WeekyApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-//                .environmentObject(viewModel)
         }
     }
     
