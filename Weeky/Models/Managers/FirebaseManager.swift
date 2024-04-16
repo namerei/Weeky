@@ -12,20 +12,20 @@ import FirebaseCore
 class FirebaseManager: ObservableObject {
     private let db = Firestore.firestore()
     
-    @Published var fetchedData: [String: Any]? = nil
+//    @Published var fetchedData: [String: Any]? = nil
     @Published var error: Error? = nil
     
-    func fetchData() {
-        print(db)
-        db.collection("data").document("exampleDocument").getDocument { (document, error) in
-            if let document = document, document.exists {
-                self.fetchedData = document.data()
-                self.error = nil
-            } else {
-                self.error = error
-            }
-        }
-    }
+//    func fetchData() {
+//        print(db)
+//        db.collection("data").document("exampleDocument").getDocument { (document, error) in
+//            if let document = document, document.exists {
+//                self.fetchedData = document.data()
+//                self.error = nil
+//            } else {
+//                self.error = error
+//            }
+//        }
+//    }
     
     func uploadTask(_ task: Task, completion: @escaping (Error?) -> Void) {
             // Ссылка на коллекцию задач пользователя
@@ -44,43 +44,47 @@ class FirebaseManager: ObservableObject {
             }
         }
     
-    func fetchUserData(completion: @escaping ([User]?, Error?) -> Void) {
-            db.collection("Users").getDocuments { (querySnapshot, error) in
-                if let error = error {
-                    completion(nil, error)
-                } else {
-                    var users = [User]()
-                    for document in querySnapshot!.documents {
-                        let userData = document.data()
-                        // Парсинг данных пользователя из userData и создание объекта User
-                        let user = User(email: userData["email"] as? String ?? "",
-                                        password: userData["password"] as? String ?? "",
-                                        Tasks: [])
-                        users.append(user)
-                    }
-                    completion(users, nil)
+//    func fetchUserData(completion: @escaping ([User]?, Error?) -> Void) {
+//            db.collection("Users").getDocuments { (querySnapshot, error) in
+//                if let error = error {
+//                    completion(nil, error)
+//                } else {
+//                    var users = [User]()
+//                    for document in querySnapshot!.documents {
+//                        let userData = document.data()
+    //                        // Парсинг данных пользователя из userData и создание объекта User
+    //                        let user = User(email: userData["email"] as? String ?? "",
+    //                                        password: userData["password"] as? String ?? "",
+    //                                        Tasks: [])
+    //                        users.append(user)
+    //                    }
+    //                    completion(users, nil)
+    //                }
+    //            }
+    //    }
+    
+    func fetchAllTasks(completion: @escaping ([Task]?, Error?) -> Void) {
+        db.collectionGroup("Tasks").getDocuments { (querySnapshot, error) in
+            if let error = error {
+                completion(nil, error)
+            } else {
+                var tasks = [Task]()
+                for document in querySnapshot!.documents {
+                    let taskData = document.data()
+                    
+                    tasks.append(self.constructTask(from: taskData))
                 }
-            }
-    }
-        
-        func fetchAllTasks(completion: @escaping ([Task]?, Error?) -> Void) {
-            db.collectionGroup("Tasks").getDocuments { (querySnapshot, error) in
-                if let error = error {
-                    completion(nil, error)
-                } else {
-                    var tasks = [Task]()
-                    for document in querySnapshot!.documents {
-                        let taskData = document.data()
-//                        print(taskData)
-                        // Парсинг данных задачи из taskData и создание объекта Task
-                        let task = Task(id: taskData["id"] as? String ?? "", title: taskData["title"] as? String ?? "",
-                                        dateString: taskData["dateString"] as? String ?? "",
-                                        colorName: taskData["colorName"] as? String ?? "",
-                                        isCompleted: taskData["isCompleted"]! as! Bool)
-                        tasks.append(task)
-                    }
-                    completion(tasks, nil)
-                }
+                completion(tasks, nil)
             }
         }
+    }
+    
+    func constructTask(from taskData: [String : Any])->Task {
+        Task(id: taskData["id"] as? String ?? "", 
+             title: taskData["title"] as? String ?? "",
+             dateString: taskData["dateString"] as? String ?? "",
+             colorName: taskData["colorName"] as? String ?? "",
+             isCompleted: taskData["isCompleted"]! as! Bool)
+    }
+    
 }

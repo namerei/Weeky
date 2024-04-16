@@ -30,8 +30,8 @@ class HomeViewModel: ObservableObject {
     init(){
         fetchAllData()
         
-        fetchCurrentWeek()
         filteringTodayTask()
+        fetchCurrentWeek()
 //        print("", Date().millisecondsSince1970)
     }
     
