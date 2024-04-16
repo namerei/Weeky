@@ -34,7 +34,7 @@ class FirebaseManager: ObservableObject {
     }
     
     func fetchUserData(completion: @escaping ([User]?, Error?) -> Void) {
-            db.collection("users").getDocuments { (querySnapshot, error) in
+            db.collection("Users").getDocuments { (querySnapshot, error) in
                 if let error = error {
                     completion(nil, error)
                 } else {
@@ -42,9 +42,9 @@ class FirebaseManager: ObservableObject {
                     for document in querySnapshot!.documents {
                         let userData = document.data()
                         // Парсинг данных пользователя из userData и создание объекта User
-                        let user = User(name: userData["name"] as? String ?? "",
+                        let user = User(email: userData["email"] as? String ?? "",
                                         password: userData["password"] as? String ?? "",
-                                        tasks: [])
+                                        Tasks: [])
                         users.append(user)
                     }
                     completion(users, nil)
