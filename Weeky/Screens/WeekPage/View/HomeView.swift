@@ -70,7 +70,7 @@ struct HomeView: View {
             WeekView()
             
             VStack(spacing: 5) {
-                if let tasks = taskModel.filteredTasks{
+                if let tasks = taskModel.filteredTasks {
                     if tasks.isEmpty{
                         Text("Задач не найдено")
                             .font(.system(size: 16))
@@ -81,7 +81,7 @@ struct HomeView: View {
                             TaskCardView(task: task)
                         }
                     }
-                }else{
+                } else {
                     //Mark: Progress View
                     ProgressView()
                         .offset(y: 100)

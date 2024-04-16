@@ -2,7 +2,7 @@
 //  TaskCardView.swift
 //  Weeky
 //
-//  Created by Nikita Evdokimov on 15.04.24.
+//  Created by namerei on 15.04.24.
 //
 
 import SwiftUI
@@ -63,11 +63,9 @@ struct TaskCardView: View {
                 }
                 if isEditing {
                     Button(action: {
-                        //MARK: Remove Task
                         withAnimation {
                             viewModel.deleteTask(task)
                         }
-                        // Handle edit button action
                     }) {
                         Image(systemName: "trash")
                             .font(.title3)
