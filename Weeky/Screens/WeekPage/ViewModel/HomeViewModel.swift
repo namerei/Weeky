@@ -40,8 +40,12 @@ class HomeViewModel: ObservableObject {
         DispatchQueue.global(qos: .userInteractive).async {
             let calendar = Calendar.current
             
-            var filtered = self.storedTasks.filter{
-                calendar.isDate($0.dateString.toDate()!, inSameDayAs: self.currentDay)
+            var filtered = self.storedTasks.filter { task in
+                guard let date = task.dateString.toDate() else {
+                    // Обработка случая, когда toDate() возвращает nil
+                    return false // Или что-то еще, зависящее от вашего приложения
+                }
+                return calendar.isDate(date, inSameDayAs: self.currentDay)
             }
             filtered.sort(by: {$0.dateString < $1.dateString})
             
@@ -123,11 +127,10 @@ class HomeViewModel: ObservableObject {
   
     
     func addTask(_ task: Task) {
-        storedTasks.append(task)
-        filteringTodayTask()
-        
         firebaseManager.uploadTask(task) { error in
+            self.storedTasks.append(task)
             self.checkFor(error)
+            self.filteringTodayTask()
         }
     }
     
