@@ -27,8 +27,8 @@
             filePath = "Weeky/Screens/NewTaskView/View/NewTaskView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "DatePickerView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -43,8 +43,8 @@
             filePath = "Weeky/Screens/NewTaskView/View/NewTaskView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "DatePickerView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -61,7 +61,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
             endingLineNumber = "107"
-            landmarkName = "addTask(_:)"
+            landmarkName = "taskAdded(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

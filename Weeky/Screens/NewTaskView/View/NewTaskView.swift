@@ -9,14 +9,10 @@ import SwiftUI
 
 struct NewTaskView: View {
     @Binding var dateFromCalendar: Date
-    
     @State private var task = Task()
-//    @State private var newTaskViewModel = NewTaskViewModel()
-//    @ObservedObject var viewModel : HomeViewModel
-    
+    @EnvironmentObject var viewModel : HomeViewModel
     
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var viewModel : HomeViewModel
     
     //MARK: - set my Colors
     let availableColors: [Color] = [.red, .blue, .green, .yellow, .orange, .purple]
@@ -56,6 +52,7 @@ struct NewTaskView: View {
                 .padding(.bottom, 20)
             
             Button(action: {
+                task.date = dateFromCalendar
                 if viewModel.taskAdded(task) {
                     backToHomeView()
                 }

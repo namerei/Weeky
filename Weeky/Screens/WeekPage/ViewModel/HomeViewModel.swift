@@ -13,12 +13,12 @@ class HomeViewModel: ObservableObject {
 //    @State var authorized = false
     
     @Published var storedTask: [Task] = [
-        Task(title: "Сходить на пробежку", date: Date().addingTimeInterval(TimeInterval(60 * 3 * 60)), color: Color(.blue)),
-        Task(title: "Сходить на пробежку", date: Date().addingTimeInterval(TimeInterval(60 * 12 * 60)), color: Color(.green)),
-        Task(title: "Медитация", date: Date().addingTimeInterval(TimeInterval(0)), color: Color(.blue)),
-        Task(title: "Накидать дизайн", date: Date().addingTimeInterval(TimeInterval(0)), color: Color("Orange light")),
-        Task(title: "Заказать продукты", date: Date().addingTimeInterval(TimeInterval(0)), color: Color("Blue light")),
-        Task(title: "Встреча с Женей в Surf", date: Date().addingTimeInterval(TimeInterval(3)), color: Color(.blue)),
+//        Task(title: "Сходить на пробежку", date: Date().addingTimeInterval(TimeInterval(60 * 3 * 60)), color: Color(.blue)),
+//        Task(title: "Сходить на пробежку", date: Date().addingTimeInterval(TimeInterval(60 * 12 * 60)), color: Color(.green)),
+//        Task(title: "Медитация", date: Date().addingTimeInterval(TimeInterval(0)), color: Color(.blue)),
+//        Task(title: "Накидать дизайн", date: Date().addingTimeInterval(TimeInterval(0)), color: Color("Orange light")),
+//        Task(title: "Заказать продукты", date: Date().addingTimeInterval(TimeInterval(0)), color: Color("Blue light")),
+//        Task(title: "Встреча с Женей в Surf", date: Date().addingTimeInterval(TimeInterval(3)), color: Color(.blue)),
     ]
     
     //Current Week Days
