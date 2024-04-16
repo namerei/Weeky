@@ -60,7 +60,7 @@ class FirebaseManager: ObservableObject {
                     var tasks = [Task]()
                     for document in querySnapshot!.documents {
                         let taskData = document.data()
-                        print(taskData)
+//                        print(taskData)
                         // Парсинг данных задачи из taskData и создание объекта Task
                         let task = Task(title: taskData["title"] as? String ?? "",
                                         dateString: taskData["dateString"] as? String ?? "",
