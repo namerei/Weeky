@@ -10,7 +10,7 @@ import SwiftUI
 
 class HomeViewModel: ObservableObject {
     @State var authorized = true
-//    @Published var firebaseManager = FirebaseManager()
+    @StateObject var firebaseManager = FirebaseManager()
 //    @State var authorized = false
     
     @Published var storedTasks: [Task] = [
