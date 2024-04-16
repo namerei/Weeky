@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var taskModel = HomeViewModel()
+    @EnvironmentObject var taskModel: HomeViewModel
     @Namespace var animation
     
     @State private var isShowingSideMenu = false

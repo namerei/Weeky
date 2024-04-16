@@ -10,11 +10,13 @@ import SwiftUI
 
 @main
 struct WeekyApp: App {
+    @StateObject var viewModel = HomeViewModel()
+    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-//            AuthorizationView()
-            HomeView()
+            ContentView()
+                .environmentObject(viewModel)
         }
     }
     
@@ -22,6 +24,7 @@ struct WeekyApp: App {
         func application(_ application: UIApplication,
                          didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
             //                FirebaseApp.configure()
+            @StateObject var taskModel = HomeViewModel()
             
             
             return true
@@ -29,3 +32,20 @@ struct WeekyApp: App {
     }
 }
 
+struct ContentView: View {
+    @EnvironmentObject var viewModel:  HomeViewModel
+
+    var body: some View {
+        Group{
+            
+//            AuthorizationView()
+//            HomeView()
+            
+            if viewModel.authorized {
+                HomeView()
+            }else {
+                AuthorizationView()
+            }
+        }
+    }
+}

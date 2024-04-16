@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 class HomeViewModel: ObservableObject {
+    @State var authorized = true
+//    @State var authorized = false
     
     @Published var storedTask: [Task] = [
         Task(title: "Сходить на пробежку", date: Date().addingTimeInterval(TimeInterval(60 * 3 * 60)), color: Color(.blue)),
