@@ -33,7 +33,7 @@ struct TaskCardView: View {
                 Text(task.title)
                     .font(.title2)
                 
-                Text("\(task.date.showOnlyTimeString())")
+                Text("\(task.dateString.toDate()!.showOnlyTimeString())")
                     .font(.subheadline)
             }
         }

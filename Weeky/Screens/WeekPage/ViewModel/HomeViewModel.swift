@@ -14,8 +14,8 @@ class HomeViewModel: ObservableObject {
 //    @State var authorized = false
     
     @Published var storedTasks: [Task] = [
-        Task(title: "Медитаця", date: Date(), colorName: "Orange light", isCompleted: false),
-        Task(title: "Спорт", date: Date(), colorName: "Blue xlight", isCompleted: false),
+        Task(title: "Медитаця", dateString: "2024-04-16 16:20:00", colorName: "Orange light", isCompleted: false),
+        Task(title: "Спорт", dateString: "2024-04-16 18:20:00", colorName: "Blue xlight", isCompleted: false),
     ]
     
     //Current Week Days
@@ -37,9 +37,9 @@ class HomeViewModel: ObservableObject {
             let calendar = Calendar.current
             
             var filtered = self.storedTasks.filter{
-                calendar.isDate($0.date, inSameDayAs: self.currentDay)
+                calendar.isDate($0.dateString.toDate()!, inSameDayAs: self.currentDay)
             }
-            filtered.sort(by: {$0.date < $1.date})
+            filtered.sort(by: {$0.dateString < $1.dateString})
             
             DispatchQueue.main.async {
                 withAnimation{
@@ -100,9 +100,9 @@ class HomeViewModel: ObservableObject {
             let calendar = Calendar.current
             
             result = self.storedTasks.filter{
-                calendar.isDate($0.date, inSameDayAs: day)
+                calendar.isDate($0.dateString.toDate()!, inSameDayAs: day)
             }
-            result.sort(by: {$0.date < $1.date})
+            result.sort(by: {$0.dateString.toDate()! < $1.dateString.toDate()!})
             
 //            DispatchQueue.main.async {
 //                withAnimation{

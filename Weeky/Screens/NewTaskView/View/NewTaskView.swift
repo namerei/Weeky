@@ -53,7 +53,7 @@ struct NewTaskView: View {
                 .padding(.bottom, 20)
             
             Button(action: {
-                task.date = dateFromCalendar
+                task.dateString = dateFromCalendar.toString()
                 task.colorName = taskColor.description.extractedName
                 print(taskColor.description.extractedName)
                 if viewModel.taskAdded(task) {
