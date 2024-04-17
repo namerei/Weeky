@@ -11,7 +11,7 @@ import Firebase
 import FirebaseCore
 
 class HomeViewModel: ObservableObject {
-    @Published var firebaseManager = taskDBManager()
+    @Published var firebaseManager = TaskDBManager()
     @Published var currentUser : User?
     
 //    @State var error : Error?
@@ -131,6 +131,11 @@ class HomeViewModel: ObservableObject {
             self.checkFor(error)
             self.filteringTodayTask()
         }
+//        firebaseManager.uploadTask(task: task, user: user) { error in
+//            self.storedTasks.append(task)
+//            self.checkFor(error)
+//            self.filteringTodayTask()
+//        }
     }
     
     func deleteTask(_ task: Task) {
@@ -174,6 +179,7 @@ class HomeViewModel: ObservableObject {
     
     func addUser(_ user: User) {
         self.currentUser = user
+        firebaseManager.addUser(user)
         print("ADDUSER", self.currentUser)
     }
 }

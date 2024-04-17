@@ -9,10 +9,10 @@ import SwiftUI
 import Firebase
 import FirebaseCore
 
-class taskDBManager: ObservableObject {
+class TaskDBManager: ObservableObject {
     private let db = Firestore.firestore()
     
-//    @Published var user : User
+    @Published var user : User?
     @Published var error: Error? = nil
     
     
@@ -23,10 +23,12 @@ class taskDBManager: ObservableObject {
     
     func uploadTask(_ task: Task, completion: @escaping (Error?) -> Void) {
         // Ссылка на коллекцию задач пользователя
-        let tasksRef = db.collection("Tasks")
+//        let tasksRef = db.collection("Tasks")
+        guard let userName = user?.name else { return }
+        let userRef = db.collection("Users").document(userName).collection("Tasks")
         
         // Добавление задачи в коллекцию
-        tasksRef.addDocument(data: ["id": task.id,
+        userRef.addDocument(data: ["id": task.id,
                                     "title": task.title,
                                     "dateString": task.dateString, "colorName": task.colorName, "isCompleted": task.isCompleted]
         ) { error in
@@ -77,6 +79,10 @@ class taskDBManager: ObservableObject {
              dateString: taskData["dateString"] as? String ?? "",
              colorName: taskData["colorName"] as? String ?? "",
              isCompleted: taskData["isCompleted"] as? Bool ?? false)
+    }
+    
+    func addUser(_ user: User) {
+        self.user = user
     }
     
 }

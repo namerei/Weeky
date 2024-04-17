@@ -82,7 +82,7 @@ class AuthorizationViewModel: ObservableObject
         
         let usersRef = authorizationManager.db.collection("Users")
         
-        //MARK: - can edit password
+        //MARK: - can edit password/ if name is exist
         usersRef.document(newUser.name).setData(dataToUpload)
         
         /*
@@ -100,8 +100,13 @@ class AuthorizationViewModel: ObservableObject
     }
     
     func updateUserData(for user: User, name: String?, password: String?) {
-        
-//        authorizationManager.updateUserName(for: "123", with: "1234")
+//        
+//        let usersRef = authorizationManager.db.collection("Users")
+//        if name != nil {
+//        let newUser = User(name: name, password: password)
+//        let dataToUpload = newUser.toData()
+//        
+//        usersRef.document(newUser.name).setData(dataToUpload)
 //        authorizationManager.updateUserName(for: , with: )
     }
 }
