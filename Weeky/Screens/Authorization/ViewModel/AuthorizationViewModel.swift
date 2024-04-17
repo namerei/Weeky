@@ -32,4 +32,9 @@ class AuthorizationViewModel: ObservableObject
         
     }
     
+    func eraseFields() {
+        email = ""
+        password = ""
+    }
+    
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Login : View {
-    @StateObject var viewModel = AuthorizationViewModel()
+    @EnvironmentObject var viewModel : AuthorizationViewModel
     @Binding var index : Int
     
     var body: some View {
@@ -92,6 +92,39 @@ struct Login : View {
                 .offset(y: 25)
                 .opacity(self.index == 0 ? 1 : 0)
         }
+    }
+}
+
+struct LoginButton: View {
+    @State private var isShowingHomePageView = false
+    @EnvironmentObject var authViewModel: AuthorizationViewModel
+    
+    var body: some View {
+        Button(action: {
+            saveNewUser()
+            withAnimation {
+                isShowingHomePageView.toggle()
+            }
+        }, label: {
+            Text("Зарегестрироваться")
+                .foregroundColor(Color("Gray"))
+                .fontWeight(.bold)
+                .padding(.vertical)
+                .padding(.horizontal, 50)
+                .background(Color("Yellow xlight"))
+                .clipShape(Capsule())
+                .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
+                .offset(y: 25)
+        })
+        .fullScreenCover(isPresented: $isShowingHomePageView, content: {
+//            HomeView()
+//                .transition(.move(edge: .leading))
+            TestScreen()
+        })
+    }
+    
+    func saveNewUser() {
+        print(authViewModel.email, authViewModel.password)
     }
 }
 

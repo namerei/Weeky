@@ -67,7 +67,7 @@ struct SignUpView : View {
                 .cornerRadius(35)
                 .padding(.horizontal, 20)
             
-            RegistrationButton()
+            RegistrationButton(index: $index)
                 .opacity(self.index == 1 ? 1 : 0)
         }
     }
@@ -76,11 +76,16 @@ struct SignUpView : View {
 //MARK: - Views
 struct RegistrationButton: View {
     @State private var isShowingWeekPageView = false
+    @Binding var index : Int
+    @EnvironmentObject var authViewModel: AuthorizationViewModel
     
     var body: some View {
         Button(action: {
+//            saveNewUser()
             withAnimation {
-                isShowingWeekPageView.toggle()
+                index = 0
+                authViewModel.eraseFields()
+//                isShowingWeekPageView.toggle()
             }
         }, label: {
             Text("Зарегестрироваться")
@@ -98,6 +103,10 @@ struct RegistrationButton: View {
 //                .transition(.move(edge: .leading))
             TestScreen()
         })
+    }
+    
+    func saveNewUser() {
+        print(authViewModel.email, authViewModel.password)
     }
 }
 
