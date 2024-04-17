@@ -78,35 +78,70 @@ struct RegistrationButton: View {
     @State private var isShowingWeekPageView = false
     @Binding var index : Int
     @EnvironmentObject var authViewModel: AuthorizationViewModel
+    @State var isShowingSuccessView = false
     
     var body: some View {
-        Button(action: {
-//            saveNewUser()
-            withAnimation {
-                index = 0
-                authViewModel.eraseFields()
-//                isShowingWeekPageView.toggle()
-            }
-        }, label: {
-            Text("Зарегестрироваться")
-                .foregroundColor(Color("Gray"))
-                .fontWeight(.bold)
-                .padding(.vertical)
-                .padding(.horizontal, 50)
-                .background(Color("Yellow xlight"))
-                .clipShape(Capsule())
-                .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
-                .offset(y: 25)
-        })
-        .fullScreenCover(isPresented: $isShowingWeekPageView, content: {
-//            HomeView()
-//                .transition(.move(edge: .leading))
-            TestScreen()
-        })
+        if !isShowingSuccessView {
+            Button(action: {
+                if authViewModel.validate() {
+                    saveNewUserToDB()
+                    
+                    withAnimation {
+                        //                    index = 0
+                        isShowingSuccessView = true
+                        authViewModel.eraseFields()
+                        //                isShowingWeekPageView.toggle()
+                    }
+                }
+                isShowingSuccessView = true
+            }, label: {
+                Text("Зарегестрироваться")
+                    .foregroundColor(Color("Gray"))
+                    .fontWeight(.bold)
+                    .padding(.vertical)
+                    .padding(.horizontal, 50)
+                    .background(Color("Yellow xlight"))
+                    .clipShape(Capsule())
+                    .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
+                    .offset(y: 25)
+            })
+            .fullScreenCover(isPresented: $isShowingWeekPageView, content: {
+                //            HomeView()
+                //                .transition(.move(edge: .leading))
+                TestScreen()
+            })
+        } else {
+            SuccessView(text: "Пользователь создан", error: authViewModel.error)
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        withAnimation {
+                            isShowingSuccessView = false
+                        }
+                    }
+                }
+        }
     }
     
-    func saveNewUser() {
+    private func saveNewUserToDB() {
+        
         print(authViewModel.email, authViewModel.password)
+    }
+}
+
+struct SuccessView: View {
+//    @Binding var isShowingView: Bool
+    @State var text: String
+    @State var error: String
+    
+    init(text: String, error: String) {
+        self.error = error
+        self.text = text
+    }
+    
+    var body: some View {
+        error == "" ? Text(text) : Text(error)
+            .font(.title)
+            .foregroundColor(error != "" ? .red : .blue)
     }
 }
 

@@ -11,7 +11,7 @@ class AuthorizationViewModel: ObservableObject
 {
     @Published var email = ""
     @Published var password = ""
-    
+    @Published var error = ""
     
 //    @Published var authorizationManager : AuthorizationManager!
     
@@ -28,13 +28,23 @@ class AuthorizationViewModel: ObservableObject
         
     }
     
-    func validate() {
-        
+    func validate()->Bool {
+        if (email != "" && password != "") {
+            error = ""
+            return true
+        } else {
+            error = "Пустые поля"
+            return false
+        }
     }
     
     func eraseFields() {
         email = ""
         password = ""
+    }
+    
+    func saveNewUserToDB() {
+//        let user = User(email: email)
     }
     
 }
