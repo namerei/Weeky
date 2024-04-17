@@ -71,8 +71,8 @@ class AuthorizationManager: ObservableObject {
 //        }
     
     //MARK: - helpers
-    func constructUser(from userData: [String : Any])->User {
-        User(id: userData["id"] as? String ?? "", name: userData["name"] as? String ?? "", password: userData["password"] as? String ?? "", isAuthorized: userData["isAuthorized"] as? Bool ?? false, tasksRef: userData["tasks"] as? String ?? String())
+    func constructUser(from userData: [String : Any]) -> User {
+        User(id: userData["id"] as? String ?? "", name: userData["name"] as? String ?? "", password: userData["password"] as? String ?? "", isAuthorized: userData["isAuthorized"] as? Bool ?? false, tasksRef: userData["tasksRef"] as? DocumentReference)
     }
     
 }

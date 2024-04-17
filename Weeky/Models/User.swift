@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseCore
 
 struct User: Identifiable, Hashable, Codable {
     var id                  = ""
@@ -13,5 +15,5 @@ struct User: Identifiable, Hashable, Codable {
     var password: String    = ""
     var isAuthorized: Bool  = false
     
-    var tasksRef: String    = ""
+    var tasksRef: DocumentReference!
 }

@@ -37,7 +37,6 @@ class AuthorizationViewModel: ObservableObject
             users?.forEach({ user in
                 print(user)
             })
-//            print(users)
         }
         return false
     }
