@@ -49,5 +49,179 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "14CB4ED7-B5B8-4F33-8494-5F0426C314C8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Weeky/Models/Managers/TaskDBManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "deleteTask(_:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "14CB4ED7-B5B8-4F33-8494-5F0426C314C8 - 17f7bac677a84b5e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Weeky.TaskDBManager.deleteTask(_: Weeky.Task, completion: (Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Weeky"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbook/work/kwork/Weekyy/Weeky/Weeky/Models/Managers/TaskDBManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "292">
+               </Location>
+               <Location
+                  uuid = "14CB4ED7-B5B8-4F33-8494-5F0426C314C8 - 17f7bac677a84b5e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Weeky.TaskDBManager.deleteTask(_: Weeky.Task, completion: (Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Weeky"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbook/work/kwork/Weekyy/Weeky/Weeky/Models/Managers/TaskDBManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "108">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AB934FA5-2F99-4FCB-8B10-ADCC38442A28"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Weeky/Models/Managers/TaskDBManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "deleteTask(_:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AB934FA5-2F99-4FCB-8B10-ADCC38442A28 - 17f7bac677a84be1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Weeky.TaskDBManager.deleteTask(_: Weeky.Task, completion: (Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Weeky"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbook/work/kwork/Weekyy/Weeky/Weeky/Models/Managers/TaskDBManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "676">
+               </Location>
+               <Location
+                  uuid = "AB934FA5-2F99-4FCB-8B10-ADCC38442A28 - 17f7bac677a84b3f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Weeky.TaskDBManager.deleteTask(_: Weeky.Task, completion: (Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Weeky"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbook/work/kwork/Weekyy/Weeky/Weeky/Models/Managers/TaskDBManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "292">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D2157E11-2908-4E75-AEA3-A5A50B23FEAA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Weeky/Models/Managers/TaskDBManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "deleteTask(_:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D2157E11-2908-4E75-AEA3-A5A50B23FEAA - 17f7bac677a84be1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Weeky.TaskDBManager.deleteTask(_: Weeky.Task, completion: (Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Weeky"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbook/work/kwork/Weekyy/Weeky/Weeky/Models/Managers/TaskDBManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "676">
+               </Location>
+               <Location
+                  uuid = "D2157E11-2908-4E75-AEA3-A5A50B23FEAA - 7e7cffc6db633a6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Weeky.TaskDBManager.deleteTask(_: Weeky.Task, completion: (Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Weeky"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbook/work/kwork/Weekyy/Weeky/Weeky/Models/Managers/TaskDBManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "D2157E11-2908-4E75-AEA3-A5A50B23FEAA - 17f7bac677a84bc2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Weeky.TaskDBManager.deleteTask(_: Weeky.Task, completion: (Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Weeky"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbook/work/kwork/Weekyy/Weeky/Weeky/Models/Managers/TaskDBManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "676">
+               </Location>
+               <Location
+                  uuid = "D2157E11-2908-4E75-AEA3-A5A50B23FEAA - 7e7cffc6db63385"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Weeky.TaskDBManager.deleteTask(_: Weeky.Task, completion: (Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Weeky"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbook/work/kwork/Weekyy/Weeky/Weeky/Models/Managers/TaskDBManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "72">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

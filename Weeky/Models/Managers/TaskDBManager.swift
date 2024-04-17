@@ -24,11 +24,11 @@ class TaskDBManager: ObservableObject {
     func uploadTask(_ task: Task, completion: @escaping (Error?) -> Void) {
         // Ссылка на коллекцию задач пользователя
         guard let userName = user?.name else { return }
-//        guard let taskId = task.id else { return }
         let userRef = db.collection("Users").document(userName).collection("Tasks").document(task.id)
         
         // Добавление задачи в коллекцию
-        userRef.setData(["title": task.title,
+        userRef.setData(["id" : task.id,
+            "title": task.title,
                          "dateString": task.dateString, "colorName": task.colorName, "isCompleted": task.isCompleted]
         ) { error in
             if let error = error {
@@ -62,13 +62,11 @@ class TaskDBManager: ObservableObject {
     
     func deleteTask(_ task: Task, completion: @escaping (Error?) -> Void) {
 //            // Ссылка на документ задачи пользователя
-//            let taskId = task.id
-        guard let taskId = user?.id else { return }
-        guard let userName = user?.name else { return }
-        let userRef = db.collection("Tasks").document(task.id)
+        guard let userName = self.user?.name else { return }
+        let taskRef = db.collection("Users").document(userName).collection("Tasks").document(task.id)
 //
 //            // Удаление задачи из коллекции
-            userRef.delete() { error in
+            taskRef.delete() { error in
                 if let error = error {
                     completion(error)
                 } else {
