@@ -42,7 +42,11 @@ class TaskDBManager: ObservableObject {
     
     
     func fetchAllTasks(completion: @escaping ([Task]?, Error?) -> Void) {
-        db.collectionGroup("Tasks").getDocuments { (querySnapshot, error) in
+        guard let userName = self.user?.name else { return }
+        let userRef = db.collection("Users").document(userName).collection("Tasks")
+
+        userRef.getDocuments { (querySnapshot, error) in
+            print("FETCH:", querySnapshot)
             if let error = error {
                 completion(nil, error)
             } else {

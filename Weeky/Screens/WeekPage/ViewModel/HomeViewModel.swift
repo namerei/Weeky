@@ -27,7 +27,7 @@ class HomeViewModel: ObservableObject {
     @Published var filteredTasks: [Task]?
     
     init(){
-        fetchAllData()
+//        fetchAllData()
         
         filteringTodayTask()
         fetchCurrentWeek()
@@ -180,6 +180,7 @@ class HomeViewModel: ObservableObject {
     func addUser(_ user: User) {
         self.currentUser = user
         firebaseManager.addUser(user)
+        self.fetchAllData()
         print("ADDUSER", self.currentUser)
     }
 }
