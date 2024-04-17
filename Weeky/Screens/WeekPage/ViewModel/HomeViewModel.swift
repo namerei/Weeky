@@ -171,5 +171,9 @@ class HomeViewModel: ObservableObject {
             print(error!.localizedDescription)
         }
     }
+    
+    func addUser(_ user: User) {
+        self.user = user
+    }
 }
 

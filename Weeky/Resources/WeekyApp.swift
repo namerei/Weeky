@@ -37,7 +37,7 @@ struct ContentView: View {
     var body: some View {
         Group{
             if isAuthorized {
-                HomeView()
+                HomeView(isAuthorized: $isAuthorized)
                     .environmentObject(viewModel)
             } else {
                 AuthorizationView(isAuthorized: $isAuthorized)
