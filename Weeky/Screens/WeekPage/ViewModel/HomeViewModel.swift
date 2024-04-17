@@ -102,13 +102,10 @@ class HomeViewModel: ObservableObject {
     //MARK: - Calendar UIFuncione
     //FIXME: - need with compition handler ?? or
     func allTaskInDay(_ day: Date)->[Task] {
-//        filteringTodayTask()
         print("ALLTASK: \(day)")
         var result = [Task]()
         //        DispatchQueue.global(qos: .userInteractive).async {
         let calendar = Calendar.current
-        
-//        guard let date = task.dateString.toDate() else { return }
         
         result = self.storedTasks.filter { task in
             guard let date = task.dateString.toDate() else { return false }

@@ -57,7 +57,6 @@ struct CalendarView: View {
     func MiniTaskScrollView()->some View {
             ScrollView {
         let tasks = viewModel.allTaskInDay(date)
-//                print(date)
                 if !tasks.isEmpty {
                     ForEach(tasks) { task in
                         Text(task.title)
