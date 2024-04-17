@@ -27,8 +27,9 @@ struct SettingsView: View {
                 VStack(alignment: .leading) {
                     Text("\(viewModel.currentUser?.name ?? "_")")
                         .font(.title)
-//                    Text()
-//                        .font(.subheadline)
+                    Text("имя пользователя")
+                        .font(.footnote)
+                        .foregroundColor(.gray)
                 }
                 //                Spacer()
             }
@@ -90,13 +91,10 @@ struct SettingsView: View {
                 withAnimation {
                     isAuthorized = false
                 }
-                // Logout action
             }) {
                 Text("Выйти из аккаунта")
                     .foregroundColor(.red)
             }
-//            .padding()
-//        }
     }
 }
 

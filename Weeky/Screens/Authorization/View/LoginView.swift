@@ -104,10 +104,6 @@ struct LoginButton: View {
                 .offset(y: 25)
         })
     }
-    
-    func saveNewUser() {
-//        print(authViewModel.email, authViewModel.password)
-    }
 }
 
 

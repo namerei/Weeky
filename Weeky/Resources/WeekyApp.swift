@@ -47,9 +47,6 @@ struct ContentView: View {
             } else {
                 AuthorizationView(isAuthorized: $isAuthorized)
                     .environmentObject(authorizationViewModel)
-//                    .onReceive(authorizationViewModel.$currentUser) { user in
-//                        homeViewModel.currentUser = user
-//                    }
             }
         }
     }

@@ -2,7 +2,7 @@
 //  TestScreen.swift
 //  Weeky
 //
-//  Created by Nikita Evdokimov on 16.04.24.
+//  Created by namerei on 16.04.24.
 //
 
 import SwiftUI

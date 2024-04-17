@@ -2,7 +2,7 @@
 //  NewTaskView.swift
 //  Weeky
 //
-//  Created by Nikita Evdokimov on 11.04.24.
+//  Created by namerei on 11.04.24.
 //
 
 import SwiftUI

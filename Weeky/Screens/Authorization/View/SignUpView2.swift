@@ -77,7 +77,6 @@ struct SignUpView : View {
 struct RegistrationButton: View {
     @EnvironmentObject var authViewModel: AuthorizationViewModel
     
-//    @Binding var index : Int
     @State var isShowingSuccessView = false
     
     var body: some View {

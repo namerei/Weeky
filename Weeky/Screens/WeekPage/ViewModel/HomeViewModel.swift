@@ -14,9 +14,7 @@ class HomeViewModel: ObservableObject {
     @Published var firebaseManager = TaskDBManager()
     @Published var currentUser : User?
     
-//    @State var error : Error?
-    @Published var storedTasks: [Task] = [
-    ]
+    @Published var storedTasks: [Task] = []
     
     //MARK: UI elements
     //Current Week Days
