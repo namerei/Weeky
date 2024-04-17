@@ -140,11 +140,11 @@ class HomeViewModel: ObservableObject {
     
     func deleteTask(_ task: Task) {
         storedTasks.removeAll { $0.id == task.id }
-        filteringTodayTask()
         
         firebaseManager.deleteTask(task) { error in
             self.checkFor(error)
         }
+        filteringTodayTask()
     }
     
     func fetchAllData() {

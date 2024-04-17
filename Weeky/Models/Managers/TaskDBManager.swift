@@ -23,14 +23,13 @@ class TaskDBManager: ObservableObject {
     
     func uploadTask(_ task: Task, completion: @escaping (Error?) -> Void) {
         // Ссылка на коллекцию задач пользователя
-//        let tasksRef = db.collection("Tasks")
         guard let userName = user?.name else { return }
-        let userRef = db.collection("Users").document(userName).collection("Tasks")
+//        guard let taskId = task.id else { return }
+        let userRef = db.collection("Users").document(userName).collection("Tasks").document(task.id)
         
         // Добавление задачи в коллекцию
-        userRef.addDocument(data: ["id": task.id,
-                                    "title": task.title,
-                                    "dateString": task.dateString, "colorName": task.colorName, "isCompleted": task.isCompleted]
+        userRef.setData(["title": task.title,
+                         "dateString": task.dateString, "colorName": task.colorName, "isCompleted": task.isCompleted]
         ) { error in
             if let error = error {
                 completion(error)
@@ -64,16 +63,18 @@ class TaskDBManager: ObservableObject {
     func deleteTask(_ task: Task, completion: @escaping (Error?) -> Void) {
 //            // Ссылка на документ задачи пользователя
 //            let taskId = task.id
-//            let userTaskRef = db.collection("Tasks").document("id")
-//            
+        guard let taskId = user?.id else { return }
+        guard let userName = user?.name else { return }
+        let userRef = db.collection("Tasks").document(task.id)
+//
 //            // Удаление задачи из коллекции
-//            userTaskRef.delete { error in
-//                if let error = error {
-//                    completion(error)
-//                } else {
-//                    completion(nil)
-//                }
-//            }
+            userRef.delete() { error in
+                if let error = error {
+                    completion(error)
+                } else {
+                    completion(nil)
+                }
+            }
         }
     
     //MARK: - helpers
