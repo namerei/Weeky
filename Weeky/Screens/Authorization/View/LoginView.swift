@@ -70,19 +70,6 @@ struct Login : View {
             .padding(.horizontal, 20)
             
             LoginButton(isAuthorized: $isAuthorized)
-//                .opacity(self.index == 0 ? 0 : 1)
-            
-//            NavigationLink("Войти", destination: HomeView())
-//                .foregroundColor(Color("Gray"))
-//            //                .fontWeight(.bold)
-//                .padding(.vertical)
-//                .padding(.horizontal, 50)
-//                .background(Color("Yellow xlight"))
-//                .clipShape(Capsule())
-//                .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
-//            
-//                .offset(y: 25)
-//                .opacity(self.index == 0 ? 1 : 0)
         }
     }
 }
@@ -93,7 +80,7 @@ struct LoginButton: View {
     
     var body: some View {
         Button(action: {
-            saveNewUser()
+//            saveNewUser()
             withAnimation {
                 isAuthorized.toggle()
             }
@@ -108,13 +95,10 @@ struct LoginButton: View {
                 .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
                 .offset(y: 25)
         })
-//        .fullScreenCover(isPresented: $isShowingHomePageView, content: {
-////            HomeView()
-//        })
     }
     
     func saveNewUser() {
-        print(authViewModel.email, authViewModel.password)
+//        print(authViewModel.email, authViewModel.password)
     }
 }
 
