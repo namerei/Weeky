@@ -103,15 +103,17 @@ class HomeViewModel: ObservableObject {
     func allTaskInDay(_ day: Date)->[Task] {
         print("ALLTASK: \(day)")
         var result = [Task]()
-//        DispatchQueue.global(qos: .userInteractive).async {
-            let calendar = Calendar.current
-            
-            result = self.storedTasks.filter{
-                calendar.isDate($0.dateString.toDate()!, inSameDayAs: day)
-            }
-            result.sort(by: {$0.dateString.toDate()! < $1.dateString.toDate()!})
-            
-//            DispatchQueue.main.async {
+        //        DispatchQueue.global(qos: .userInteractive).async {
+        let calendar = Calendar.current
+        
+        result = self.storedTasks.filter { task in
+            guard let date = task.dateString.toDate() else { return false }
+            return calendar.isDate(date, inSameDayAs: self.currentDay)
+        }
+        
+        result.sort(by: {$0.dateString.toDate()! < $1.dateString.toDate()!})
+        
+        //            DispatchQueue.main.async {
 //                withAnimation{
 //                    result = self.storedTasks
 //                }
