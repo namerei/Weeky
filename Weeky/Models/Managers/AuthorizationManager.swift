@@ -10,7 +10,7 @@ import Firebase
 import FirebaseCore
 
 class AuthorizationManager: ObservableObject {
-    private let db = Firestore.firestore()
+     let db = Firestore.firestore()
     
 //    @Published var user : User
 //    @Published var error: Error? = nil

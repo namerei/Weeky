@@ -84,7 +84,7 @@ struct RegistrationButton: View {
         if !isShowingSuccessView {
             Button(action: {
                 if authViewModel.validate() {
-                    authViewModel.saveNewUserToDB()
+                    authViewModel.createAccount()
                     
                     withAnimation {
                         isShowingSuccessView = true

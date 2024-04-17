@@ -75,8 +75,18 @@ class AuthorizationViewModel: ObservableObject
         password = ""
     }
     
-    func saveNewUserToDB() {
-//        let user = User(email: email)
+    func createAccount() {
+
+        let newUser = User(name: name, password: password)
+        print("CREATE : \(newUser)")
+            
+        authorizationManager.db.collection("Users").addDocument(data: newUser.toData()) { error in
+                if let error = error {
+                    print("Ошибка при добавлении документа: \(error)")
+                } else {
+                    print("Документ успешно добавлен")
+                }
+            }
     }
     
     func updateUserData(for user: User, name: String?, password: String?) {
