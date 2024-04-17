@@ -70,6 +70,7 @@ struct Login : View {
             .padding(.horizontal, 20)
             
             LoginButton(isAuthorized: $isAuthorized)
+                .opacity(self.index == 1 ? 0 : 1)
         }
     }
 }
