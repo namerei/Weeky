@@ -14,6 +14,7 @@ class AuthorizationViewModel: ObservableObject
     @Published var error = ""
     
     @Published var authorizationManager =  AuthorizationManager()
+    @Published var user: User?
     
 //    init(email: String = "", password: String = "",  authorizationManager: AuthorizationManager) {
 //        self.email = email
@@ -24,21 +25,40 @@ class AuthorizationViewModel: ObservableObject
 //        self.authorizationManager = AuthorizationManager(user: user)
 //    }
     
-    func login()->Bool {
+    func login(completion: @escaping (Bool) -> Void) {
         print("LOGIN")
         print(name, password)
         
-        //MARK: - checking
-        if (name == "123" && password == "123") {
-            return true
-        }
-        
         authorizationManager.fetchAllUsers { users, error in
-            users?.forEach({ user in
-                print(user)
-            })
+            if let error = error {
+                print("Error fetching users: \(error)")
+                completion(false) // Сообщаем об ошибке через замыкание
+                return
+            }
+            
+            guard let users = users else {
+                print("No users found")
+                completion(false) // Сообщаем, что пользователей нет
+                return
+            }
+            
+            let userExists = self.checkedUserExist(users)
+            if userExists {
+                completion(true)
+            } else {
+                completion(false) // Сообщаем, что пользователь не найден
+            }
         }
-        return false
+    }
+    
+    func checkedUserExist(_ users: [User])->Bool {
+        users.forEach({
+            if $0.name == self.name && $0.password == self.password {
+                self.user = $0
+            }
+        })
+        let res = user != nil ? true : false
+        return res
     }
     
     func validate()->Bool {
