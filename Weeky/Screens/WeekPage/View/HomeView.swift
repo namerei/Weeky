@@ -97,6 +97,7 @@ struct HomeView: View {
     func WeekView()->some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 10){
+//                guard let taskModel
                 ForEach(taskModel.currentWeek,id: \.self){ day in
                     VStack(spacing: 5){
                         Text(taskModel.extractDate(date: day, format: "dd"))

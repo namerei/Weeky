@@ -67,7 +67,7 @@ struct SignUpView : View {
                 .cornerRadius(35)
                 .padding(.horizontal, 20)
             
-            RegistrationButton(index: $index)
+            RegistrationButton()
                 .opacity(self.index == 1 ? 1 : 0)
         }
     }
@@ -75,22 +75,20 @@ struct SignUpView : View {
 
 //MARK: - Views
 struct RegistrationButton: View {
-    @State private var isShowingWeekPageView = false
-    @Binding var index : Int
     @EnvironmentObject var authViewModel: AuthorizationViewModel
+    
+//    @Binding var index : Int
     @State var isShowingSuccessView = false
     
     var body: some View {
         if !isShowingSuccessView {
             Button(action: {
                 if authViewModel.validate() {
-                    saveNewUserToDB()
+                    authViewModel.saveNewUserToDB()
                     
                     withAnimation {
-                        //                    index = 0
                         isShowingSuccessView = true
                         authViewModel.eraseFields()
-                        //                isShowingWeekPageView.toggle()
                     }
                 }
                 isShowingSuccessView = true
@@ -105,13 +103,8 @@ struct RegistrationButton: View {
                     .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
                     .offset(y: 25)
             })
-            .fullScreenCover(isPresented: $isShowingWeekPageView, content: {
-                //            HomeView()
-                //                .transition(.move(edge: .leading))
-                TestScreen()
-            })
         } else {
-            SuccessView(text: "Пользователь создан", error: authViewModel.error)
+            SuccessView(text: "Пользователь создан!", error: authViewModel.error)
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                         withAnimation {
@@ -121,15 +114,9 @@ struct RegistrationButton: View {
                 }
         }
     }
-    
-    private func saveNewUserToDB() {
-        
-        print(authViewModel.email, authViewModel.password)
-    }
 }
 
 struct SuccessView: View {
-//    @Binding var isShowingView: Bool
     @State var text: String
     @State var error: String
     
@@ -157,5 +144,4 @@ struct CShape1: Shape {
             path.addLine(to: CGPoint(x: rect.width, y: 0))
         }
     }
-    
 }

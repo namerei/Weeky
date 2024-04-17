@@ -10,6 +10,7 @@ import SwiftUI
 struct Login : View {
     @EnvironmentObject var viewModel : AuthorizationViewModel
     @Binding var index : Int
+    @Binding var isAuthorized: Bool
     
     var body: some View {
         
@@ -52,61 +53,52 @@ struct Login : View {
                     
                     Divider()
                         .background(Color.white.opacity(0.8))
-                } .padding(.horizontal)
-                    .padding(.top, 50)
-                
-                //        HStack {
-                //          Spacer(minLength: 0)
-                //
-                //          Button(action: {
-                //            //
-                //          }) {
-                //            Text("Забыли пароль?")
-                //              .foregroundColor(Color.white.opacity(0.6))
-                //          }
-                //        } .padding(.horizontal)
-                //          .padding(.top, 30)
-                
-            }   .padding()
-                .padding(.bottom, 70)
-                .background(Color("Blue light"))
-                .clipShape(CShape())
-                .contentShape(CShape())
-                .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: -5)
-                .onTapGesture {
-                    self.index = 0
                 }
-                .cornerRadius(35)
-                .padding(.horizontal, 20)
+                .padding(.horizontal)
+                .padding(.top, 50)
+            }
+            .padding()
+            .padding(.bottom, 70)
+            .background(Color("Blue light"))
+            .clipShape(CShape())
+            .contentShape(CShape())
+            .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: -5)
+            .onTapGesture {
+                self.index = 0
+            }
+            .cornerRadius(35)
+            .padding(.horizontal, 20)
             
+            LoginButton(isAuthorized: $isAuthorized)
+//                .opacity(self.index == 0 ? 0 : 1)
             
-            NavigationLink("Войти", destination: HomeView())
-                .foregroundColor(Color("Gray"))
-//                .fontWeight(.bold)
-                .padding(.vertical)
-                .padding(.horizontal, 50)
-                .background(Color("Yellow xlight"))
-                .clipShape(Capsule())
-                .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
-            
-                .offset(y: 25)
-                .opacity(self.index == 0 ? 1 : 0)
+//            NavigationLink("Войти", destination: HomeView())
+//                .foregroundColor(Color("Gray"))
+//            //                .fontWeight(.bold)
+//                .padding(.vertical)
+//                .padding(.horizontal, 50)
+//                .background(Color("Yellow xlight"))
+//                .clipShape(Capsule())
+//                .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
+//            
+//                .offset(y: 25)
+//                .opacity(self.index == 0 ? 1 : 0)
         }
     }
 }
 
 struct LoginButton: View {
-    @State private var isShowingHomePageView = false
+    @Binding var isAuthorized: Bool
     @EnvironmentObject var authViewModel: AuthorizationViewModel
     
     var body: some View {
         Button(action: {
             saveNewUser()
             withAnimation {
-                isShowingHomePageView.toggle()
+                isAuthorized.toggle()
             }
         }, label: {
-            Text("Зарегестрироваться")
+            Text("Вход")
                 .foregroundColor(Color("Gray"))
                 .fontWeight(.bold)
                 .padding(.vertical)
@@ -116,11 +108,9 @@ struct LoginButton: View {
                 .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
                 .offset(y: 25)
         })
-        .fullScreenCover(isPresented: $isShowingHomePageView, content: {
-//            HomeView()
-//                .transition(.move(edge: .leading))
-            TestScreen()
-        })
+//        .fullScreenCover(isPresented: $isShowingHomePageView, content: {
+////            HomeView()
+//        })
     }
     
     func saveNewUser() {

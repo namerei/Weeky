@@ -5,8 +5,9 @@ struct AuthorizationView: View {
     @StateObject var authViewModel = AuthorizationViewModel()
     
     @State private var isShowingDetailsView = false
-    @State var index = 1
     
+    @State var index = 1
+    @Binding var isAuthorized: Bool
     
     var body: some View {
         GeometryReader { _ in
@@ -18,7 +19,7 @@ struct AuthorizationView: View {
                 ZStack {
                     SignUpView(index: self.$index)
                         .zIndex(Double(self.index))
-                    Login(index: self.$index)
+                    Login(index: $index, isAuthorized: $isAuthorized)
                 }
                 .environmentObject(authViewModel)
                 .padding(.vertical)
@@ -30,9 +31,9 @@ struct AuthorizationView: View {
 //}
 
 
-#Preview {
-    AuthorizationView()
-}
+//#Preview {
+//    AuthorizationView()
+//}
 
 
 //MARK: logic
