@@ -13,13 +13,8 @@ class TaskDBManager: ObservableObject {
     private let db = Firestore.firestore()
     
     @Published var user : User?
+//    @Published var task: Task?
     @Published var error: Error? = nil
-    
-    
-//    init(user: User, error: Error? = nil) {
-//        self.user = user
-//        self.error = error
-//    }
     
     func uploadTask(_ task: Task, completion: @escaping (Error?) -> Void) {
         // Ссылка на коллекцию задач пользователя
@@ -28,7 +23,7 @@ class TaskDBManager: ObservableObject {
         
         // Добавление задачи в коллекцию
         userRef.setData(["id" : task.id,
-            "title": task.title,
+                         "title": task.title,
                          "dateString": task.dateString, "colorName": task.colorName, "isCompleted": task.isCompleted]
         ) { error in
             if let error = error {
@@ -45,7 +40,7 @@ class TaskDBManager: ObservableObject {
         let userRef = db.collection("Users").document(userName).collection("Tasks")
 
         userRef.getDocuments { (querySnapshot, error) in
-            print("FETCH:", querySnapshot)
+//            print("FETCH:", querySnapshot)
             if let error = error {
                 completion(nil, error)
             } else {
@@ -60,8 +55,24 @@ class TaskDBManager: ObservableObject {
         }
     }
     
+    func markTaskAsCompleted(_ task: Task, completion: @escaping (Error?) -> Void) {
+        guard let userName = self.user?.name else { return }
+        let taskRef = db.collection("Users").document(userName).collection("Tasks").document(task.id)
+        
+        taskRef.setData(["id" : task.id,
+                         "title": task.title,
+                         "dateString": task.dateString, "colorName": task.colorName, "isCompleted": task.isCompleted])
+        { error in
+            if let error = error {
+                completion(error)
+            } else {
+                completion(nil)
+            }
+        }
+    }
+    
     func deleteTask(_ task: Task, completion: @escaping (Error?) -> Void) {
-//            // Ссылка на документ задачи пользователя
+        //            // Ссылка на документ задачи пользователя
         guard let userName = self.user?.name else { return }
         let taskRef = db.collection("Users").document(userName).collection("Tasks").document(task.id)
 //
@@ -81,7 +92,7 @@ class TaskDBManager: ObservableObject {
              title: taskData["title"] as? String ?? "",
              dateString: taskData["dateString"] as? String ?? "",
              colorName: taskData["colorName"] as? String ?? "",
-             isCompleted: taskData["isCompleted"] as? Bool ?? false)
+             isCompleted: taskData["isCompleted"] as? Bool ?? false) 
     }
     
     func addUser(_ user: User) {

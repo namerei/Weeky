@@ -36,6 +36,7 @@ class HomeViewModel: ObservableObject {
     
     //MARK: - HomePage UI functions
     func filteringTodayTask(){
+//        fetchAllData()
         DispatchQueue.global(qos: .userInteractive).async {
             let calendar = Calendar.current
             
@@ -148,6 +149,8 @@ class HomeViewModel: ObservableObject {
     }
     
     func fetchAllData() {
+        self.storedTasks.removeAll()
+        
         print("FETCH")
         firebaseManager.fetchAllTasks { fetchedTasks, error in
             self.checkFor(error)
