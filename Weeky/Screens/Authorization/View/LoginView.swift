@@ -84,8 +84,10 @@ struct LoginButton: View {
             
             //MARK: - login logic
             
+            
             authViewModel.login { success in
                 if success {
+//                    authViewModel.updateUserName()
                     print("\(authViewModel.user?.name) logged in successfully")
                     withAnimation {
                         isAuthorized.toggle()

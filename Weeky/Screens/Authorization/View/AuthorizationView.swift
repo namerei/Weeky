@@ -27,6 +27,7 @@ struct AuthorizationView: View {
         }
         .background(Color("Blue xlight").edgesIgnoringSafeArea(.all))
     }
+    
 }
 //}
 

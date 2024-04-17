@@ -13,7 +13,7 @@ struct User: Identifiable, Hashable, Codable {
     var id                  = ""
     var name: String        = ""
     var password: String    = ""
-    var isAuthorized: Bool  = false
+//    var isAuthorized: Bool  = false
     
-    var tasksRef: DocumentReference!
+    var tasksRef: DocumentReference?
 }

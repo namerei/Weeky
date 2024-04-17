@@ -79,4 +79,7 @@ class AuthorizationViewModel: ObservableObject
 //        let user = User(email: email)
     }
     
+    func updateUserName() {
+        authorizationManager.updateUserName(for: "123", with: "1234")
+    }
 }
