@@ -86,17 +86,12 @@ struct LoginButton: View {
             
             authViewModel.login { success in
                 if success {
-                    print("User logged in successfully")
+                    print("\(authViewModel.user?.name) logged in successfully")
                     withAnimation {
                         isAuthorized.toggle()
                     }
                 }
             }
-            
-//            if authViewModel.login() {
-//                //            saveNewUser()
-//                
-//            }
         }, label: {
             Text("Вход")
                 .foregroundColor(Color("Gray"))
