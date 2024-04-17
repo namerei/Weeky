@@ -147,14 +147,16 @@ class HomeViewModel: ObservableObject {
     }
     
     func fetchAllData() {
-        self.storedTasks.removeAll()
         
         print("FETCH")
         firebaseManager.fetchAllTasks { fetchedTasks, error in
             self.checkFor(error)
             
             guard let fetchedTasks = fetchedTasks else { return }
+            
+            self.storedTasks.removeAll()
             self.storedTasks += fetchedTasks
+            
             self.filteringTodayTask()
         }
     }
