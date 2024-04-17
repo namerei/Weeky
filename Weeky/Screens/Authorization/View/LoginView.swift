@@ -81,9 +81,13 @@ struct LoginButton: View {
     
     var body: some View {
         Button(action: {
-//            saveNewUser()
-            withAnimation {
-                isAuthorized.toggle()
+            
+            //MARK: - login logic
+            if authViewModel.login() {
+                //            saveNewUser()
+                withAnimation {
+                    isAuthorized.toggle()
+                }
             }
         }, label: {
             Text("Вход")

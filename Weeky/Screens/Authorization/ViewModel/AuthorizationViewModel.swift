@@ -13,7 +13,7 @@ class AuthorizationViewModel: ObservableObject
     @Published var password = ""
     @Published var error = ""
     
-//    @Published var authorizationManager : AuthorizationManager!
+    @Published var authorizationManager =  AuthorizationManager()
     
 //    init(email: String = "", password: String = "",  authorizationManager: AuthorizationManager) {
 //        self.email = email
@@ -24,8 +24,14 @@ class AuthorizationViewModel: ObservableObject
 //        self.authorizationManager = AuthorizationManager(user: user)
 //    }
     
-    func login() {
+    func login()->Bool {
+        print("LOGIN")
+        print(email, password)
         
+        authorizationManager.fetchAllUsers { users, error in
+//            print(users)
+        }
+        return false
     }
     
     func validate()->Bool {

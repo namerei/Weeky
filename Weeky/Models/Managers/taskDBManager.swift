@@ -9,7 +9,7 @@ import SwiftUI
 import Firebase
 import FirebaseCore
 
-class FirebaseManager: ObservableObject {
+class taskDBManager: ObservableObject {
     private let db = Firestore.firestore()
     
 //    @Published var user : User
