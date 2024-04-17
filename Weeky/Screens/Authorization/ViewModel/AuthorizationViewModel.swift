@@ -57,8 +57,7 @@ class AuthorizationViewModel: ObservableObject
                 self.user = $0
             }
         })
-        let res = user != nil ? true : false
-        return res
+        return user != nil ? true : false
     }
     
     func validate()->Bool {

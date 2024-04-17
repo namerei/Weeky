@@ -6,7 +6,7 @@ struct AuthorizationView: View {
     
     @State private var isShowingDetailsView = false
     
-    @State var index = 1
+    @State var index = 0
     @Binding var isAuthorized: Bool
     
     var body: some View {

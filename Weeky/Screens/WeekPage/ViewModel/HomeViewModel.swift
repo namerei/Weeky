@@ -7,20 +7,18 @@
 
 import Foundation
 import SwiftUI
+import Firebase
+import FirebaseCore
 
 class HomeViewModel: ObservableObject {
-//    @Published var authorized = true
     @Published var firebaseManager = taskDBManager()
+    @Published var user : User?
     
-//    @State var authorized = false
-    
-    @State var error : Error?
-    
+//    @State var error : Error?
     @Published var storedTasks: [Task] = [
-//        Task(title: "Медитаця", dateString: "2024-04-16 16:20:00", colorName: "Orange light", isCompleted: false),
-//        Task(title: "Спорт", dateString: "2024-04-16 18:20:00", colorName: "Blue xlight", isCompleted: false),
     ]
     
+    //MARK: UI elements
     //Current Week Days
     @Published var currentWeek: [Date] = []
     //Current Day
@@ -99,8 +97,8 @@ class HomeViewModel: ObservableObject {
         return hour == currentDate
     }
     
+    
     //MARK: - Calendar UIFuncione
-    //FIXME: - need with compition handler ?? or
     func allTaskInDay(_ day: Date)->[Task] {
         print("ALLTASK: \(day)")
         var result = [Task]()
@@ -124,9 +122,8 @@ class HomeViewModel: ObservableObject {
         return result
     }
     
-    //MARK: - write/read Firebase
     
-  
+    //MARK: - FirebaseDB
     
     func addTask(_ task: Task) {
         firebaseManager.uploadTask(task) { error in
