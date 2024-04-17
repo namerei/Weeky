@@ -8,10 +8,10 @@
 import Foundation
 
 struct User: Identifiable, Hashable, Codable {
-    var id                  = UUID().uuidString
-    var email: String        = ""
+    var id                  = ""
+    var name: String        = ""
     var password: String    = ""
     var isAuthorized: Bool  = false
     
-    var Tasks: [Task] = [Task]()
+    var tasksRef: String    = ""
 }

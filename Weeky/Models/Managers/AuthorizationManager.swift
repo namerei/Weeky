@@ -46,7 +46,7 @@ class AuthorizationManager: ObservableObject {
                 var users = [User]()
                 for document in querySnapshot!.documents {
                     let userData = document.data()
-                    print(userData)
+//                    print(userData)
                     
                     users.append(self.constructUser(from: userData))
                 }
@@ -55,7 +55,7 @@ class AuthorizationManager: ObservableObject {
         }
     }
     
-    func deleteTask(_ task: Task, completion: @escaping (Error?) -> Void) {
+//    func deleteTask(_ task: Task, completion: @escaping (Error?) -> Void) {
 //            // Ссылка на документ задачи пользователя
 //            let taskId = task.id
 //            let userTaskRef = db.collection("Tasks").document("id")
@@ -68,16 +68,11 @@ class AuthorizationManager: ObservableObject {
 //                    completion(nil)
 //                }
 //            }
-        }
+//        }
     
     //MARK: - helpers
     func constructUser(from userData: [String : Any])->User {
-//        Task(id: userData["id"] as? String ?? "",
-//             title: userData["title"] as? String ?? "",
-//             dateString: userData["dateString"] as? String ?? "",
-//             colorName: userData["colorName"] as? String ?? "",
-//             isCompleted: userData["isCompleted"] as? Bool ?? false)
-        User()
+        User(id: userData["id"] as? String ?? "", name: userData["name"] as? String ?? "", password: userData["password"] as? String ?? "", isAuthorized: userData["isAuthorized"] as? Bool ?? false, tasksRef: userData["tasks"] as? String ?? String())
     }
     
 }

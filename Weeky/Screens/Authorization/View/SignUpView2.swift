@@ -35,7 +35,7 @@ struct SignUpView : View {
                     HStack(spacing: 15){
                         Image(systemName: "person.fill")
                             .foregroundColor(Color("Orange light"))
-                        TextField("Имя пользователя", text: $authViewModel.email)
+                        TextField("Имя пользователя", text: $authViewModel.name)
                     }
                     
                     Divider().background(Color.white.opacity(0.6))

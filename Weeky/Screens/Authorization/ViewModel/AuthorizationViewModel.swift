@@ -9,7 +9,7 @@ import Foundation
 
 class AuthorizationViewModel: ObservableObject
 {
-    @Published var email = ""
+    @Published var name = ""
     @Published var password = ""
     @Published var error = ""
     
@@ -26,21 +26,24 @@ class AuthorizationViewModel: ObservableObject
     
     func login()->Bool {
         print("LOGIN")
-        print(email, password)
+        print(name, password)
         
         //MARK: - checking
-        if (email == "123@mail.ru" && password == "123") {
+        if (name == "123" && password == "123") {
             return true
         }
         
         authorizationManager.fetchAllUsers { users, error in
+            users?.forEach({ user in
+                print(user)
+            })
 //            print(users)
         }
         return false
     }
     
     func validate()->Bool {
-        if (email != "" && password != "") {
+        if (name != "" && password != "") {
             error = ""
             return true
         } else {
@@ -50,7 +53,7 @@ class AuthorizationViewModel: ObservableObject
     }
     
     func eraseFields() {
-        email = ""
+        name = ""
         password = ""
     }
     

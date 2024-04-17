@@ -36,7 +36,7 @@ struct Login : View {
                     HStack(spacing: 15){
                         Image(systemName: "person.fill")
                             .foregroundColor(Color("Orange light"))
-                        TextField("Имя пользователя", text: $viewModel.email)
+                        TextField("Имя пользователя", text: $viewModel.name)
                     }
                     
                     Divider().background(Color.white.opacity(0.8))
