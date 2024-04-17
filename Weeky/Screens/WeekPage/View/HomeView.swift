@@ -29,7 +29,7 @@ struct HomeView: View {
     //MARK: - Views
     private func MainVStack()->some View {
         VStack {
-            HeaderView(isShowingSideMenu: $isShowingSideMenu, isCalendarViewShowed: $isCalendarViewShowed)
+            HeaderView(isShowingSideMenu: $isShowingSideMenu, isCalendarViewShowed: $isCalendarViewShowed, isAuthorized: $isAuthorized)
             MainScrollView()
         }
     }

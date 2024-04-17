@@ -47,7 +47,7 @@ struct TaskCardView: View {
                         task.isCompleted.toggle()
                         viewModel.firebaseManager.markTaskAsCompleted(task, completion: {_ in })
                         viewModel.fetchAllData()
-                        viewModel.filteringTodayTask()
+//                        viewModel.filteringTodayTask()
                     }
                 }) {
                     Image(systemName: task.isCompleted ? "checkmark.square" : "square")

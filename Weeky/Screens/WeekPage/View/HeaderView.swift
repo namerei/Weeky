@@ -10,10 +10,11 @@ import SwiftUI
 struct HeaderView: View {
     @Binding var isShowingSideMenu: Bool
     @Binding var isCalendarViewShowed: Bool
+    @Binding var isAuthorized: Bool
     
     var body: some View {
         HStack(spacing: 10){
-            ShowSideMenuButton(isShowingSideMenu: $isShowingSideMenu)
+            ShowSideMenuButton(isShowingSideMenu: $isShowingSideMenu, isAuthorized: $isAuthorized)
                 .onTapGesture {
                     withAnimation {
                         isShowingSideMenu = true
@@ -67,9 +68,10 @@ struct ShowCalendarButton: View {
 
 struct ShowSideMenuButton: View {
     @Binding var isShowingSideMenu : Bool
+    @Binding var isAuthorized : Bool
     
     var body: some View {
-        NavigationLink(destination: SettingsView().transition(.scale), label: {
+        NavigationLink(destination: SettingsView(isAuthorized: $isAuthorized).transition(.scale), label: {
             Image(systemName: "list.bullet")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
