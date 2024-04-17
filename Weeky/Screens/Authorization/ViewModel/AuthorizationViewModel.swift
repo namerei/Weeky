@@ -28,6 +28,11 @@ class AuthorizationViewModel: ObservableObject
         print("LOGIN")
         print(email, password)
         
+        //MARK: - checking
+        if (email == "123@mail.ru" && password == "123") {
+            return true
+        }
+        
         authorizationManager.fetchAllUsers { users, error in
 //            print(users)
         }
