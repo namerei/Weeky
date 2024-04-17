@@ -12,7 +12,7 @@ import FirebaseCore
 
 class HomeViewModel: ObservableObject {
     @Published var firebaseManager = taskDBManager()
-    @Published var user : User?
+    @Published var currentUser : User?
     
 //    @State var error : Error?
     @Published var storedTasks: [Task] = [
@@ -173,7 +173,8 @@ class HomeViewModel: ObservableObject {
     }
     
     func addUser(_ user: User) {
-        self.user = user
+        self.currentUser = user
+        print("ADDUSER", self.currentUser)
     }
 }
 

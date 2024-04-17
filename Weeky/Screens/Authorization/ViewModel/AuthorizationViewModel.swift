@@ -79,7 +79,9 @@ class AuthorizationViewModel: ObservableObject
 //        let user = User(email: email)
     }
     
-    func updateUserName() {
-        authorizationManager.updateUserName(for: "123", with: "1234")
+    func updateUserData(for user: User, name: String?, password: String?) {
+        
+//        authorizationManager.updateUserName(for: "123", with: "1234")
+//        authorizationManager.updateUserName(for: , with: )
     }
 }

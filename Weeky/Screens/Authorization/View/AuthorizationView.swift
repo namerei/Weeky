@@ -2,7 +2,7 @@
 import SwiftUI
 
 struct AuthorizationView: View {
-    @StateObject var authViewModel = AuthorizationViewModel()
+    @EnvironmentObject var authViewModel : AuthorizationViewModel
     
     @State private var isShowingDetailsView = false
     

@@ -31,16 +31,25 @@ struct WeekyApp: App {
 }
 
 struct ContentView: View {
-    @StateObject var viewModel = HomeViewModel()
+    @StateObject var authorizationViewModel = AuthorizationViewModel()
+    @StateObject var homeViewModel = HomeViewModel()
+    
     @State var isAuthorized = false
 
     var body: some View {
         Group{
             if isAuthorized {
                 HomeView(isAuthorized: $isAuthorized)
-                    .environmentObject(viewModel)
+                    .environmentObject(homeViewModel)
+                    .onAppear {
+                        homeViewModel.addUser(authorizationViewModel.user ?? User())
+                    }
             } else {
                 AuthorizationView(isAuthorized: $isAuthorized)
+                    .environmentObject(authorizationViewModel)
+//                    .onReceive(authorizationViewModel.$currentUser) { user in
+//                        homeViewModel.currentUser = user
+//                    }
             }
         }
     }
