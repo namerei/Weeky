@@ -78,6 +78,15 @@ class AuthorizationViewModel: ObservableObject
     func createAccount() {
 
         let newUser = User(name: name, password: password)
+        let dataToUpload = newUser.toData()
+        
+        let usersRef = authorizationManager.db.collection("Users")
+        
+        //MARK: - can edit password
+        usersRef.document(newUser.name).setData(dataToUpload)
+        
+        /*
+        let newUser = User(name: name, password: password)
         print("CREATE : \(newUser)")
             
         authorizationManager.db.collection("Users").addDocument(data: newUser.toData()) { error in
@@ -87,6 +96,7 @@ class AuthorizationViewModel: ObservableObject
                     print("Документ успешно добавлен")
                 }
             }
+         */
     }
     
     func updateUserData(for user: User, name: String?, password: String?) {
