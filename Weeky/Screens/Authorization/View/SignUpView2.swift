@@ -1,5 +1,5 @@
 //
-//  SignUpView2.swift
+//  SignUpView.swift
 //  Weeky
 //
 //  Created by namerei on 10.04.24.
@@ -7,7 +7,8 @@
 import SwiftUI
 
 struct SignUpView : View {
-    @StateObject var viewModel = AuthorizationViewModel()
+    @EnvironmentObject var authViewModel: AuthorizationViewModel
+    
     @Binding var index : Int
     
     var body: some View {
@@ -34,7 +35,7 @@ struct SignUpView : View {
                     HStack(spacing: 15){
                         Image(systemName: "person.fill")
                             .foregroundColor(Color("Orange light"))
-                        TextField("Имя пользователя", text: $viewModel.email)
+                        TextField("Имя пользователя", text: $authViewModel.email)
                     }
                     
                     Divider().background(Color.white.opacity(0.6))
@@ -46,7 +47,7 @@ struct SignUpView : View {
                     HStack(spacing: 15) {
                         Image(systemName: "eye.slash.fill")
                             .foregroundColor(Color("Orange light"))
-                        SecureField("Пароль", text: $viewModel.password)
+                        SecureField("Пароль", text: $authViewModel.password)
                     }
                     
                     Divider()
@@ -93,8 +94,9 @@ struct RegistrationButton: View {
                 .offset(y: 25)
         })
         .fullScreenCover(isPresented: $isShowingWeekPageView, content: {
-            HomeView()
-                .transition(.move(edge: .leading))
+//            HomeView()
+//                .transition(.move(edge: .leading))
+            TestScreen()
         })
     }
 }

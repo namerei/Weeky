@@ -45,6 +45,8 @@
 		FAEDEEF22BCEB47D0030E036 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FAEDEEF12BCEB47D0030E036 /* FirebaseAuth */; };
 		FAEDEEF42BCEB47D0030E036 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FAEDEEF32BCEB47D0030E036 /* FirebaseFirestore */; };
 		FAEDEEF62BCEB47D0030E036 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = FAEDEEF52BCEB47D0030E036 /* FirebaseStorage */; };
+		FAEDEEF82BCF06BA0030E036 /* TestScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDEEF72BCF06BA0030E036 /* TestScreen.swift */; };
+		FAEDEEFA2BCF08880030E036 /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDEEF92BCF08880030E036 /* AuthorizationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,8 @@
 		FACE0FCF2BCE8D2600CD178B /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		FACE0FD52BCE994400CD178B /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		FACE0FD72BCE9AF500CD178B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FAEDEEF72BCF06BA0030E036 /* TestScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScreen.swift; sourceTree = "<group>"; };
+		FAEDEEF92BCF08880030E036 /* AuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +262,7 @@
 				06F3EA562B276619000B5C71 /* AuthorizationView.swift */,
 				FA5E3BD52BC674E10045E290 /* LoginView.swift */,
 				FA5E3BD82BC6871F0045E290 /* SignUpView2.swift */,
+				FAEDEEF72BCF06BA0030E036 /* TestScreen.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -365,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				FACE0FCF2BCE8D2600CD178B /* FirebaseManager.swift */,
+				FAEDEEF92BCF08880030E036 /* AuthorizationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -516,9 +522,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAEDEEFA2BCF08880030E036 /* AuthorizationManager.swift in Sources */,
 				FA5E3BF92BC7F1B90045E290 /* NewTaskViewModel.swift in Sources */,
 				0645E71B2B2899F80081EE15 /* TextModifiers.swift in Sources */,
 				06F3EA552B276619000B5C71 /* WeekyApp.swift in Sources */,
+				FAEDEEF82BCF06BA0030E036 /* TestScreen.swift in Sources */,
 				FACE0FD02BCE8D2600CD178B /* FirebaseManager.swift in Sources */,
 				FA5E3BE62BC6B2640045E290 /* SideMenuView.swift in Sources */,
 				FA5E3BD62BC674E10045E290 /* LoginView.swift in Sources */,

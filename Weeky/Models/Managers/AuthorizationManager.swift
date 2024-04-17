@@ -1,5 +1,5 @@
 //
-//  FirebaseManager.swift
+//  AutorizationManager.swift
 //  Weeky
 //
 //  Created by namerei on 16.04.24.
@@ -9,17 +9,16 @@ import SwiftUI
 import Firebase
 import FirebaseCore
 
-class FirebaseManager: ObservableObject {
+class AuthorizationManager: ObservableObject {
     private let db = Firestore.firestore()
     
-//    @Published var user : User
+    @Published var user : User
     @Published var error: Error? = nil
     
-    
-//    init(user: User, error: Error? = nil) {
-//        self.user = user
-//        self.error = error
-//    }
+    init(user: User, error: Error? = nil) {
+        self.user = user
+        self.error = error
+    }
     
     func uploadTask(_ task: Task, completion: @escaping (Error?) -> Void) {
         // Ссылка на коллекцию задач пользователя
@@ -59,7 +58,7 @@ class FirebaseManager: ObservableObject {
 //            // Ссылка на документ задачи пользователя
 //            let taskId = task.id
 //            let userTaskRef = db.collection("Tasks").document("id")
-//            
+//
 //            // Удаление задачи из коллекции
 //            userTaskRef.delete { error in
 //                if let error = error {
@@ -72,7 +71,7 @@ class FirebaseManager: ObservableObject {
     
     //MARK: - helpers
     func constructTask(from taskData: [String : Any])->Task {
-        Task(id: taskData["id"] as? String ?? "", 
+        Task(id: taskData["id"] as? String ?? "",
              title: taskData["title"] as? String ?? "",
              dateString: taskData["dateString"] as? String ?? "",
              colorName: taskData["colorName"] as? String ?? "",
@@ -80,3 +79,4 @@ class FirebaseManager: ObservableObject {
     }
     
 }
+

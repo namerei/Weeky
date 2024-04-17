@@ -13,5 +13,5 @@ struct User: Identifiable, Hashable, Codable {
     var password: String    = ""
     var isAuthorized: Bool  = false
     
-    var Tasks: [Task]
+    var Tasks: [Task] = [Task]()
 }

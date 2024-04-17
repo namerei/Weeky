@@ -9,8 +9,9 @@ import Foundation
 import SwiftUI
 
 class HomeViewModel: ObservableObject {
-    @Published var authorized = true
-    @StateObject var firebaseManager = FirebaseManager()
+//    @Published var authorized = true
+    @Published var firebaseManager = FirebaseManager()
+    
 //    @State var authorized = false
     
     @State var error : Error?
@@ -41,12 +42,10 @@ class HomeViewModel: ObservableObject {
             let calendar = Calendar.current
             
             var filtered = self.storedTasks.filter { task in
-                guard let date = task.dateString.toDate() else {
-                    // Обработка случая, когда toDate() возвращает nil
-                    return false // Или что-то еще, зависящее от вашего приложения
-                }
+                guard let date = task.dateString.toDate() else { return false }
                 return calendar.isDate(date, inSameDayAs: self.currentDay)
             }
+            
             filtered.sort(by: {$0.dateString < $1.dateString})
             
             DispatchQueue.main.async {

@@ -6,23 +6,30 @@
 //
 
 import Foundation
+
 class AuthorizationViewModel: ObservableObject
 {
-  @Published var email = ""
-  @Published var password = ""
-  @Published var repass = ""
-  @Published var errorMessage = ""
-
-  init() {}
-  
-  func login() {
-    guard !email.trimmingCharacters(in: .whitespaces).isEmpty,
-          !password.trimmingCharacters(in: .whitespaces).isEmpty  else {
-      errorMessage = "Пожалуйста, заполните все поля"
-      
-      return
+    @Published var email = ""
+    @Published var password = ""
+    
+    
+//    @Published var authorizationManager : AuthorizationManager!
+    
+//    init(email: String = "", password: String = "",  authorizationManager: AuthorizationManager) {
+//        self.email = email
+//        self.password = password
+//        
+//        let user = User(email: email, password: password)
+//        
+//        self.authorizationManager = AuthorizationManager(user: user)
+//    }
+    
+    func login() {
+        
     }
-  }
-  func validate() {  }
-
+    
+    func validate() {
+        
+    }
+    
 }

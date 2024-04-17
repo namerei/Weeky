@@ -32,6 +32,8 @@ struct WeekyApp: App {
 
 struct ContentView: View {
     @StateObject var viewModel = HomeViewModel()
+//    @StateObject var authViewModel = AuthorizationViewModel()
+    
 //    @EnvironmentObject var viewModel:  HomeViewModel
 
     var body: some View {
@@ -39,12 +41,14 @@ struct ContentView: View {
             
 //            AuthorizationView()
 //            HomeView()
+            let isAuthorized = false
             
-            if viewModel.authorized {
+            if isAuthorized {
                 HomeView()
                     .environmentObject(viewModel)
-            }else {
+            } else {
                 AuthorizationView()
+//                    .environment(authViewModel)
             }
         }
     }
