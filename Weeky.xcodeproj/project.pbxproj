@@ -30,9 +30,6 @@
 		FA5E3BEE2BC700940045E290 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BED2BC700940045E290 /* Slider.swift */; };
 		FA5E3BF02BC7BB550045E290 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BEF2BC7BB550045E290 /* HomeView.swift */; };
 		FA5E3BF22BC7D6C00045E290 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BF12BC7D6C00045E290 /* HeaderView.swift */; };
-		FA5E3BF42BC7D8840045E290 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BF32BC7D8830045E290 /* TaskView.swift */; };
-		FA5E3BF72BC7F16B0045E290 /* NewTaskView0.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BF62BC7F16B0045E290 /* NewTaskView0.swift */; };
-		FA5E3BF92BC7F1B90045E290 /* NewTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BF82BC7F1B90045E290 /* NewTaskViewModel.swift */; };
 		FA6233402BC91DED008CBD84 /* MySideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62333F2BC91DED008CBD84 /* MySideMenuView.swift */; };
 		FA6233472BC92DC9008CBD84 /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6233462BC92DC9008CBD84 /* NewTaskView.swift */; };
 		FACE0FCB2BCD4FBA00CD178B /* TaskCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE0FCA2BCD4FBA00CD178B /* TaskCardView.swift */; };
@@ -43,7 +40,6 @@
 		FAEDEEF22BCEB47D0030E036 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FAEDEEF12BCEB47D0030E036 /* FirebaseAuth */; };
 		FAEDEEF42BCEB47D0030E036 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FAEDEEF32BCEB47D0030E036 /* FirebaseFirestore */; };
 		FAEDEEF62BCEB47D0030E036 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = FAEDEEF52BCEB47D0030E036 /* FirebaseStorage */; };
-		FAEDEEF82BCF06BA0030E036 /* TestScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDEEF72BCF06BA0030E036 /* TestScreen.swift */; };
 		FAEDEEFA2BCF08880030E036 /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDEEF92BCF08880030E036 /* AuthorizationManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,16 +87,12 @@
 		FA5E3BED2BC700940045E290 /* Slider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
 		FA5E3BEF2BC7BB550045E290 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FA5E3BF12BC7D6C00045E290 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		FA5E3BF32BC7D8830045E290 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
-		FA5E3BF62BC7F16B0045E290 /* NewTaskView0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView0.swift; sourceTree = "<group>"; };
-		FA5E3BF82BC7F1B90045E290 /* NewTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewModel.swift; sourceTree = "<group>"; };
 		FA62333F2BC91DED008CBD84 /* MySideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySideMenuView.swift; sourceTree = "<group>"; };
 		FA6233462BC92DC9008CBD84 /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
 		FACE0FCA2BCD4FBA00CD178B /* TaskCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCardView.swift; sourceTree = "<group>"; };
 		FACE0FCC2BCD5A6400CD178B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		FACE0FCF2BCE8D2600CD178B /* TaskDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDBManager.swift; sourceTree = "<group>"; };
 		FACE0FD72BCE9AF500CD178B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		FAEDEEF72BCF06BA0030E036 /* TestScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScreen.swift; sourceTree = "<group>"; };
 		FAEDEEF92BCF08880030E036 /* AuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -255,7 +247,6 @@
 				06F3EA562B276619000B5C71 /* AuthorizationView.swift */,
 				FA5E3BD52BC674E10045E290 /* LoginView.swift */,
 				FA5E3BD82BC6871F0045E290 /* SignUpView2.swift */,
-				FAEDEEF72BCF06BA0030E036 /* TestScreen.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -281,7 +272,6 @@
 			children = (
 				FA5E3BEF2BC7BB550045E290 /* HomeView.swift */,
 				FA5E3BF12BC7D6C00045E290 /* HeaderView.swift */,
-				FA5E3BF32BC7D8830045E290 /* TaskView.swift */,
 				FA46939D2BC7F86F0092430D /* AddNewTaskButton.swift */,
 				FACE0FCA2BCD4FBA00CD178B /* TaskCardView.swift */,
 			);
@@ -336,7 +326,6 @@
 			isa = PBXGroup;
 			children = (
 				FA5E3BFA2BC7F21D0045E290 /* View */,
-				FA5E3BFB2BC7F2260045E290 /* ViewModel */,
 			);
 			path = NewTaskView;
 			sourceTree = "<group>";
@@ -344,19 +333,10 @@
 		FA5E3BFA2BC7F21D0045E290 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FA5E3BF62BC7F16B0045E290 /* NewTaskView0.swift */,
 				062DCF172B508AA9005C209A /* OneTaskView.swift */,
 				FA6233462BC92DC9008CBD84 /* NewTaskView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		FA5E3BFB2BC7F2260045E290 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				FA5E3BF82BC7F1B90045E290 /* NewTaskViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		FACE0FCE2BCE8D1500CD178B /* Managers */ = {
@@ -525,16 +505,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAEDEEFA2BCF08880030E036 /* AuthorizationManager.swift in Sources */,
-				FA5E3BF92BC7F1B90045E290 /* NewTaskViewModel.swift in Sources */,
 				0645E71B2B2899F80081EE15 /* TextModifiers.swift in Sources */,
 				06F3EA552B276619000B5C71 /* WeekyApp.swift in Sources */,
-				FAEDEEF82BCF06BA0030E036 /* TestScreen.swift in Sources */,
 				FACE0FD02BCE8D2600CD178B /* TaskDBManager.swift in Sources */,
 				FA5E3BE62BC6B2640045E290 /* SettingsView.swift in Sources */,
 				FA5E3BD62BC674E10045E290 /* LoginView.swift in Sources */,
 				FACE0FCD2BCD5A6400CD178B /* Colors.swift in Sources */,
 				FA5E3BE02BC6AD410045E290 /* ViewExtensions.swift in Sources */,
-				FA5E3BF72BC7F16B0045E290 /* NewTaskView0.swift in Sources */,
 				FA6233402BC91DED008CBD84 /* MySideMenuView.swift in Sources */,
 				0645E7172B28997A0081EE15 /* AuthorizationView.swift in Sources */,
 				FA46939E2BC7F86F0092430D /* AddNewTaskButton.swift in Sources */,
@@ -543,7 +520,6 @@
 				062DCF162B508920005C209A /* HomeViewModel.swift in Sources */,
 				FA5E3BEA2BC6D7870045E290 /* CalendarView.swift in Sources */,
 				FA5E3BEE2BC700940045E290 /* Slider.swift in Sources */,
-				FA5E3BF42BC7D8840045E290 /* TaskView.swift in Sources */,
 				FA5E3BF02BC7BB550045E290 /* HomeView.swift in Sources */,
 				062DCF122B5088A9005C209A /* User.swift in Sources */,
 				062DCF142B5088F6005C209A /* AuthorizationViewModel.swift in Sources */,

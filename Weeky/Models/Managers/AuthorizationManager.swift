@@ -30,48 +30,48 @@ class AuthorizationManager: ObservableObject {
         }
     }
     
-    func updateUserName(for username: String, with newName: String) {
-        let db = Firestore.firestore()
-        
-        // Запрос к коллекции "users" для поиска пользователя с заданным именем
-        let usersRef = db.collection("Users")
-        let query = usersRef.whereField("name", isEqualTo: username)
-        
-        // Получение результатов запроса
-        query.getDocuments { (snapshot, error) in
-            if let error = error {
-                print("Error fetching user documents: \(error.localizedDescription)")
-                return
-            }
-            
-            guard let snapshot = snapshot else {
-                print("No user documents found")
-                return
-            }
-            
-            // Проверка наличия пользователей с заданным именем
-            if snapshot.documents.isEmpty {
-                print("User with username '\(username)' not found")
-                return
-            }
-            
-            // Перебор всех найденных документов (обычно должен быть только один)
-            for document in snapshot.documents {
-                // Получение идентификатора пользователя
-                let userId = document.documentID
-                
-                // Обновление имени пользователя в базе данных
-                let userRef = usersRef.document(userId)
-                userRef.updateData(["name": newName]) { error in
-                    if let error = error {
-                        print("Error updating user name: \(error.localizedDescription)")
-                    } else {
-                        print("User name updated successfully")
-                    }
-                }
-            }
-        }
-    }
+//    func updateUserName(for username: String, with newName: String) {
+////        let db = Firestore.firestore()
+//        
+//        // Запрос к коллекции "users" для поиска пользователя с заданным именем
+//        let usersRef = db.collection("Users")
+//        let query = usersRef.whereField("name", isEqualTo: username)
+//        
+//        // Получение результатов запроса
+//        query.getDocuments { (snapshot, error) in
+//            if let error = error {
+//                print("Error fetching user documents: \(error.localizedDescription)")
+//                return
+//            }
+//            
+//            guard let snapshot = snapshot else {
+//                print("No user documents found")
+//                return
+//            }
+//            
+//            // Проверка наличия пользователей с заданным именем
+//            if snapshot.documents.isEmpty {
+//                print("User with username '\(username)' not found")
+//                return
+//            }
+//            
+//            // Перебор всех найденных документов (обычно должен быть только один)
+//            for document in snapshot.documents {
+//                // Получение идентификатора пользователя
+//                let userId = document.documentID
+//                
+//                // Обновление имени пользователя в базе данных
+//                let userRef = usersRef.document(userId)
+//                userRef.updateData(["name": newName]) { error in
+//                    if let error = error {
+//                        print("Error updating user name: \(error.localizedDescription)")
+//                    } else {
+//                        print("User name updated successfully")
+//                    }
+//                }
+//            }
+//        }
+//    }
     
 
     //MARK: - helpers

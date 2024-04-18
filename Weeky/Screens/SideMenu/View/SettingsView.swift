@@ -132,17 +132,17 @@ struct SettingsView: View {
     
     func ChangeUserData()->some View {
         VStack {
-            VStack{
-                HStack(spacing: 15){
-                    Image(systemName: "person.fill")
-                        .foregroundColor(Color("Blue light"))
-                    TextField("Изменить имя пользователя", text: $name)
-                }
-                
-                Divider().background(Color.white.opacity(0.6))
-            }
-            .padding(.horizontal)
-            .padding(.top, 40)
+//            VStack{
+//                HStack(spacing: 15){
+//                    Image(systemName: "person.fill")
+//                        .foregroundColor(Color("Blue light"))
+//                    TextField("Изменить имя пользователя", text: $name)
+//                }
+//                
+//                Divider().background(Color.white.opacity(0.6))
+//            }
+//            .padding(.horizontal)
+//            .padding(.top, 40)
             
             VStack {
                 HStack(spacing: 15) {
@@ -160,8 +160,11 @@ struct SettingsView: View {
             
             Button(action: {
                 //MARK: - back to authorization View
-                viewModel.currentUser = nil
-                viewModel.storedTasks.removeAll()
+                
+//                viewModel.currentUser = nil
+//                viewModel.storedTasks.removeAll()
+                
+//                viewModel.
                 withAnimation {
                     isAuthorized = false
                 }
@@ -175,39 +178,38 @@ struct SettingsView: View {
     
     func AcceptButton()->some View {
         VStack {
-        if !isShowingSuccessView {
-            Button(action: {
-                if name != "" || password != "" {
-                    //MARK: - update Data
-                    error = ""
-                    withAnimation {
-                        isShowingSuccessView = true
-                        name = ""
-                        password = ""
-                    }
-                }
-                isShowingSuccessView = true
-            }, label: {
-                Text("Внести изменения")
-                    .foregroundColor(.gray)
-                    .fontWeight(.medium)
-                    .padding()
-//                    .padding(.horizontal, 50)
-//                    .background(Color("Yellow xlight"))
-                    .clipShape(Capsule())
-                    .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
-//                    .offset(y: 25)
-            })
-        } else {
-            SuccessView(text: "Данные изменены", error: error)
-                .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            if !isShowingSuccessView {
+                Button(action: {
+                    if name != "" || password != "" {
+                        //MARK: - update Data
+                        viewModel.updatePassword( password)
+                        error = ""
                         withAnimation {
-                            isShowingSuccessView = false
+                            isShowingSuccessView = true
+                            name = ""
+                            password = ""
                         }
                     }
-                }
-        }
+                    isShowingSuccessView = true
+                }, label: {
+                    Text("Внести изменения")
+                        .foregroundColor(.gray)
+                        .fontWeight(.medium)
+                        .padding()
+                        .clipShape(Capsule())
+                        .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
+                                        .offset(y: 25)
+                })
+            } else {
+                SuccessView(text: "Данные изменены", error: error)
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            withAnimation {
+                                isShowingSuccessView = false
+                            }
+                        }
+                    }
+            }
         }
     }
 }

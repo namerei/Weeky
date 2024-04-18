@@ -37,7 +37,7 @@ struct ContentView: View {
     @State var isAuthorized = false
 
     var body: some View {
-        Group{
+        Group {
             if isAuthorized {
                 HomeView(isAuthorized: $isAuthorized)
                     .environmentObject(homeViewModel)

@@ -83,7 +83,7 @@ struct LoginButton: View {
         Button(action: {
             
             //MARK: - login logic
-            
+            authViewModel.user = nil
             authViewModel.login { success in
                 if success {
                     print("\(authViewModel.user?.name) logged in successfully")
@@ -91,6 +91,10 @@ struct LoginButton: View {
                         isAuthorized.toggle()
                     }
                 }
+                else {
+                    print("user not found")
+                }
+
             }
         }, label: {
             Text("Вход")

@@ -196,11 +196,13 @@ class HomeViewModel: ObservableObject {
     }
     
     func updatePassword(_ newPassword: String) {
-        
+        firebaseManager.updatePassword(for: currentUser, newPassword: newPassword) { error in
+            print(error?.localizedDescription)
+        }
     }
     
     func updateName(_ newName: String) {
-        
+//        firebaseManager.updateName(for: self.user, newName: newName, completion: nil)
     }
 }
 

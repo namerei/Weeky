@@ -95,8 +95,45 @@ class TaskDBManager: ObservableObject {
              isCompleted: taskData["isCompleted"] as? Bool ?? false) 
     }
     
+    //MARK: - helpers
     func addUser(_ user: User) {
         self.user = user
     }
     
+    //MARK: - accaunt settings
+    func updatePassword(for user: User?, newPassword: String, completion: @escaping (Error?) -> Void) {
+        let washingtonRef = db.collection("cities").document("DC")
+
+        guard let user = user else { return }
+        let userRef = db.collection("Users").document(user.name)
+        
+//        Добавление задачи в коллекцию
+        userRef.setData(["name" : user.name,
+                         "password": newPassword]
+        ) { error in
+            if let error = error {
+                completion(error)
+            } else {
+                completion(nil)
+            }
+        }
+
+    }
+    
+    func updateName(for user: User?, newName: String, completion: @escaping (Error?) -> Void) {
+        // Ссылка на коллекцию задач пользователя
+//        guard let user = user else { return }
+//        let userRef = db.collection("Users").document(user.name)
+//        
+////        Добавление задачи в коллекцию
+//        userRef.setData(["name" : user.name,
+//                         "title": user.password]
+//        ) { error in
+//            if let error = error {
+//                completion(error)
+//            } else {
+//                completion(nil)
+//            }
+//        }
+    }
 }

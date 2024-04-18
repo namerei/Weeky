@@ -69,7 +69,6 @@ struct NewTaskView: View {
             })
         }
         .padding()
-//        Spacer()
     }
     
     func backToHomeView() {
@@ -79,14 +78,6 @@ struct NewTaskView: View {
     }
     
     func DatePickerView()->some View {
-//        print("DATE")
-//        print("\(task.date)")
-//        task.title = "her"
-//        print("Task title: \(task.title)")
-//        if dateFromCalendar != nil {
-//            print("NOT NIL")
-//            task.date = dateFromCalendar!
-//        }
         return DatePicker("Select Date", selection: $dateFromCalendar, displayedComponents: [.date, .hourAndMinute])
             .padding(.bottom, 20)
     }
@@ -113,32 +104,3 @@ struct CustomColorPicker: View {
             }
         }
 }
-
-
-
-//struct EditTaskView: View {
-//    @State private var selectedColor: Color = .blue
-//    let availableColors: [Color] = [.red, .blue, .green, .yellow, .orange, .purple]
-//
-//    var body: some View {
-//        VStack(alignment: .leading) {
-//            Text("Edit Task")
-//                .font(.title)
-//                .fontWeight(.bold)
-//                .padding(.bottom, 20)
-//
-//            CustomColorPicker(selectedColor: $selectedColor, colors: availableColors)
-//                .padding(.bottom, 20)
-//
-//            // Остальной код...
-//        }
-//        .padding()
-//    }
-//}
-
-
-//struct EditTaskView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NewTaskView(dateFromCalendar: <#Date#>)
-//    }
-//}
