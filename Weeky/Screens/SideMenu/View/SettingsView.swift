@@ -12,8 +12,14 @@ struct SettingsView: View {
     
     @State private var darkModeOn = false
     @State private var notificationsOn = false
+    @State private var language = false
     @State private var selectedDayIndex = 0
     @State private var isShowingAccountView = false
+    @State var isShowingSuccessView = false
+    @State private var error = "Пустые поля"
+    
+    @State private var name = ""
+    @State private var password = ""
     
     @Binding var isAuthorized : Bool
     
@@ -42,38 +48,7 @@ struct SettingsView: View {
                 .padding()
                 
                 if isShowingAccountView {
-                    Divider()
-                    
-                    VStack {
-                        Button(action: {
-                            // Change password
-                        }) {
-                            Text("Изменить имя")
-                        }
-                        .padding()
-                        
-                        Button(action: {
-                            // Change username
-                        }) {
-                            Text("Изменить пароль")
-                        }
-                        .padding()
-                        
-                        Button(action: {
-                            //MARK: - back to authorization View
-                            viewModel.currentUser = nil
-                            viewModel.storedTasks.removeAll()
-                            withAnimation {
-                                isAuthorized = false
-                            }
-                        }) {
-                            Text("Выйти из аккаунта")
-                                .foregroundColor(.red)
-                        }
-                        .padding()
-                    }
-                    Divider()
-                        .padding()
+                    ChangeUserData()
                 } else {
                     
                     VStack {
@@ -84,6 +59,11 @@ struct SettingsView: View {
                         
                         Toggle(isOn: $notificationsOn) {
                             Text("Уведомления")
+                        }
+                        .padding()
+                        
+                        Toggle(isOn: $language) {
+                            Text("Изменить язык (ru/en)")
                         }
                         .padding()
                         
@@ -125,49 +105,9 @@ struct SettingsView: View {
                 //                }
             }
         }
-//        }
-//        else {
-//            AccountView()
-//        }
+
     }
     
-//    func AccountView()->some View {
-//        VStack {
-//            HStack {
-//                Image(systemName: "person.circle")
-//                    .resizable()
-//                    .frame(width: 50, height: 50)
-//                VStack(alignment: .leading) {
-//                    Text("\(viewModel.currentUser?.name ?? "_")")
-//                        .font(.title)
-//                    Text("имя пользователя")
-//                        .font(.footnote)
-//                        .foregroundColor(.gray)
-//                }
-//                ForwardArrow()
-//            }
-//            .padding()
-//            
-//            Divider()
-//            
-//            VStack {
-//                Button(action: {
-//                    // Change password
-//                }) {
-//                    Text("Изменить имя")
-//                }
-//                .padding()
-//                
-//                Button(action: {
-//                    // Change username
-//                }) {
-//                    Text("Изменить пароль")
-//                }
-//            }
-//            Divider()
-//                .padding()
-//        }
-//    }
     
     func ForwardArrow()->some View {
 //        Spacer()
@@ -189,7 +129,103 @@ struct SettingsView: View {
         }
         .padding(30)
     }
+    
+    func ChangeUserData()->some View {
+        VStack {
+            VStack{
+                HStack(spacing: 15){
+                    Image(systemName: "person.fill")
+                        .foregroundColor(Color("Blue light"))
+                    TextField("Изменить имя пользователя", text: $name)
+                }
+                
+                Divider().background(Color.white.opacity(0.6))
+            }
+            .padding(.horizontal)
+            .padding(.top, 40)
+            
+            VStack {
+                HStack(spacing: 15) {
+                    Image(systemName: "eye.slash.fill")
+                        .foregroundColor(Color("Blue light"))
+                    SecureField("Изменить пароль", text: $password)
+                }
+                
+                Divider()
+                    .background(Color.white.opacity(0.6))
+            } .padding(.horizontal)
+                .padding(.top, 50)
+            
+            AcceptButton()
+            
+            Button(action: {
+                //MARK: - back to authorization View
+                viewModel.currentUser = nil
+                viewModel.storedTasks.removeAll()
+                withAnimation {
+                    isAuthorized = false
+                }
+            }) {
+                Text("Выйти из аккаунта")
+                    .foregroundColor(.red)
+            }
+            .padding()
+        }
+    }
+    
+    func AcceptButton()->some View {
+        VStack {
+        if !isShowingSuccessView {
+            Button(action: {
+                if name != "" || password != "" {
+                    //MARK: - update Data
+                    error = ""
+                    withAnimation {
+                        isShowingSuccessView = true
+                        name = ""
+                        password = ""
+                    }
+                }
+                isShowingSuccessView = true
+            }, label: {
+                Text("Внести изменения")
+                    .foregroundColor(.gray)
+                    .fontWeight(.medium)
+                    .padding()
+//                    .padding(.horizontal, 50)
+//                    .background(Color("Yellow xlight"))
+                    .clipShape(Capsule())
+                    .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
+//                    .offset(y: 25)
+            })
+        } else {
+            SuccessView(text: "Пользователь создан!", error: error)
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        withAnimation {
+                            isShowingSuccessView = false
+                        }
+                    }
+                }
+        }
+        }
+    }
 }
 
 
+//struct SuccessView: View {
+//    @State var text: String
+//    @State var error: String
+//
+//    init(text: String, error: String) {
+//        self.error = error
+//        self.text = text
+//    }
+//
+//    var body: some View {
+//        error == "" ? Text(text) : Text(error)
+//            .font(.title)
+//            .foregroundColor(error != "" ? .red : .blue)
+//    }
+//}
 
