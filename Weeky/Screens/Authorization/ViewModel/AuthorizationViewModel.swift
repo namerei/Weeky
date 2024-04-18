@@ -99,14 +99,7 @@ class AuthorizationViewModel: ObservableObject
          */
     }
     
-    func updateUserData(for user: User, name: String?, password: String?) {
-//        
-//        let usersRef = authorizationManager.db.collection("Users")
-//        if name != nil {
-//        let newUser = User(name: name, password: password)
-//        let dataToUpload = newUser.toData()
-//        
-//        usersRef.document(newUser.name).setData(dataToUpload)
-//        authorizationManager.updateUserName(for: , with: )
-    }
+//    func updateUserData(for user: User, name: String?, password: String?) {
+//
+//    }
 }

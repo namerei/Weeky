@@ -161,6 +161,14 @@ class HomeViewModel: ObservableObject {
         }
     }
     
+    func updateUser(_ user: User, newName: String, newPassword: String) {
+        if newName == "" {
+            updatePassword(newPassword)
+        } else {
+            updateName(newName)
+        }
+    }
+    
     //MARK: - Helpers
     func taskIsCorrect(_ task: Task)->Bool {
         !task.title.isEmpty
@@ -185,6 +193,14 @@ class HomeViewModel: ObservableObject {
         firebaseManager.addUser(user)
         self.fetchAllData()
         print("ADDUSER", self.currentUser)
+    }
+    
+    func updatePassword(_ newPassword: String) {
+        
+    }
+    
+    func updateName(_ newName: String) {
+        
     }
 }
 

@@ -199,7 +199,7 @@ struct SettingsView: View {
 //                    .offset(y: 25)
             })
         } else {
-            SuccessView(text: "Пользователь создан!", error: error)
+            SuccessView(text: "Данные изменены", error: error)
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                         withAnimation {
@@ -212,20 +212,4 @@ struct SettingsView: View {
     }
 }
 
-
-//struct SuccessView: View {
-//    @State var text: String
-//    @State var error: String
-//
-//    init(text: String, error: String) {
-//        self.error = error
-//        self.text = text
-//    }
-//
-//    var body: some View {
-//        error == "" ? Text(text) : Text(error)
-//            .font(.title)
-//            .foregroundColor(error != "" ? .red : .blue)
-//    }
-//}
 
