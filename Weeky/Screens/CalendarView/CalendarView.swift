@@ -56,18 +56,35 @@ struct CalendarView: View {
     
     func MiniTaskScrollView()->some View {
         ScrollView(showsIndicators: false) {
-        let tasks = viewModel.allTaskInDay(date)
-                if !tasks.isEmpty {
-                    ForEach(tasks) { task in
-                        Text(task.title)
-                    }
-                } else {
-                    Text("Задачи не найдены")
-                        .foregroundColor(.gray)
+            let tasks = viewModel.allTaskInDay(date)
+            if !tasks.isEmpty {
+                ForEach(tasks) { task in
+//                    Text(task.title)
+                    MiniTaskScrollViewCell(task)
                 }
+            } else {
+                Text("Задачи не найдены")
+                    .foregroundColor(.gray)
             }
         }
     }
+    
+    func MiniTaskScrollViewCell(_ task: Task)->some View {
+        HStack {
+            Circle()
+                .fill(Color(task.colorName))
+                .frame(width: 20, height: 20)
+            Text(task.title)
+            Spacer()
+            if let date = task.dateString.toDate() {
+                Text("\(date.showOnlyTimeString())")
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
+            }
+        }
+        .padding(.horizontal, 15)
+    }
+}
 
 
 struct BackwordArrow: View {

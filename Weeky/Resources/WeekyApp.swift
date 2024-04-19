@@ -49,6 +49,6 @@ struct ContentView: View {
                     .environmentObject(authorizationViewModel)
             }
         }
-        .preferredColorScheme(homeViewModel.isDarkMode ? .dark : .light)
+        .preferredColorScheme(homeViewModel.isDarkMode ? withAnimation{.dark} : .light)
     }
 }

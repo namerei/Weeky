@@ -52,10 +52,17 @@ struct SettingsView: View {
                 } else {
                     
                     VStack {
-                        Toggle(isOn: $viewModel.isDarkMode.animation()) {
+                        //                        withAnimation {
+                        Toggle(isOn: withAnimation {$viewModel.isDarkMode}.animation()) {
                             Text("Темная тема")
                         }
+                        //                        }
                         .padding()
+                        .onChange(of: viewModel.isDarkMode) { _ in
+                            withAnimation {
+                                
+                            }
+                        }
                         
                         Toggle(isOn: $notificationsOn) {
                             Text("Уведомления")
