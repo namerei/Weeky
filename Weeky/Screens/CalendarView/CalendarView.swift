@@ -33,6 +33,7 @@ struct CalendarView: View {
             } else {
                 VStack {
                     NewTaskView(dateFromCalendar: $date)
+//                        .background(Color("Blue xlight").edgesIgnoringSafeArea(.all))
                 }
             }
         }

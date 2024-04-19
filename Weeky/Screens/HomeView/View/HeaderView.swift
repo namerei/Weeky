@@ -26,7 +26,7 @@ struct HeaderView: View {
             ShowCalendarButton(isCalendarViewShowed: $isCalendarViewShowed)
         }
         .padding()
-        .background(Color.white)
+        .background(Color("Blue dark").edgesIgnoringSafeArea(.all))
     }
     
 }

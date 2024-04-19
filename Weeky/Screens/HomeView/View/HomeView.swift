@@ -30,8 +30,10 @@ struct HomeView: View {
     private func MainVStack()->some View {
         VStack {
             HeaderView(isShowingSideMenu: $isShowingSideMenu, isCalendarViewShowed: $isCalendarViewShowed, isAuthorized: $isAuthorized)
+                
             MainScrollView()
         }
+        .background(Color("Blue xlight").edgesIgnoringSafeArea(.all))
     }
     
     private func AddNewTaskButtonView()-> some View {

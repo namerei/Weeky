@@ -27,6 +27,7 @@ struct AddNewTaskButton: View {
             .sheet(isPresented: $isShowingNewTaskView, content: {
                 NewTaskView(dateFromCalendar: $date)
             })
+//            .background(Color("Blue xlight").edgesIgnoringSafeArea(.all))
         }
     }
 }

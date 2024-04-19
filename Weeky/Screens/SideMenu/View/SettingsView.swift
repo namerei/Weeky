@@ -27,6 +27,7 @@ struct SettingsView: View {
     
     var body: some View {
 //        if !isShowingAccountView {
+        VStack {
             ScrollView {
                 if isShowingAccountView {
                     Spacer()
@@ -96,22 +97,24 @@ struct SettingsView: View {
                     Spacer()
                 }
             }
-        if !isShowingAccountView {
-            Button(action: {
-                //MARK: - back to authorization View
-                viewModel.currentUser = nil
-                viewModel.storedTasks.removeAll()
-                withAnimation {
-                    isAuthorized = false
+            if !isShowingAccountView {
+                Button(action: {
+                    //MARK: - back to authorization View
+                    viewModel.currentUser = nil
+                    viewModel.storedTasks.removeAll()
+                    withAnimation {
+                        isAuthorized = false
+                    }
+                }) {
+                    Text("Выйти из аккаунта")
+                        .foregroundColor(.red)
+                    //                if isShowingAccountView {
+                    //                    Spacer()
+                    //                }
                 }
-            }) {
-                Text("Выйти из аккаунта")
-                    .foregroundColor(.red)
-                //                if isShowingAccountView {
-                //                    Spacer()
-                //                }
             }
         }
+        .background(Color("Blue xlight").edgesIgnoringSafeArea(.all))
 
     }
     

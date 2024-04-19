@@ -20,55 +20,58 @@ struct NewTaskView: View {
     
     var body: some View {
         
-        VStack(alignment: .leading) {
-            HStack {
-                Spacer()
-                VStack {
-                    Button(action: {
+        VStack {
+            VStack(alignment: .leading) {
+                HStack {
+                    Spacer()
+                    VStack {
+                        Button(action: {
+                            backToHomeView()
+                        }, label: {
+                            Image(systemName: "x.circle")
+                                .foregroundColor(.black)
+                                .font(.system(size: 24))
+                        })
+                    }
+                }
+                //            Spacer()
+                
+                Text("Edit Task")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .padding(.bottom, 30)
+                
+                //MARK: - color picker
+                //            ColorPicker("Select Color", selection: $selectedColor)
+                CustomColorPicker(selectedColor: $taskColor, colors: availableColors)
+                    .padding(.bottom, 20)
+                
+                DatePickerView()
+                
+                TextField("описание задачи", text: $task.title)
+                    .font(.title2)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(.bottom, 20)
+                
+                Button(action: {
+                    task.dateString = dateFromCalendar.toString()
+                    task.colorName = taskColor.description.extractedName
+                    print(taskColor.description.extractedName)
+                    if viewModel.taskAdded(task) {
                         backToHomeView()
-                    }, label: {
-                        Image(systemName: "x.circle")
-                            .foregroundColor(.black)
-                            .font(.system(size: 24))
-                    })
-                }
+                    }
+                }, label: {
+                    Text("Save Task")
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .foregroundColor(.white)
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                })
             }
-//            Spacer()
-            
-            Text("Edit Task")
-                .font(.title)
-                .fontWeight(.bold)
-                .padding(.bottom, 30)
-            
-            //MARK: - color picker
-//            ColorPicker("Select Color", selection: $selectedColor)
-            CustomColorPicker(selectedColor: $taskColor, colors: availableColors)
-                            .padding(.bottom, 20)
-            
-            DatePickerView()
-            
-            TextField("описание задачи", text: $task.title)
-                .font(.title2)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding(.bottom, 20)
-            
-            Button(action: {
-                task.dateString = dateFromCalendar.toString()
-                task.colorName = taskColor.description.extractedName
-                print(taskColor.description.extractedName)
-                if viewModel.taskAdded(task) {
-                    backToHomeView()
-                }
-            }, label: {
-                Text("Save Task")
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .foregroundColor(.white)
-                    .background(Color.blue)
-                    .cornerRadius(10)
-            })
+            .padding()
         }
-        .padding()
+        
     }
     
     func backToHomeView() {
