@@ -7,6 +7,24 @@
 
 import SwiftUI
 
+//struct CustomToggleStyle: ToggleStyle {
+//    var color: Color
+//    
+//    func makeBody(configuration: Configuration) -> some View {
+//        Button {
+//            configuration.isOn.toggle()
+//        } label: {
+//            HStack {
+//                configuration.label
+//                    .foregroundColor(color)
+//                Spacer()
+//                Image(systemName: configuration.isOn ? "checkmark.square.fill" : "square")
+//                    .foregroundColor(color)
+//            }
+//        }
+//    }
+//}
+
 struct SettingsView: View {
     @EnvironmentObject var viewModel : HomeViewModel
     
@@ -54,16 +72,11 @@ struct SettingsView: View {
                     
                     VStack {
                         //                        withAnimation {
-                        Toggle(isOn: withAnimation {$viewModel.isDarkMode}.animation()) {
+                        Toggle(isOn: withAnimation {$viewModel.isDarkMode}) {
                             Text("Темная тема")
                         }
-                        //                        }
+                        .toggleStyle(SwitchToggleStyle(tint: Color("Blue dark")))
                         .padding()
-                        .onChange(of: viewModel.isDarkMode) { _ in
-                            withAnimation {
-                                
-                            }
-                        }
                         
                         Toggle(isOn: $notificationsOn) {
                             Text("Уведомления")
@@ -115,6 +128,7 @@ struct SettingsView: View {
             }
         }
         .background(Color("Blue xlight").edgesIgnoringSafeArea(.all))
+        .foregroundColor(Color(.black))
 
     }
     
@@ -223,5 +237,21 @@ struct SettingsView: View {
         }
     }
 }
-
-
+                        
+//struct CustomToggleStyle: ToggleStyle {
+//                            var color: Color
+//                            
+//                            func makeBody(configuration: Configuration) -> some View {
+//                                Button {
+//                                    configuration.isOn.toggle()
+//                                } label: {
+//                                    HStack {
+//                                        configuration.label
+//                                            .foregroundColor(color)
+//                                        Spacer()
+//                                        Image(systemName: configuration.isOn ? "checkmark.square.fill" : "square")
+//                                            .foregroundColor(color)
+//                                    }
+//                                }
+//                            }
+//                        }
