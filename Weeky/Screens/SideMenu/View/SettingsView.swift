@@ -10,7 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     @EnvironmentObject var viewModel : HomeViewModel
     
-    @State private var darkModeOn = false
+//    @State private var darkModeOn = false
     @State private var notificationsOn = false
     @State private var language = false
     @State private var selectedDayIndex = 0
@@ -52,7 +52,7 @@ struct SettingsView: View {
                 } else {
                     
                     VStack {
-                        Toggle(isOn: $darkModeOn) {
+                        Toggle(isOn: $viewModel.isDarkMode.animation()) {
                             Text("Темная тема")
                         }
                         .padding()

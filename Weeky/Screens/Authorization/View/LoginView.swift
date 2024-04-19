@@ -72,6 +72,9 @@ struct Login : View {
             LoginButton(isAuthorized: $isAuthorized)
                 .opacity(self.index == 1 ? 0 : 1)
         }
+        .onAppear(perform: {
+            viewModel.eraseFields()
+        })
     }
 }
 

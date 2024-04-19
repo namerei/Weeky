@@ -13,6 +13,8 @@ import FirebaseCore
 class HomeViewModel: ObservableObject {
     @Published var firebaseManager = TaskDBManager()
     @Published var currentUser : User?
+    @Published var isDarkMode = false
+    
     
     @Published var storedTasks: [Task] = []
     
