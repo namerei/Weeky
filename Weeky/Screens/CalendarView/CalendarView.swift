@@ -45,7 +45,7 @@ struct CalendarView: View {
                 isShowingNewTaskView.toggle()
             }
         }, label: {
-            Text("New Task")
+            Text("Новая задача")
                 .padding()
                 .frame(maxWidth: .infinity)
                 .foregroundColor(.white)

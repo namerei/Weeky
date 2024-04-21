@@ -36,7 +36,7 @@ struct NewTaskView: View {
                 }
                 //            Spacer()
                 
-                Text("Edit Task")
+                Text("Создать задачу")
                     .font(.title)
                     .fontWeight(.bold)
                     .padding(.bottom, 30)
@@ -61,7 +61,7 @@ struct NewTaskView: View {
                         backToHomeView()
                     }
                 }, label: {
-                    Text("Save Task")
+                    Text("Сохранить")
                         .padding()
                         .frame(maxWidth: .infinity)
                         .foregroundColor(.white)
@@ -81,7 +81,7 @@ struct NewTaskView: View {
     }
     
     func DatePickerView()->some View {
-        return DatePicker("Select Date", selection: $dateFromCalendar, displayedComponents: [.date, .hourAndMinute])
+        return DatePicker("Выбор даты", selection: $dateFromCalendar, displayedComponents: [.date, .hourAndMinute])
             .padding(.bottom, 20)
     }
 }
