@@ -82,6 +82,16 @@ struct CalendarView: View {
                     .font(.subheadline)
                     .foregroundColor(.gray)
             }
+            
+            Button(action: {
+                withAnimation {
+                    viewModel.deleteTask(task)
+                }
+            }) {
+                Image(systemName: "trash")
+                    .font(.title3)
+                    .foregroundColor(.red)
+            }
         }
         .padding(.horizontal, 15)
     }
