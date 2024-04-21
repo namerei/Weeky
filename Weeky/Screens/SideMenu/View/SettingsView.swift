@@ -59,7 +59,7 @@ struct SettingsView: View {
     //MARK: - Views
     func MainListView()->some View {
         List {
-            VStack {
+//            VStack {
                 HStack {
                     //                    Image(systemName: "person.circle")
                     //                        .resizable()
@@ -72,30 +72,35 @@ struct SettingsView: View {
 //                    ForwardArrow()
                 }
                 .onTapGesture {
-                    print("TAp")
+                    print("TAP")
                 }
-                Divider()
+//                .onTapGesture {
+//                    self.selectedItem = item
+//                    // Здесь можно выполнить нужное действие при выборе элемента
+//                    print("Selected item: \(item)")
+//                }
+//                Divider()
                 //                    .padding()
                 
                 Toggle(isOn: withAnimation {$viewModel.isDarkMode}) {
                     Text("Темная тема")
                 }
 //                .toggleStyle(SwitchToggleStyle(tint: Color("Blue dark")))
-                Divider()
+//                Divider()
                 //                    .padding()
                 
                 Toggle(isOn: $notificationsOn) {
                     Text("Уведомления")
                 }
 //                .toggleStyle(SwitchToggleStyle(tint: Color("Blue dark")))
-                Divider()
+//                Divider()
                 //                    .padding()
                 
                 Toggle(isOn: $language) {
                     Text("Изменить язык (ru/en)")
                 }
 //                .toggleStyle(SwitchToggleStyle(tint: Color("Blue dark")))
-                Divider()
+//                Divider()
                 //                    .padding()
                 
                 //                    HStack {
@@ -111,7 +116,7 @@ struct SettingsView: View {
                 .pickerStyle(DefaultPickerStyle())
             }
             //                .padding()
-        }
+//        }
 //        .disabled(true)
 //        .listStyle(InsetListStyle())
     }

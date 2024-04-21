@@ -18,6 +18,7 @@
 		06F3EA662B27661B000B5C71 /* WeekyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F3EA652B27661B000B5C71 /* WeekyTests.swift */; };
 		06F3EA702B27661B000B5C71 /* WeekyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F3EA6F2B27661B000B5C71 /* WeekyUITests.swift */; };
 		06F3EA722B27661B000B5C71 /* WeekyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F3EA712B27661B000B5C71 /* WeekyUITestsLaunchTests.swift */; };
+		FA265E762BD57FD10065DFA4 /* AccauntView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA265E752BD57FD10065DFA4 /* AccauntView.swift */; };
 		FA46939E2BC7F86F0092430D /* AddNewTaskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46939D2BC7F86F0092430D /* AddNewTaskButton.swift */; };
 		FA5E3BD62BC674E10045E290 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BD52BC674E10045E290 /* LoginView.swift */; };
 		FA5E3BD92BC6871F0045E290 /* SignUpView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BD82BC6871F0045E290 /* SignUpView2.swift */; };
@@ -74,6 +75,7 @@
 		06F3EA6B2B27661B000B5C71 /* WeekyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeekyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06F3EA6F2B27661B000B5C71 /* WeekyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekyUITests.swift; sourceTree = "<group>"; };
 		06F3EA712B27661B000B5C71 /* WeekyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FA265E752BD57FD10065DFA4 /* AccauntView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccauntView.swift; sourceTree = "<group>"; };
 		FA46939D2BC7F86F0092430D /* AddNewTaskButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskButton.swift; sourceTree = "<group>"; };
 		FA5E3BD52BC674E10045E290 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FA5E3BD82BC6871F0045E290 /* SignUpView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView2.swift; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 				FA5E3BE52BC6B2640045E290 /* SettingsView.swift */,
 				FA5E3BED2BC700940045E290 /* Slider.swift */,
 				FA62333F2BC91DED008CBD84 /* MySideMenuView.swift */,
+				FA265E752BD57FD10065DFA4 /* AccauntView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				FACE0FD02BCE8D2600CD178B /* TaskDBManager.swift in Sources */,
 				FA5E3BE62BC6B2640045E290 /* SettingsView.swift in Sources */,
 				FA5E3BD62BC674E10045E290 /* LoginView.swift in Sources */,
+				FA265E762BD57FD10065DFA4 /* AccauntView.swift in Sources */,
 				FACE0FCD2BCD5A6400CD178B /* Colors.swift in Sources */,
 				FA5E3BE02BC6AD410045E290 /* ViewExtensions.swift in Sources */,
 				FA6233402BC91DED008CBD84 /* MySideMenuView.swift in Sources */,
