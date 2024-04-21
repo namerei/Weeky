@@ -50,7 +50,6 @@ struct SettingsView: View {
                 LogoutButton()
             }
         }
-        .background(Color("Blue xlight").edgesIgnoringSafeArea(.all))
         .foregroundColor(Color(.black))
         .navigationBarTitle("Настройки", displayMode: .large)
         
