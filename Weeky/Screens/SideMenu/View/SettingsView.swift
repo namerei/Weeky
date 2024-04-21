@@ -23,58 +23,46 @@ struct SettingsView: View {
     let daysOfWeek = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
     
     var body: some View {
-//        NavigationView {
         VStack {
-                MainListView()
-                LogoutButton()
-            }
-//        }
+            MainListView()
+            LogoutButton()
+        }
         .foregroundColor(Color(.black))
         .navigationBarTitle("Настройки", displayMode: .large)
-//        .navigationBarBackButtonHidden(isShowingAccountView)
-//        .navigatiobar
-        
     }
     
     //MARK: - Views
     func MainListView()->some View {
         List {
-//            VStack {
             
             
             NavigationLink(destination: AccountView(isAuthorized: $isAuthorized)) {
                 Text("Аккаунт")
             }
-            //            .onTapGesture {
-//                isShowingAccountView = true
-//            }
-//                .onTapGesture {
-//                    print("TAP")
-//                }
             
-                Toggle(isOn: withAnimation {$viewModel.isDarkMode}) {
-                    Text("Темная тема")
-                }
-//                .toggleStyle(SwitchToggleStyle(tint: Color("Blue dark")))
-
-                Toggle(isOn: $notificationsOn) {
-                    Text("Уведомления")
-                }
-//                .toggleStyle(SwitchToggleStyle(tint: Color("Blue dark")))
-
-                Toggle(isOn: $language) {
-                    Text("Изменить язык (ru/en)")
-                }
-//                .toggleStyle(SwitchToggleStyle(tint: Color("Blue dark")))
-
-                Picker(selection: $selectedDayIndex, label: Text("День начала недели")) {
-                    ForEach(0..<daysOfWeek.count) { index in
-                        Text(daysOfWeek[index])
-                    }
-                }
-//                .foregroundColor(Color("Blue xlight"))
-                .pickerStyle(DefaultPickerStyle())
+            Toggle(isOn: withAnimation {$viewModel.isDarkMode}) {
+                Text("Темная тема")
             }
+            //                .toggleStyle(SwitchToggleStyle(tint: Color("Blue dark")))
+            
+            Toggle(isOn: $notificationsOn) {
+                Text("Уведомления")
+            }
+            //                .toggleStyle(SwitchToggleStyle(tint: Color("Blue dark")))
+            
+            Toggle(isOn: $language) {
+                Text("Изменить язык (ru/en)")
+            }
+            //                .toggleStyle(SwitchToggleStyle(tint: Color("Blue dark")))
+            
+            Picker(selection: $selectedDayIndex, label: Text("День начала недели")) {
+                ForEach(0..<daysOfWeek.count) { index in
+                    Text(daysOfWeek[index])
+                }
+            }
+            //                .foregroundColor(Color("Blue xlight"))
+            .pickerStyle(DefaultPickerStyle())
+        }
     }
     
     func LogoutButton()->some View {
@@ -90,14 +78,12 @@ struct SettingsView: View {
         }
     }
 }
-                        
+
 struct Previews: PreviewProvider {
     
-//    struct Container: View {
     static var previews: some View {
         @State var show = true
         
-            SettingsView(isAuthorized: $show)
-        }
-//    }
+        SettingsView(isAuthorized: $show)
+    }
 }

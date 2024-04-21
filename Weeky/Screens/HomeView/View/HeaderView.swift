@@ -28,16 +28,14 @@ struct HeaderView: View {
         .padding()
         .background(Color("Blue dark").edgesIgnoringSafeArea(.all))
     }
-    
 }
 
 
 struct DateTitleView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10){
-//            Text(Date().formatted(date: .abbreviated, time: .omitted)).foregroundColor(.gray)
-            Text(Date().formatted(date: .abbreviated, time: .omitted)).font(.title2)
-//            Text("Today").font(.title.bold())
+            Text(Date().formatted(date: .abbreviated, time: .omitted)).font(.title3)
+//            Text("сегодня").font(.footnote)
         }
     }
 }
@@ -81,6 +79,4 @@ struct ShowSideMenuButton: View {
     }
 }
 
-//#Preview(body: {
-//    HeaderView()
-//})
+

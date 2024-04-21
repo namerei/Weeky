@@ -11,7 +11,6 @@ import SwiftUI
 struct CalendarView: View {
     @EnvironmentObject var viewModel : HomeViewModel
     @Binding var isCalendarViewShowed : Bool
-//    @State var date : Date
     
     @State var isShowingNewTaskView = false
     

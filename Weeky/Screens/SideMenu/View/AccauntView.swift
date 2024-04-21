@@ -2,7 +2,7 @@
 //  AccauntView.swift
 //  Weeky
 //
-//  Created by Nikita Evdokimov on 21.04.24.
+//  Created by namerei on 21.04.24.
 //
 
 import SwiftUI
@@ -29,13 +29,11 @@ struct AccountView:View {
                 Image(systemName: "person.crop.circle")
                     .resizable()
                     .frame(width: 80, height: 80)
-                Text(viewModel.currentUser?.name ?? "-")
+                Text(viewModel.currentUser?.name ?? "")
                     .font(.largeTitle)
             }
             .frame(width: 400, height: 160)
             .background(Color("Blue dark"))
-//            .padding(.horizontal)
-//            .padding(.top, 40)
             
             VStack {
                 HStack(spacing: 15) {
@@ -52,12 +50,7 @@ struct AccountView:View {
             AcceptButton()
             
             Button(action: {
-                //MARK: - back to authorization View
-                
-//                viewModel.currentUser = nil
-//                viewModel.storedTasks.removeAll()
-                
-//                viewModel.
+                viewModel.currentUser = nil
                 withAnimation {
                     isAuthorized = false
                 }
@@ -110,11 +103,9 @@ struct AccountView:View {
 
 struct Previews_AccountView: PreviewProvider {
     
-//    struct Container: View {
     static var previews: some View {
         @State var show = true
         
         AccountView(isAuthorized: $show)
-        }
-//    }
+    }
 }

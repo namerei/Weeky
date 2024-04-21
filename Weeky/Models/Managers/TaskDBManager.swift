@@ -13,7 +13,6 @@ class TaskDBManager: ObservableObject {
     private let db = Firestore.firestore()
     
     @Published var user : User?
-//    @Published var task: Task?
     @Published var error: Error? = nil
     
     func uploadTask(_ task: Task, completion: @escaping (Error?) -> Void) {
@@ -121,19 +120,5 @@ class TaskDBManager: ObservableObject {
     }
     
     func updateName(for user: User?, newName: String, completion: @escaping (Error?) -> Void) {
-        // Ссылка на коллекцию задач пользователя
-//        guard let user = user else { return }
-//        let userRef = db.collection("Users").document(user.name)
-//        
-////        Добавление задачи в коллекцию
-//        userRef.setData(["name" : user.name,
-//                         "title": user.password]
-//        ) { error in
-//            if let error = error {
-//                completion(error)
-//            } else {
-//                completion(nil)
-//            }
-//        }
     }
 }

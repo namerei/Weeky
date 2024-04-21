@@ -29,17 +29,4 @@ struct AuthorizationView: View {
     }
     
 }
-//}
 
-
-//#Preview {
-//    AuthorizationView()
-//}
-
-
-//MARK: logic
-/*
- 1) registration - save user - isAuthorized
- 2) login: check if user saved - isAuthorized
- 3) if user logged fetch all tasks, show etc
- */

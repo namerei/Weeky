@@ -15,7 +15,6 @@ class HomeViewModel: ObservableObject {
     @Published var currentUser : User?
     @Published var isDarkMode = false
     
-    
     @Published var storedTasks: [Task] = []
     
     //MARK: UI elements
@@ -27,11 +26,9 @@ class HomeViewModel: ObservableObject {
     @Published var filteredTasks: [Task]?
     
     init(){
-//        fetchAllData()
         
         filteringTodayTask()
         fetchCurrentWeek()
-//        print("", Date().millisecondsSince1970)
     }
     
     //MARK: - HomePage UI functions
@@ -204,7 +201,6 @@ class HomeViewModel: ObservableObject {
     }
     
     func updateName(_ newName: String) {
-//        firebaseManager.updateName(for: self.user, newName: newName, completion: nil)
     }
 }
 

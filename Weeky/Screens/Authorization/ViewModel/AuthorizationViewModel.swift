@@ -16,14 +16,6 @@ class AuthorizationViewModel: ObservableObject
     @Published var authorizationManager =  AuthorizationManager()
     @Published var user: User?
     
-//    init(email: String = "", password: String = "",  authorizationManager: AuthorizationManager) {
-//        self.email = email
-//        self.password = password
-//        
-//        let user = User(email: email, password: password)
-//        
-//        self.authorizationManager = AuthorizationManager(user: user)
-//    }
     
     func login(completion: @escaping (Bool) -> Void) {
         print("LOGIN")
@@ -84,22 +76,7 @@ class AuthorizationViewModel: ObservableObject
         
         //MARK: - can edit password/ if name is exist
         usersRef.document(newUser.name).setData(dataToUpload)
-        
-        /*
-        let newUser = User(name: name, password: password)
-        print("CREATE : \(newUser)")
-            
-        authorizationManager.db.collection("Users").addDocument(data: newUser.toData()) { error in
-                if let error = error {
-                    print("Ошибка при добавлении документа: \(error)")
-                } else {
-                    print("Документ успешно добавлен")
-                }
-            }
-         */
+      
     }
     
-//    func updateUserData(for user: User, name: String?, password: String?) {
-//
-//    }
 }
