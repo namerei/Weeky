@@ -17,6 +17,9 @@ struct WeekyApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onAppear {
+                    locationSettings()
+                }
         }
     }
     
@@ -27,6 +30,12 @@ struct WeekyApp: App {
             
             return true
         }
+        
+    }
+    
+    func locationSettings() {
+        print(Locale.current)
+        Locale.init(identifier: "ru_RU")
     }
 }
 

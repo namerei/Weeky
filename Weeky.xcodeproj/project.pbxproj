@@ -19,6 +19,7 @@
 		06F3EA702B27661B000B5C71 /* WeekyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F3EA6F2B27661B000B5C71 /* WeekyUITests.swift */; };
 		06F3EA722B27661B000B5C71 /* WeekyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F3EA712B27661B000B5C71 /* WeekyUITestsLaunchTests.swift */; };
 		FA265E762BD57FD10065DFA4 /* AccauntView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA265E752BD57FD10065DFA4 /* AccauntView.swift */; };
+		FA265E782BD5CC220065DFA4 /* Ru_ru.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FA265E772BD5CC220065DFA4 /* Ru_ru.xcstrings */; };
 		FA46939E2BC7F86F0092430D /* AddNewTaskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46939D2BC7F86F0092430D /* AddNewTaskButton.swift */; };
 		FA5E3BD62BC674E10045E290 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BD52BC674E10045E290 /* LoginView.swift */; };
 		FA5E3BD92BC6871F0045E290 /* SignUpView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BD82BC6871F0045E290 /* SignUpView2.swift */; };
@@ -76,6 +77,7 @@
 		06F3EA6F2B27661B000B5C71 /* WeekyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekyUITests.swift; sourceTree = "<group>"; };
 		06F3EA712B27661B000B5C71 /* WeekyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FA265E752BD57FD10065DFA4 /* AccauntView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccauntView.swift; sourceTree = "<group>"; };
+		FA265E772BD5CC220065DFA4 /* Ru_ru.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Ru_ru.xcstrings; sourceTree = "<group>"; };
 		FA46939D2BC7F86F0092430D /* AddNewTaskButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskButton.swift; sourceTree = "<group>"; };
 		FA5E3BD52BC674E10045E290 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FA5E3BD82BC6871F0045E290 /* SignUpView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView2.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				06F3EA5A2B27661A000B5C71 /* Preview Content */,
 				06F3EA582B27661A000B5C71 /* Assets.xcassets */,
 				06F3EA542B276619000B5C71 /* WeekyApp.swift */,
+				FA265E772BD5CC220065DFA4 /* Ru_ru.xcstrings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 06F3EA482B276619000B5C71;
 			packageReferences = (
@@ -480,6 +484,7 @@
 				06F3EA5C2B27661A000B5C71 /* Preview Assets.xcassets in Resources */,
 				06F3EA592B27661A000B5C71 /* Assets.xcassets in Resources */,
 				FACE0FD82BCE9AF600CD178B /* GoogleService-Info.plist in Resources */,
+				FA265E782BD5CC220065DFA4 /* Ru_ru.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
