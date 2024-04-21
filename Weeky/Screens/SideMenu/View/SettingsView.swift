@@ -41,23 +41,23 @@ struct SettingsView: View {
     
     @Binding var isAuthorized : Bool
     
-    let daysOfWeek = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"]
+    let daysOfWeek = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
     
     var body: some View {
 //        if !isShowingAccountView {
-        VStack {
-            ScrollView {
+        NavigationView {
+            List {
                 if isShowingAccountView {
                     Spacer()
                 }
                 HStack {
-                    Image(systemName: "person.circle")
-                        .resizable()
-                        .frame(width: 50, height: 50)
+//                    Image(systemName: "person.circle")
+//                        .resizable()
+//                        .frame(width: 50, height: 50)
                     VStack(alignment: .leading) {
                         Text("\(viewModel.currentUser?.name ?? "_")")
                             .font(.title)
-                        Text("имя пользователя")
+                        Text("Аккаунт")
                             .font(.footnote)
                             .foregroundColor(.gray)
                     }
@@ -93,7 +93,7 @@ struct SettingsView: View {
                             Text("День начала недели")
                                 .padding()
                             Spacer()
-                            Picker(selection: $selectedDayIndex, label: Text("Выберите день")) {
+                            Picker(selection: $selectedDayIndex, label: Text("")) {
                                 ForEach(0..<daysOfWeek.count) { index in
                                     Text(daysOfWeek[index])
                                 }
@@ -129,6 +129,7 @@ struct SettingsView: View {
         }
         .background(Color("Blue xlight").edgesIgnoringSafeArea(.all))
         .foregroundColor(Color(.black))
+        .navigationBarTitle("Настройки", displayMode: .large)
 
     }
     
@@ -238,20 +239,3 @@ struct SettingsView: View {
     }
 }
                         
-//struct CustomToggleStyle: ToggleStyle {
-//                            var color: Color
-//                            
-//                            func makeBody(configuration: Configuration) -> some View {
-//                                Button {
-//                                    configuration.isOn.toggle()
-//                                } label: {
-//                                    HStack {
-//                                        configuration.label
-//                                            .foregroundColor(color)
-//                                        Spacer()
-//                                        Image(systemName: configuration.isOn ? "checkmark.square.fill" : "square")
-//                                            .foregroundColor(color)
-//                                    }
-//                                }
-//                            }
-//                        }

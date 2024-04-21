@@ -12,7 +12,6 @@ import FirebaseCore
 class AuthorizationManager: ObservableObject {
      let db = Firestore.firestore()
     
-    
     func fetchAllUsers(completion: @escaping ([User]?, Error?) -> Void) {
         db.collectionGroup("Users").getDocuments { (querySnapshot, error) in
             if let error = error {

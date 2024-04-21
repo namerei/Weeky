@@ -29,7 +29,6 @@ class AuthorizationViewModel: ObservableObject
         print("LOGIN")
         print(name, password)
         
-        
         authorizationManager.fetchAllUsers { users, error in
             if let error = error {
                 print("Error fetching users: \(error)")
