@@ -11,7 +11,7 @@ import SwiftUI
 struct CalendarView: View {
     @EnvironmentObject var viewModel : HomeViewModel
     @Binding var isCalendarViewShowed : Bool
-    @State var date : Date
+//    @State var date : Date
     
     @State var isShowingNewTaskView = false
     
@@ -20,7 +20,7 @@ struct CalendarView: View {
             BackwordArrow(isCalendarViewShowed: $isCalendarViewShowed, isShowingNewTaskView: $isShowingNewTaskView)
             if !isShowingNewTaskView {
                 VStack {
-                    DatePicker("j", selection: $date)
+                    DatePicker("j", selection: $viewModel.currentDay)
                         .datePickerStyle(GraphicalDatePickerStyle())
                         .foregroundColor(.black)
                         .accentColor(Color("Blue dark"))
@@ -32,7 +32,7 @@ struct CalendarView: View {
                 }
             } else {
                 VStack {
-                    NewTaskView(dateFromCalendar: $date)
+                    NewTaskView(dateFromCalendar: $viewModel.currentDay)
 //                        .background(Color("Blue xlight").edgesIgnoringSafeArea(.all))
                 }
             }
@@ -57,7 +57,7 @@ struct CalendarView: View {
     
     func MiniTaskScrollView()->some View {
         ScrollView(showsIndicators: false) {
-            let tasks = viewModel.allTaskInDay(date)
+            let tasks = viewModel.allTaskInDay(viewModel.currentDay)
             if !tasks.isEmpty {
                 ForEach(tasks) { task in
 //                    Text(task.title)

@@ -59,7 +59,7 @@ struct ShowCalendarButton: View {
                 .foregroundColor(.black)
         })
         .sheet(isPresented: $isCalendarViewShowed, content: {
-            CalendarView(isCalendarViewShowed: $isCalendarViewShowed, date: date)
+            CalendarView(isCalendarViewShowed: $isCalendarViewShowed)
         })
     }
     
