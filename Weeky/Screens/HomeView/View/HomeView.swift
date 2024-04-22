@@ -32,6 +32,9 @@ struct HomeView: View {
             HeaderView(isShowingSideMenu: $isShowingSideMenu, isCalendarViewShowed: $isCalendarViewShowed, isAuthorized: $isAuthorized)
                 
             MainScrollView()
+                .onAppear {
+                    taskModel.currentDay = Date()
+                }
         }
         .background(Color("Blue xlight").edgesIgnoringSafeArea(.all))
     }
@@ -73,6 +76,7 @@ struct HomeView: View {
             }
             .onChange(of: taskModel.currentDay){ newValue in
                 taskModel.filteringTodayTask()
+//                taskModel.currentDay = Date()
             }
         }
     }

@@ -76,6 +76,7 @@ struct NewTaskView: View {
     
     func backToHomeView() {
         withAnimation(.smooth) {
+            viewModel.backTodayIfNeeded()
             presentationMode.wrappedValue.dismiss()
         }
     }

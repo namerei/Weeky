@@ -202,5 +202,11 @@ class HomeViewModel: ObservableObject {
     
     func updateName(_ newName: String) {
     }
+    
+    func backTodayIfNeeded() {
+        if currentDay < Date() || currentDay > Date().addingTimeInterval(60 * 60 * 24 * 6) {
+            currentDay = Date()
+        }
+    }
 }
 

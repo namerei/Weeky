@@ -100,6 +100,7 @@ struct CalendarView: View {
 struct BackwordArrow: View {
     @Binding var isCalendarViewShowed: Bool
     @Binding var isShowingNewTaskView: Bool
+    @EnvironmentObject var viewModel: HomeViewModel
     
     var body: some View {
         HStack {
@@ -109,6 +110,7 @@ struct BackwordArrow: View {
                         if isShowingNewTaskView {
                             isShowingNewTaskView.toggle()
                         } else {
+                            viewModel.backTodayIfNeeded()
                             isCalendarViewShowed.toggle()
                         }
                     }
