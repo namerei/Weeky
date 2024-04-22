@@ -1,5 +1,5 @@
 //
-//  AccauntView.swift
+//  AccountView.swift
 //  Weeky
 //
 //  Created by namerei on 21.04.24.
@@ -23,6 +23,7 @@ struct AccountView:View {
         }
     }
     
+    //MARK: - Views
     func ChangeUserData()->some View {
         VStack {
             VStack{

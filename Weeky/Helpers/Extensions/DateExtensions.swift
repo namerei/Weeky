@@ -45,7 +45,6 @@ extension String {
             return String(self[range].dropFirst().dropLast())
         }
         return ""
-//        return nil
     }
 }
 

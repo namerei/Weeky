@@ -11,20 +11,18 @@
 		062DCF142B5088F6005C209A /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062DCF132B5088F6005C209A /* AuthorizationViewModel.swift */; };
 		062DCF162B508920005C209A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062DCF152B508920005C209A /* HomeViewModel.swift */; };
 		0645E7172B28997A0081EE15 /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F3EA562B276619000B5C71 /* AuthorizationView.swift */; };
-		0645E71B2B2899F80081EE15 /* TextModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0645E71A2B2899F80081EE15 /* TextModifiers.swift */; };
 		06F3EA552B276619000B5C71 /* WeekyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F3EA542B276619000B5C71 /* WeekyApp.swift */; };
 		06F3EA592B27661A000B5C71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06F3EA582B27661A000B5C71 /* Assets.xcassets */; };
 		06F3EA5C2B27661A000B5C71 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06F3EA5B2B27661A000B5C71 /* Preview Assets.xcassets */; };
 		06F3EA662B27661B000B5C71 /* WeekyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F3EA652B27661B000B5C71 /* WeekyTests.swift */; };
 		06F3EA702B27661B000B5C71 /* WeekyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F3EA6F2B27661B000B5C71 /* WeekyUITests.swift */; };
 		06F3EA722B27661B000B5C71 /* WeekyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F3EA712B27661B000B5C71 /* WeekyUITestsLaunchTests.swift */; };
-		FA265E762BD57FD10065DFA4 /* AccauntView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA265E752BD57FD10065DFA4 /* AccauntView.swift */; };
+		FA265E762BD57FD10065DFA4 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA265E752BD57FD10065DFA4 /* AccountView.swift */; };
 		FA265E782BD5CC220065DFA4 /* Ru_ru.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FA265E772BD5CC220065DFA4 /* Ru_ru.xcstrings */; };
 		FA46939E2BC7F86F0092430D /* AddNewTaskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46939D2BC7F86F0092430D /* AddNewTaskButton.swift */; };
 		FA5E3BD62BC674E10045E290 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BD52BC674E10045E290 /* LoginView.swift */; };
 		FA5E3BD92BC6871F0045E290 /* SignUpView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BD82BC6871F0045E290 /* SignUpView2.swift */; };
 		FA5E3BDD2BC6A6BA0045E290 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BDC2BC6A6BA0045E290 /* Task.swift */; };
-		FA5E3BE02BC6AD410045E290 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BDF2BC6AD410045E290 /* ViewExtensions.swift */; };
 		FA5E3BE22BC6AD600045E290 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BE12BC6AD600045E290 /* DateExtensions.swift */; };
 		FA5E3BE62BC6B2640045E290 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BE52BC6B2640045E290 /* SettingsView.swift */; };
 		FA5E3BEA2BC6D7870045E290 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BE92BC6D7870045E290 /* CalendarView.swift */; };
@@ -63,7 +61,6 @@
 		062DCF112B5088A9005C209A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		062DCF132B5088F6005C209A /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
 		062DCF152B508920005C209A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		0645E71A2B2899F80081EE15 /* TextModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifiers.swift; sourceTree = "<group>"; };
 		06F3EA512B276619000B5C71 /* Weeky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weeky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06F3EA542B276619000B5C71 /* WeekyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekyApp.swift; sourceTree = "<group>"; };
 		06F3EA562B276619000B5C71 /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
@@ -74,13 +71,12 @@
 		06F3EA6B2B27661B000B5C71 /* WeekyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeekyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06F3EA6F2B27661B000B5C71 /* WeekyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekyUITests.swift; sourceTree = "<group>"; };
 		06F3EA712B27661B000B5C71 /* WeekyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekyUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		FA265E752BD57FD10065DFA4 /* AccauntView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccauntView.swift; sourceTree = "<group>"; };
+		FA265E752BD57FD10065DFA4 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		FA265E772BD5CC220065DFA4 /* Ru_ru.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Ru_ru.xcstrings; sourceTree = "<group>"; };
 		FA46939D2BC7F86F0092430D /* AddNewTaskButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskButton.swift; sourceTree = "<group>"; };
 		FA5E3BD52BC674E10045E290 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FA5E3BD82BC6871F0045E290 /* SignUpView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView2.swift; sourceTree = "<group>"; };
 		FA5E3BDC2BC6A6BA0045E290 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		FA5E3BDF2BC6AD410045E290 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		FA5E3BE12BC6AD600045E290 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		FA5E3BE52BC6B2640045E290 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FA5E3BE92BC6D7870045E290 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -147,7 +143,6 @@
 		0645E7192B2899C30081EE15 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
-				0645E71A2B2899F80081EE15 /* TextModifiers.swift */,
 				FACE0FCC2BCD5A6400CD178B /* Colors.swift */,
 			);
 			path = Styles;
@@ -280,7 +275,6 @@
 		FA5E3BDE2BC6AD300045E290 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				FA5E3BDF2BC6AD410045E290 /* ViewExtensions.swift */,
 				FA5E3BE12BC6AD600045E290 /* DateExtensions.swift */,
 			);
 			path = Extensions;
@@ -307,7 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				FA5E3BE52BC6B2640045E290 /* SettingsView.swift */,
-				FA265E752BD57FD10065DFA4 /* AccauntView.swift */,
+				FA265E752BD57FD10065DFA4 /* AccountView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -504,14 +498,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAEDEEFA2BCF08880030E036 /* AuthorizationManager.swift in Sources */,
-				0645E71B2B2899F80081EE15 /* TextModifiers.swift in Sources */,
 				06F3EA552B276619000B5C71 /* WeekyApp.swift in Sources */,
 				FACE0FD02BCE8D2600CD178B /* TaskDBManager.swift in Sources */,
 				FA5E3BE62BC6B2640045E290 /* SettingsView.swift in Sources */,
 				FA5E3BD62BC674E10045E290 /* LoginView.swift in Sources */,
-				FA265E762BD57FD10065DFA4 /* AccauntView.swift in Sources */,
+				FA265E762BD57FD10065DFA4 /* AccountView.swift in Sources */,
 				FACE0FCD2BCD5A6400CD178B /* Colors.swift in Sources */,
-				FA5E3BE02BC6AD410045E290 /* ViewExtensions.swift in Sources */,
 				0645E7172B28997A0081EE15 /* AuthorizationView.swift in Sources */,
 				FA46939E2BC7F86F0092430D /* AddNewTaskButton.swift in Sources */,
 				FA5E3BE22BC6AD600045E290 /* DateExtensions.swift in Sources */,
