@@ -100,7 +100,7 @@ struct CustomColorPicker: View {
                         .frame(width: 30, height: 30)
                         .overlay(
                             Circle()
-                                .stroke(Color(.gray), lineWidth: selectedColor == color ? 3 : 0)
+                                .stroke(Colors.textHeader, lineWidth: selectedColor == color ? 3 : 0)
                         )
                         .onTapGesture {
                             selectedColor = color
