@@ -83,8 +83,9 @@ struct NewTaskView: View {
     }
     
     func DatePickerView()->some View {
-        return DatePicker("Выбор даты", selection: $dateFromCalendar, displayedComponents: [.date, .hourAndMinute])
+        DatePicker("Выбор даты", selection: $dateFromCalendar, displayedComponents: [.date, .hourAndMinute])
             .padding(.bottom, 20)
+            .accentColor(Colors.textList)
     }
 }
 
