@@ -23,7 +23,6 @@ struct CalendarView: View {
                         .datePickerStyle(GraphicalDatePickerStyle())
                         .foregroundColor(.black)
                         .accentColor(Colors.textList)
-//                        .background(Color("Orange light"))
                     Divider()
                     MiniTaskScrollView()
                     Divider()
@@ -32,6 +31,7 @@ struct CalendarView: View {
             } else {
                 VStack {
                     NewTaskView(dateFromCalendar: $viewModel.currentDay)
+                        .offset(y: -30)
                 }
             }
         }

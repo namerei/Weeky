@@ -19,7 +19,6 @@ struct NewTaskView: View {
     let availableColors: [Color] = [Color("Blue dark"), Color("Blue light"), Color("Orange dark"), Color("Orange light"), Color("Yellow dark"), Color("Yellow light")]
     
     var body: some View {
-        
         VStack {
             VStack(alignment: .leading) {
                 HStack {
@@ -70,6 +69,7 @@ struct NewTaskView: View {
             }
             .padding()
         }
+        .frame(maxHeight: .infinity)
         .background(Color("Background").ignoresSafeArea(.all))
         .foregroundColor(Colors.textHeader)
         
