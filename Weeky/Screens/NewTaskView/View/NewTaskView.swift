@@ -108,5 +108,8 @@ struct CustomColorPicker: View {
                         }
                 }
             }
+            .onAppear {
+                selectedColor = Color("Blue dark")
+            }
         }
 }
