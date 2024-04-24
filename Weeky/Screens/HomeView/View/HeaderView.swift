@@ -26,7 +26,8 @@ struct HeaderView: View {
             ShowCalendarButton(isCalendarViewShowed: $isCalendarViewShowed)
         }
         .padding()
-        .background(Color("Blue dark").edgesIgnoringSafeArea(.all))
+        .background(Color("Header").edgesIgnoringSafeArea(.all))
+        .foregroundColor(Colors.textHeader)
     }
 }
 
@@ -35,7 +36,6 @@ struct DateTitleView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10){
             Text(Date().formatted(date: .abbreviated, time: .omitted)).font(.title3)
-//            Text("сегодня").font(.footnote)
         }
     }
 }
@@ -53,14 +53,12 @@ struct ShowCalendarButton: View {
             Image(systemName: "calendar")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 25, height: 25)
-                .foregroundColor(.black)
+                .frame(width: 20, height: 20)
         })
         .sheet(isPresented: $isCalendarViewShowed, content: {
             CalendarView(isCalendarViewShowed: $isCalendarViewShowed)
         })
     }
-    
 }
 
 
@@ -73,8 +71,7 @@ struct ShowSideMenuButton: View {
             Image(systemName: "list.bullet")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 25, height: 25)
-                .foregroundColor(.black)
+                .frame(width: 20, height: 20)
         })
     }
 }

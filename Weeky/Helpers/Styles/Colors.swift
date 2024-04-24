@@ -21,4 +21,6 @@ enum Colors {
     static var textHeader = Color("Header text")
     
     static var dividerGray = Color("Divider Gray")
+    
+    static var yellow = Color("Yellow light")
 }

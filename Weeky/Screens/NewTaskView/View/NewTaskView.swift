@@ -16,7 +16,7 @@ struct NewTaskView: View {
     @Environment(\.presentationMode) var presentationMode
     
     //MARK: - set my Colors
-    let availableColors: [Color] = [Color("Blue dark"), Color("Blue xlight"), Color("Orange dark"), Color("Orange light"), Color("Yellow dark"), Color("Yellow light")]
+    let availableColors: [Color] = [Color("Blue dark"), Color("Blue light"), Color("Orange dark"), Color("Orange light"), Color("Yellow dark"), Color("Yellow light")]
     
     var body: some View {
         
@@ -29,7 +29,6 @@ struct NewTaskView: View {
                             backToHomeView()
                         }, label: {
                             Image(systemName: "x.circle")
-                                .foregroundColor(.black)
                                 .font(.system(size: 24))
                         })
                     }
@@ -42,7 +41,6 @@ struct NewTaskView: View {
                     .padding(.bottom, 30)
                 
                 //MARK: - color picker
-                //            ColorPicker("Select Color", selection: $selectedColor)
                 CustomColorPicker(selectedColor: $taskColor, colors: availableColors)
                     .padding(.bottom, 20)
                 
@@ -64,13 +62,15 @@ struct NewTaskView: View {
                     Text("Сохранить")
                         .padding()
                         .frame(maxWidth: .infinity)
-                        .foregroundColor(.white)
-                        .background(Color.blue)
-                        .cornerRadius(10)
+                        .background(Colors.yellow)
+                        .foregroundColor(.black)
+                        .cornerRadius(20)
+                        .shadow(color: Color.black.opacity(0.3), radius: 5, x: -5, y: 5)
                 })
             }
             .padding()
         }
+        .foregroundColor(Colors.textHeader)
         
     }
     

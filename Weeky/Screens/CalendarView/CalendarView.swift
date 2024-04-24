@@ -36,6 +36,8 @@ struct CalendarView: View {
                 }
             }
         }
+//        .background(Colors.background)
+        .foregroundColor(Colors.textHeader)
     }
     
     func NewTaskButton()->some View {
@@ -47,9 +49,11 @@ struct CalendarView: View {
             Text("Новая задача")
                 .padding()
                 .frame(maxWidth: .infinity)
-                .foregroundColor(.white)
-                .background(Color.blue)
-                .cornerRadius(10)
+//                .foregroundColor(.white)
+                .background(Colors.yellow)
+                .foregroundColor(.black)
+                .cornerRadius(20)
+                .shadow(color: Color.black.opacity(0.3), radius: 5, x: -5, y: 5)
         })
         .padding(30)
     }
@@ -120,7 +124,6 @@ struct BackwordArrow: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 15, height: 15)
-                    .foregroundColor(.black)
                 Spacer()
             })
         }
