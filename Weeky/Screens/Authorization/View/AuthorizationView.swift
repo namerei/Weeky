@@ -12,6 +12,7 @@ struct AuthorizationView: View {
     var body: some View {
         GeometryReader { _ in
             VStack {
+//                Spacer()
                 Text("Weeky")
                     .foregroundColor(Color("Blue light"))
                     .font(.largeTitle)
@@ -23,10 +24,11 @@ struct AuthorizationView: View {
                 }
                 .environmentObject(authViewModel)
                 .padding(.vertical)
+//                Spacer()
             }
+            .offset(y: 55)
         }
-        .background(Color("Blue xlight").edgesIgnoringSafeArea(.all))
+        .background(Color("Background").edgesIgnoringSafeArea(.all))
     }
-    
 }
 
