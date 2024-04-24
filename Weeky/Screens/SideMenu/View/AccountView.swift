@@ -78,13 +78,7 @@ struct AccountView:View {
                 )
                 .offset(y: 10)
                 .padding()
-//            Divider()
-//                .background(Color.white.opacity(0.6))
         }
-//        .foregroundColor(Color("Gray"))
-//        .fontWeight(.bold)
-//        .padding(.vertical)
-//        .padding(.top, 50)
     }
     
     func AcceptButton()->some View {

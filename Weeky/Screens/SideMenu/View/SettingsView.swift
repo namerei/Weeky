@@ -28,46 +28,45 @@ struct SettingsView: View {
             MainListView()
             LogoutButton()
         }
-//        .foregroundColor(Color(.black))
         .background(Colors.background)
-//        .navigationBarTitle("Настройки", displayMode: .large)
     }
     
     //MARK: - Views
     func MainListView()->some View {
-//        VStack {
-            
-            ScrollView {
-                VStack {
-                NavigationLink(destination: AccountView(isAuthorized: $isAuthorized)) {
-                    HStack {
-                        Text("Аккаунт")
-                        Spacer()
-                        Image(systemName: "chevron.forward")
-                    }
-                }
-                .padding(20)
-                Divider()
-                .background(Colors.dividerGray)
-
+        ScrollView {
+            VStack {
+                AccountNavLink()
+                
                 CustomToggle(text: "Темная тема",binding: $viewModel.isDarkMode)
-                        
+                
                 CustomToggle(text: "Уведомления",binding: $notificationsOn)
-                        
+                
                 CustomToggle(text: "Изменить язык ru/en",binding: $isShowingAccountView)
-                        
+                
                 DatePickerView()
-                }
-                .background(Colors.backgroundList)
-                .cornerRadius(30)
-                .padding()
             }
-//        }
-//        .background(Colors.background)
-        .foregroundColor(Colors.textList)
+            .background(Colors.backgroundList)
+            .foregroundColor(Colors.textList)
+            .cornerRadius(30)
+            .padding()
+        }
     }
     
     //MARK: - Views
+    private func AccountNavLink()->some View {
+        VStack {
+            NavigationLink(destination: AccountView(isAuthorized: $isAuthorized)) {
+                HStack {
+                    Text("Аккаунт")
+                    Spacer()
+                    Image(systemName: "chevron.forward")
+                }
+            }
+            .padding(20)
+            Divider()
+        }
+    }
+    
     private func HeaderView()->some View {
         HStack {
             Text("Настройки")
@@ -106,7 +105,7 @@ struct SettingsView: View {
             .toggleStyle(SwitchToggleStyle(tint: Color("Blue light")))
             .padding()
             Divider()
-                .background(Colors.dividerGray)
+//                .background(Colors.dividerGray)
         }
     }
     
