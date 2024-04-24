@@ -24,52 +24,67 @@ struct SettingsView: View {
     
     var body: some View {
         VStack {
+            HeaderView()
             MainListView()
-//                .background(Colors.background0)
-//            Spacer()
             LogoutButton()
         }
-        .foregroundColor(Color(.black))
-        .background(Colors.background0)
-//        .background(Colors.background0)
-        .navigationBarTitle("Настройки", displayMode: .large)
+//        .foregroundColor(Color(.black))
+        .background(Colors.background)
+//        .navigationBarTitle("Настройки", displayMode: .large)
     }
     
     //MARK: - Views
     func MainListView()->some View {
-        ZStack {
-            List {
+//        VStack {
+            
+            ScrollView {
+                VStack {
                 NavigationLink(destination: AccountView(isAuthorized: $isAuthorized)) {
-                    Text("Аккаунт")
-                }
-                .listRowBackground(Colors.background1)
-                
-                CustomToggle(text: "Темная тема",binding: $viewModel.isDarkMode)
-                CustomToggle(text: "Уведомления",binding: $notificationsOn)
-                CustomToggle(text: "Изменить язык ru/en",binding: $isShowingAccountView)
-                
-                Picker(selection: $selectedDayIndex, label: Text("День начала недели")) {
-                    ForEach(0..<daysOfWeek.count) { index in
-                        Text(daysOfWeek[index])
+                    HStack {
+                        Text("Аккаунт")
+                        Spacer()
+                        Image(systemName: "chevron.forward")
                     }
                 }
-                .listRowBackground(Colors.background1)
-                .pickerStyle(DefaultPickerStyle())
-//                .frame(height: 400)
+                .padding(20)
+                Divider()
+                .background(Colors.dividerGray)
+
+                CustomToggle(text: "Темная тема",binding: $viewModel.isDarkMode)
+                        
+                CustomToggle(text: "Уведомления",binding: $notificationsOn)
+                        
+                CustomToggle(text: "Изменить язык ru/en",binding: $isShowingAccountView)
+                        
+                DatePickerView()
+                }
+                .background(Colors.backgroundList)
+                .cornerRadius(30)
+                .padding()
             }
-            .listStyle(InsetGroupedListStyle())
-            .padding(.vertical, 20)
-            .background() // Цвет фона списка
-            .cornerRadius(30)
-            .padding()
-//            .background(Colors.background0)
-        }
-        .background(Colors.background0)
-        .foregroundColor(Colors.text0)
+//        }
+//        .background(Colors.background)
+        .foregroundColor(Colors.textList)
     }
     
     //MARK: - Views
-    func LogoutButton()->some View {
+    private func HeaderView()->some View {
+        HStack {
+            Text("Настройки")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .foregroundColor(Colors.textHeader)
+            Spacer()
+            Image(systemName: "gear")
+                .font(.title)
+                .foregroundColor(.black)
+        }
+        .padding()
+        .frame(width: 400, height: 60)
+        .background(Colors.header)
+    }
+    
+    private func LogoutButton()->some View {
         Button(action: {
             viewModel.currentUser = nil
             viewModel.storedTasks.removeAll()
@@ -82,14 +97,34 @@ struct SettingsView: View {
         }
     }
     
-    func CustomToggle(text: String, binding: Binding<Bool> )->some View {
-        Toggle(isOn: binding) {
-            Text(text)
+    private func CustomToggle(text: String, binding: Binding<Bool> )->some View {
+        VStack {
+            Toggle(isOn: binding) {
+                Text(text)
+            }
+//            .listRowBackground(Colors.backgroundList)
+            .toggleStyle(SwitchToggleStyle(tint: Color("Blue light")))
+            .padding()
+            Divider()
+                .background(Colors.dividerGray)
         }
-        .listRowBackground(Colors.background1)
-        .toggleStyle(SwitchToggleStyle(tint: Color("Blue light")))
+    }
+    
+    private func DatePickerView()->some View {
+        HStack {
+            Text("День начала недели")
+                .padding()
+            Spacer()
+            Picker(selection: $selectedDayIndex, label: Text("")) {
+                ForEach(0..<daysOfWeek.count) { index in
+                    Text(daysOfWeek[index])
+                }
+            }
+        }
+        .padding(.vertical, 10)
     }
 }
+
 
 struct Previews: PreviewProvider {
     

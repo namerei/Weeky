@@ -26,19 +26,8 @@ struct AccountView:View {
     //MARK: - Views
     func ChangeUserData()->some View {
         VStack {
-            VStack{
-                Image(systemName: "person.crop.circle")
-                    .resizable()
-                    .frame(width: 80, height: 80)
-                Text(viewModel.currentUser?.name ?? "")
-                    .font(.largeTitle)
-            }
-            .frame(width: 400, height: 160)
-            .background(Color("Blue dark"))
-            
+            HeaderView()
             ChangePasswordView()
-                
-            
             AcceptButton()
             
             Button(action: {
@@ -53,6 +42,22 @@ struct AccountView:View {
             .padding()
             Spacer()
         }
+        .background(Colors.background)
+    }
+    
+    func HeaderView()->some View {
+        VStack {
+            Image(systemName: "person.crop.circle")
+                .resizable()
+                .frame(width: 80, height: 80)
+            
+            Text(viewModel.currentUser?.name ?? "")
+                .font(.largeTitle)
+        }
+        .padding(.bottom)
+        .frame(width: 400, height: 130)
+        .background(Colors.blueDark)
+        .foregroundColor(Colors.backgroundReversed)
     }
     
     func ChangePasswordView()->some View {
@@ -60,10 +65,10 @@ struct AccountView:View {
             
             HStack(spacing: 15) {
                     Image(systemName: "eye.slash.fill")
-                        .foregroundColor(Color("Gray"))
+                    .foregroundColor(Colors.gray)
                     SecureField("Изменить пароль", text: $password)
                 }
-                
+
                 .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 20)
@@ -71,8 +76,8 @@ struct AccountView:View {
                         .frame(height: 70)
                         .shadow(color: Color.black.opacity(0.3), radius: 5, x: -5, y: 5)
                 )
-//                .offset(y: 25)
-                .padding(.horizontal)
+                .offset(y: 10)
+                .padding()
 //            Divider()
 //                .background(Color.white.opacity(0.6))
         }

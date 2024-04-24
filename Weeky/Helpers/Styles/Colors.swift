@@ -9,8 +9,16 @@ import SwiftUI
 
 enum Colors {
     static var header = Color("Header")
-    static var background0 = Color("Background0")
-    static var background1 = Color("Background1")
-   
-    static var text0 = Color("Text0")
+    static var background = Color("Background")
+    static var backgroundReversed = Color("BackgroundReversed")
+    static var backgroundList = Color("BackgroundList")
+    
+    static var blueDark = Color("Blue dark")
+    static var blueDarkReverse = Color("Blue dark reverse")
+    static var gray = Color("Gray")
+
+    static var textList = Color("TextList")
+    static var textHeader = Color("Header text")
+    
+    static var dividerGray = Color("Divider Gray")
 }
