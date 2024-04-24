@@ -56,8 +56,8 @@ struct AccountView:View {
         }
         .padding(.bottom)
         .frame(width: 400, height: 130)
-        .background(Colors.blueDark)
-        .foregroundColor(Colors.backgroundReversed)
+        .background(Colors.header)
+        .foregroundColor(Colors.textHeader)
     }
     
     func ChangePasswordView()->some View {
