@@ -22,8 +22,8 @@ struct CalendarView: View {
                     DatePicker("j", selection: $viewModel.currentDay)
                         .datePickerStyle(GraphicalDatePickerStyle())
                         .foregroundColor(.black)
-                        .accentColor(Color("Blue dark"))
-//                    Spacer()
+                        .accentColor(Colors.textList)
+//                        .background(Color("Orange light"))
                     Divider()
                     MiniTaskScrollView()
                     Divider()
@@ -32,11 +32,10 @@ struct CalendarView: View {
             } else {
                 VStack {
                     NewTaskView(dateFromCalendar: $viewModel.currentDay)
-//                        .background(Color("Blue xlight").edgesIgnoringSafeArea(.all))
                 }
             }
         }
-//        .background(Colors.background)
+        .background(Colors.background)
         .foregroundColor(Colors.textHeader)
     }
     
@@ -127,6 +126,7 @@ struct BackwordArrow: View {
                 Spacer()
             })
         }
+        .foregroundColor(Colors.textHeader)
         .padding(30)
     }
 }

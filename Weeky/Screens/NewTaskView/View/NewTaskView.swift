@@ -70,6 +70,7 @@ struct NewTaskView: View {
             }
             .padding()
         }
+        .background(Color("Background").ignoresSafeArea(.all))
         .foregroundColor(Colors.textHeader)
         
     }
