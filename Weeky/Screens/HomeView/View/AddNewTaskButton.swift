@@ -13,7 +13,6 @@ struct AddNewTaskButton: View {
     
     var body: some View {
         Button {
-            print("button add new task")
             isShowingNewTaskView.toggle()
         } label: {
             Label { Text("") } icon: {

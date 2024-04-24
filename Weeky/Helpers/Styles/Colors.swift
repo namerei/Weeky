@@ -8,6 +8,9 @@
 import SwiftUI
 
 enum Colors {
-    static var isDarkTheme = false
-    static var blue = !isDarkTheme ? Color("Blue xlight") : Color("Blue dark")
+    static var header = Color("Header")
+    static var background0 = Color("Background0")
+    static var background1 = Color("Background1")
+   
+    static var text0 = Color("Text0")
 }

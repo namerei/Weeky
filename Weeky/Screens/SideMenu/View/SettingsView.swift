@@ -25,46 +25,50 @@ struct SettingsView: View {
     var body: some View {
         VStack {
             MainListView()
+//                .background(Colors.background0)
+//            Spacer()
             LogoutButton()
         }
         .foregroundColor(Color(.black))
+        .background(Colors.background0)
+//        .background(Colors.background0)
         .navigationBarTitle("Настройки", displayMode: .large)
     }
     
     //MARK: - Views
     func MainListView()->some View {
-        List {
-            
-            
-            NavigationLink(destination: AccountView(isAuthorized: $isAuthorized)) {
-                Text("Аккаунт")
-            }
-            
-            Toggle(isOn: withAnimation {$viewModel.isDarkMode}) {
-                Text("Темная тема")
-            }
-            //                .toggleStyle(SwitchToggleStyle(tint: Color("Blue dark")))
-            
-            Toggle(isOn: $notificationsOn) {
-                Text("Уведомления")
-            }
-            //                .toggleStyle(SwitchToggleStyle(tint: Color("Blue dark")))
-            
-            Toggle(isOn: $language) {
-                Text("Изменить язык (ru/en)")
-            }
-            //                .toggleStyle(SwitchToggleStyle(tint: Color("Blue dark")))
-            
-            Picker(selection: $selectedDayIndex, label: Text("День начала недели")) {
-                ForEach(0..<daysOfWeek.count) { index in
-                    Text(daysOfWeek[index])
+        ZStack {
+            List {
+                NavigationLink(destination: AccountView(isAuthorized: $isAuthorized)) {
+                    Text("Аккаунт")
                 }
+                .listRowBackground(Colors.background1)
+                
+                CustomToggle(text: "Темная тема",binding: $viewModel.isDarkMode)
+                CustomToggle(text: "Уведомления",binding: $notificationsOn)
+                CustomToggle(text: "Изменить язык ru/en",binding: $isShowingAccountView)
+                
+                Picker(selection: $selectedDayIndex, label: Text("День начала недели")) {
+                    ForEach(0..<daysOfWeek.count) { index in
+                        Text(daysOfWeek[index])
+                    }
+                }
+                .listRowBackground(Colors.background1)
+                .pickerStyle(DefaultPickerStyle())
+//                .frame(height: 400)
             }
-            //                .foregroundColor(Color("Blue xlight"))
-            .pickerStyle(DefaultPickerStyle())
+            .listStyle(InsetGroupedListStyle())
+            .padding(.vertical, 20)
+            .background() // Цвет фона списка
+            .cornerRadius(30)
+            .padding()
+//            .background(Colors.background0)
         }
+        .background(Colors.background0)
+        .foregroundColor(Colors.text0)
     }
     
+    //MARK: - Views
     func LogoutButton()->some View {
         Button(action: {
             viewModel.currentUser = nil
@@ -76,6 +80,14 @@ struct SettingsView: View {
             Text("Выйти из аккаунта")
                 .foregroundColor(.red)
         }
+    }
+    
+    func CustomToggle(text: String, binding: Binding<Bool> )->some View {
+        Toggle(isOn: binding) {
+            Text(text)
+        }
+        .listRowBackground(Colors.background1)
+        .toggleStyle(SwitchToggleStyle(tint: Color("Blue light")))
     }
 }
 

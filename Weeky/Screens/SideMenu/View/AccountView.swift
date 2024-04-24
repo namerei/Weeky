@@ -36,17 +36,8 @@ struct AccountView:View {
             .frame(width: 400, height: 160)
             .background(Color("Blue dark"))
             
-            VStack {
-                HStack(spacing: 15) {
-                    Image(systemName: "eye.slash.fill")
-                        .foregroundColor(Color("Blue light"))
-                    SecureField("Изменить пароль", text: $password)
-                }
+            ChangePasswordView()
                 
-                Divider()
-                    .background(Color.white.opacity(0.6))
-            } .padding(.horizontal)
-                .padding(.top, 50)
             
             AcceptButton()
             
@@ -62,6 +53,33 @@ struct AccountView:View {
             .padding()
             Spacer()
         }
+    }
+    
+    func ChangePasswordView()->some View {
+        VStack {
+            
+            HStack(spacing: 15) {
+                    Image(systemName: "eye.slash.fill")
+                        .foregroundColor(Color("Gray"))
+                    SecureField("Изменить пароль", text: $password)
+                }
+                
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(Color("Orange light"))
+                        .frame(height: 70)
+                        .shadow(color: Color.black.opacity(0.3), radius: 5, x: -5, y: 5)
+                )
+//                .offset(y: 25)
+                .padding(.horizontal)
+//            Divider()
+//                .background(Color.white.opacity(0.6))
+        }
+//        .foregroundColor(Color("Gray"))
+//        .fontWeight(.bold)
+//        .padding(.vertical)
+//        .padding(.top, 50)
     }
     
     func AcceptButton()->some View {
@@ -86,7 +104,7 @@ struct AccountView:View {
                         .padding()
                         .clipShape(Capsule())
                         .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
-                                        .offset(y: 25)
+                        .offset(y: 25)
                 })
             } else {
                 SuccessView(text: "Данные изменены", error: error)

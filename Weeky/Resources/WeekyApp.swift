@@ -15,6 +15,8 @@ struct WeekyApp: App {
     //register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
+    @State var isAuthorized = false
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -49,6 +51,8 @@ struct ContentView: View {
                 AuthorizationView(isAuthorized: $isAuthorized)
                     .environmentObject(authorizationViewModel)
             }
+//            SettingsView(isAuthorized: $isAuthorized)
+//                .environmentObject(homeViewModel)
         }
         .preferredColorScheme(homeViewModel.isDarkMode ? withAnimation{.dark} : .light)
     }
