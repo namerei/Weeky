@@ -73,6 +73,7 @@
 		06F3EA712B27661B000B5C71 /* WeekyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FA265E752BD57FD10065DFA4 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		FA265E772BD5CC220065DFA4 /* Ru_ru.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Ru_ru.xcstrings; sourceTree = "<group>"; };
+		FA265E7A2BD94AA90065DFA4 /* didot_bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = didot_bold.otf; sourceTree = "<group>"; };
 		FA46939D2BC7F86F0092430D /* AddNewTaskButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskButton.swift; sourceTree = "<group>"; };
 		FA5E3BD52BC674E10045E290 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FA5E3BD82BC6871F0045E290 /* SignUpView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView2.swift; sourceTree = "<group>"; };
@@ -131,6 +132,7 @@
 		062DCF0A2B5086BC005C209A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FA265E792BD94A920065DFA4 /* Fonts */,
 				FACE0FD72BCE9AF500CD178B /* GoogleService-Info.plist */,
 				06F3EA5A2B27661A000B5C71 /* Preview Content */,
 				06F3EA582B27661A000B5C71 /* Assets.xcassets */,
@@ -203,6 +205,14 @@
 				06F3EA712B27661B000B5C71 /* WeekyUITestsLaunchTests.swift */,
 			);
 			path = WeekyUITests;
+			sourceTree = "<group>";
+		};
+		FA265E792BD94A920065DFA4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FA265E7A2BD94AA90065DFA4 /* didot_bold.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		FA5E3BCF2BC672560045E290 /* Screens */ = {

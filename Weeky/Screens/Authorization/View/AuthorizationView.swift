@@ -12,10 +12,9 @@ struct AuthorizationView: View {
     var body: some View {
         GeometryReader { _ in
             VStack {
-//                Spacer()
                 Text("Weeky")
-                    .foregroundColor(Color("Blue light"))
-                    .font(.largeTitle)
+                    .foregroundColor(Colors.blueDarkReverse)
+                    .font(Font.custom("Didot", size: 60))
                     .fontWeight(.bold)
                 ZStack {
                     SignUpView(index: self.$index)
@@ -23,10 +22,9 @@ struct AuthorizationView: View {
                     Login(index: $index, isAuthorized: $isAuthorized)
                 }
                 .environmentObject(authViewModel)
-                .padding(.vertical)
-//                Spacer()
+//                .padding(.vertical)
             }
-            .offset(y: 55)
+            .offset(y: 50)
         }
         .background(Color("Background").edgesIgnoringSafeArea(.all))
     }
