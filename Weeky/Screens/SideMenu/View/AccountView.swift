@@ -67,6 +67,7 @@ struct AccountView:View {
                     Image(systemName: "eye.slash.fill")
                     .foregroundColor(Colors.gray)
                     SecureField("Изменить пароль", text: $password)
+                    .foregroundColor(.black)
                 }
 
                 .padding()
