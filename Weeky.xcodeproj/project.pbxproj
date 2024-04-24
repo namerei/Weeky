@@ -19,6 +19,8 @@
 		06F3EA722B27661B000B5C71 /* WeekyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F3EA712B27661B000B5C71 /* WeekyUITestsLaunchTests.swift */; };
 		FA265E762BD57FD10065DFA4 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA265E752BD57FD10065DFA4 /* AccountView.swift */; };
 		FA265E782BD5CC220065DFA4 /* Ru_ru.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FA265E772BD5CC220065DFA4 /* Ru_ru.xcstrings */; };
+		FA265E7C2BD950630065DFA4 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA265E7B2BD950630065DFA4 /* Fonts.swift */; };
+		FA265E7E2BD953DC0065DFA4 /* DidactGothic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA265E7D2BD953DC0065DFA4 /* DidactGothic-Regular.ttf */; };
 		FA46939E2BC7F86F0092430D /* AddNewTaskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46939D2BC7F86F0092430D /* AddNewTaskButton.swift */; };
 		FA5E3BD62BC674E10045E290 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BD52BC674E10045E290 /* LoginView.swift */; };
 		FA5E3BD92BC6871F0045E290 /* SignUpView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BD82BC6871F0045E290 /* SignUpView2.swift */; };
@@ -73,7 +75,8 @@
 		06F3EA712B27661B000B5C71 /* WeekyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FA265E752BD57FD10065DFA4 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		FA265E772BD5CC220065DFA4 /* Ru_ru.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Ru_ru.xcstrings; sourceTree = "<group>"; };
-		FA265E7A2BD94AA90065DFA4 /* didot_bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = didot_bold.otf; sourceTree = "<group>"; };
+		FA265E7B2BD950630065DFA4 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		FA265E7D2BD953DC0065DFA4 /* DidactGothic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DidactGothic-Regular.ttf"; sourceTree = "<group>"; };
 		FA46939D2BC7F86F0092430D /* AddNewTaskButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskButton.swift; sourceTree = "<group>"; };
 		FA5E3BD52BC674E10045E290 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FA5E3BD82BC6871F0045E290 /* SignUpView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView2.swift; sourceTree = "<group>"; };
@@ -146,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				FACE0FCC2BCD5A6400CD178B /* Colors.swift */,
+				FA265E7B2BD950630065DFA4 /* Fonts.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -210,7 +214,7 @@
 		FA265E792BD94A920065DFA4 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				FA265E7A2BD94AA90065DFA4 /* didot_bold.otf */,
+				FA265E7D2BD953DC0065DFA4 /* DidactGothic-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -481,6 +485,7 @@
 			files = (
 				06F3EA5C2B27661A000B5C71 /* Preview Assets.xcassets in Resources */,
 				06F3EA592B27661A000B5C71 /* Assets.xcassets in Resources */,
+				FA265E7E2BD953DC0065DFA4 /* DidactGothic-Regular.ttf in Resources */,
 				FACE0FD82BCE9AF600CD178B /* GoogleService-Info.plist in Resources */,
 				FA265E782BD5CC220065DFA4 /* Ru_ru.xcstrings in Resources */,
 			);
@@ -514,6 +519,7 @@
 				FA5E3BD62BC674E10045E290 /* LoginView.swift in Sources */,
 				FA265E762BD57FD10065DFA4 /* AccountView.swift in Sources */,
 				FACE0FCD2BCD5A6400CD178B /* Colors.swift in Sources */,
+				FA265E7C2BD950630065DFA4 /* Fonts.swift in Sources */,
 				0645E7172B28997A0081EE15 /* AuthorizationView.swift in Sources */,
 				FA46939E2BC7F86F0092430D /* AddNewTaskButton.swift in Sources */,
 				FA5E3BE22BC6AD600045E290 /* DateExtensions.swift in Sources */,

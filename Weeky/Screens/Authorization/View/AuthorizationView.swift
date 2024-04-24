@@ -14,7 +14,7 @@ struct AuthorizationView: View {
             VStack {
                 Text("Weeky")
                     .foregroundColor(Colors.blueDarkReverse)
-                    .font(Font.custom("Didot", size: 60))
+                    .font(Fonts.mainTitle)
                     .fontWeight(.bold)
                 ZStack {
                     SignUpView(index: self.$index)
@@ -27,6 +27,8 @@ struct AuthorizationView: View {
             .offset(y: 50)
         }
         .background(Color("Background").edgesIgnoringSafeArea(.all))
+        
+//        .font(Font.custom("PT Sans", size: 16))
     }
 }
 

@@ -45,6 +45,7 @@ struct SettingsView: View {
                 
                 DatePickerView()
             }
+//            .font(Fonts.body)
             .background(Colors.backgroundList)
             .foregroundColor(Colors.textList)
             .cornerRadius(30)
@@ -70,8 +71,7 @@ struct SettingsView: View {
     private func HeaderView()->some View {
         HStack {
             Text("Настройки")
-                .font(.largeTitle)
-                .fontWeight(.bold)
+                .font(Fonts.title)
                 .foregroundColor(Colors.textHeader)
             Spacer()
             Image(systemName: "gear")
