@@ -91,7 +91,7 @@ struct CalendarView: View {
                 }
             }) {
                 Image(systemName: "trash")
-                    .font(.title3)
+                    .font(.body)
                     .foregroundColor(.red)
             }
         }

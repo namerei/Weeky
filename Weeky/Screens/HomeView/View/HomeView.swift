@@ -36,7 +36,7 @@ struct HomeView: View {
                     taskModel.currentDay = Date()
                 }
         }
-        .background(Color("Blue xlight").edgesIgnoringSafeArea(.all))
+        .background(Color("Background").edgesIgnoringSafeArea(.all))
     }
     
     private func AddNewTaskButtonView()-> some View {
@@ -101,13 +101,13 @@ struct HomeView: View {
                             .opacity(taskModel.isToday(date: day) ? 1 : 0)
                     }
                     .foregroundStyle(taskModel.isToday(date: day) ? .primary : .secondary)
-                    .foregroundColor(taskModel.isToday(date: day) ? .white : .black)
+                    .foregroundColor(taskModel.isToday(date: day) ? Colors.textHeader : Colors.textList)
                     .frame(width: 45, height: 90)
                     .background(
                         ZStack{
                             if taskModel.isToday(date: day){
                                 Capsule()
-                                    .fill(Color("Blue dark"))
+                                    .fill(Colors.header)
                                     .matchedGeometryEffect(id: "CURRENTDAY", in: animation)
                             }
                         })
@@ -118,9 +118,12 @@ struct HomeView: View {
                     }
                 }
             }
+//            .background(Colors.textList)
+//            .foregroundColor(Colors.header)
             .padding()
         }
     }
+    
     
 }
 

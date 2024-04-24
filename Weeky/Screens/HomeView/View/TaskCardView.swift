@@ -18,6 +18,7 @@ struct TaskCardView: View {
             Spacer()
             ButtonsHStack()
         }
+        .foregroundColor(Colors.textHeader)
         .padding()
     }
     
@@ -36,6 +37,7 @@ struct TaskCardView: View {
                 if let date = task.dateString.toDate() {
                     Text("\(date.showOnlyTimeString())")
                         .font(.subheadline)
+                        .foregroundColor(Colors.blueDarkReverse)
                 }
             }
         }
@@ -53,7 +55,7 @@ struct TaskCardView: View {
                 }) {
                     Image(systemName: task.isCompleted ? "checkmark.square" : "square")
                         .font(.title)
-                        .foregroundColor(.black)
+//                        .foregroundColor(Colors.textHeader)
                 }
                 Button(action: {
                     withAnimation {
@@ -62,7 +64,7 @@ struct TaskCardView: View {
                 }) {
                     Image(systemName: "pencil")
                         .font(.title)
-                        .foregroundColor(.blue)
+                        .foregroundColor(Colors.blueDarkReverse)
                 }
                 if isEditing {
                     Button(action: {
