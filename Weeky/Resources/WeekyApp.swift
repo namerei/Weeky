@@ -30,6 +30,8 @@ struct WeekyApp: App {
             
             return true
         }
+        
+        
     }
 }
 
@@ -38,6 +40,10 @@ struct ContentView: View {
     @StateObject var homeViewModel = HomeViewModel()
     
     @State var isAuthorized = false
+    
+    init() {
+        UIApplication.shared.applicationIconBadgeNumber = 0
+    }
     
     var body: some View {
         Group {

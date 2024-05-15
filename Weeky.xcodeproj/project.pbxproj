@@ -31,6 +31,7 @@
 		FA5E3BF02BC7BB550045E290 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BEF2BC7BB550045E290 /* HomeView.swift */; };
 		FA5E3BF22BC7D6C00045E290 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E3BF12BC7D6C00045E290 /* HeaderView.swift */; };
 		FA6233472BC92DC9008CBD84 /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6233462BC92DC9008CBD84 /* NewTaskView.swift */; };
+		FA62CFF82BEE657600604196 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62CFF72BEE657600604196 /* NotificationManager.swift */; };
 		FACE0FCB2BCD4FBA00CD178B /* TaskCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE0FCA2BCD4FBA00CD178B /* TaskCardView.swift */; };
 		FACE0FCD2BCD5A6400CD178B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE0FCC2BCD5A6400CD178B /* Colors.swift */; };
 		FACE0FD02BCE8D2600CD178B /* TaskDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE0FCF2BCE8D2600CD178B /* TaskDBManager.swift */; };
@@ -87,6 +88,8 @@
 		FA5E3BEF2BC7BB550045E290 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FA5E3BF12BC7D6C00045E290 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		FA6233462BC92DC9008CBD84 /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
+		FA62CFF72BEE657600604196 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		FA62CFF92BEE67E400604196 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FACE0FCA2BCD4FBA00CD178B /* TaskCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCardView.swift; sourceTree = "<group>"; };
 		FACE0FCC2BCD5A6400CD178B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		FACE0FCF2BCE8D2600CD178B /* TaskDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDBManager.swift; sourceTree = "<group>"; };
@@ -178,6 +181,7 @@
 		06F3EA532B276619000B5C71 /* Weeky */ = {
 			isa = PBXGroup;
 			children = (
+				FA62CFF92BEE67E400604196 /* Info.plist */,
 				FA5E3BE32BC6AE480045E290 /* Helpers */,
 				FA5E3BCF2BC672560045E290 /* Screens */,
 				062DCF092B508666005C209A /* Models */,
@@ -349,6 +353,7 @@
 			children = (
 				FACE0FCF2BCE8D2600CD178B /* TaskDBManager.swift */,
 				FAEDEEF92BCF08880030E036 /* AuthorizationManager.swift */,
+				FA62CFF72BEE657600604196 /* NotificationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -439,7 +444,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					06F3EA502B276619000B5C71 = {
 						CreatedOnToolsVersion = 15.0;
@@ -516,6 +521,7 @@
 				06F3EA552B276619000B5C71 /* WeekyApp.swift in Sources */,
 				FACE0FD02BCE8D2600CD178B /* TaskDBManager.swift in Sources */,
 				FA5E3BE62BC6B2640045E290 /* SettingsView.swift in Sources */,
+				FA62CFF82BEE657600604196 /* NotificationManager.swift in Sources */,
 				FA5E3BD62BC674E10045E290 /* LoginView.swift in Sources */,
 				FA265E762BD57FD10065DFA4 /* AccountView.swift in Sources */,
 				FACE0FCD2BCD5A6400CD178B /* Colors.swift in Sources */,
@@ -574,6 +580,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -637,6 +644,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -699,6 +707,7 @@
 				DEVELOPMENT_TEAM = AFAAV4M63Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Weeky/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -729,6 +738,7 @@
 				DEVELOPMENT_TEAM = AFAAV4M63Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Weeky/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

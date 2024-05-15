@@ -12,6 +12,8 @@ import FirebaseCore
 
 class HomeViewModel: ObservableObject {
     @Published var firebaseManager = TaskDBManager()
+//    @State var notificationManager = NotificationManager()
+    
     @Published var currentUser : User?
     @Published var isDarkMode = false
     
@@ -128,6 +130,8 @@ class HomeViewModel: ObservableObject {
             self.storedTasks.append(task)
             self.checkFor(error)
             self.filteringTodayTask()
+            
+            self.createNotifications()
         }
 //        firebaseManager.uploadTask(task: task, user: user) { error in
 //            self.storedTasks.append(task)
@@ -143,6 +147,8 @@ class HomeViewModel: ObservableObject {
             self.checkFor(error)
         }
         filteringTodayTask()
+        
+        self.createNotifications()
     }
     
     func fetchAllData() {
@@ -157,8 +163,12 @@ class HomeViewModel: ObservableObject {
             self.storedTasks += fetchedTasks
             
             self.filteringTodayTask()
+            
+            //Create notifications
+            self.createNotifications()
         }
     }
+    
     
     func updateUser(_ user: User, newName: String, newPassword: String) {
         if newName == "" {
@@ -207,6 +217,23 @@ class HomeViewModel: ObservableObject {
         if currentDay < Date() || currentDay > Date().addingTimeInterval(60 * 60 * 24 * 6) {
             currentDay = Date()
         }
+    }
+    
+    
+    //MARK: - NotificationManager
+//    @Published var nextTasks: [Task]
+    
+//    func createNewNotification(for task: Task) {
+//        NotificationManager.shared.scheduleNotification(task: task)
+//    }
+    
+    func createNotifications() {
+        NotificationManager.shared.cancelNotification()
+        
+        let nextTasks = storedTasks.filter({$0.dateString.toDate()! > Date()})
+        
+        nextTasks.forEach({NotificationManager.shared.scheduleNotification(task: $0)})
+        
     }
 }
 

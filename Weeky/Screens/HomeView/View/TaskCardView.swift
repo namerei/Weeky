@@ -60,6 +60,7 @@ struct TaskCardView: View {
                 Button(action: {
                     withAnimation {
                         isEditing.toggle()
+                        UIApplication.shared.applicationIconBadgeNumber = 0
                     }
                 }) {
                     Image(systemName: "pencil")

@@ -51,6 +51,9 @@ struct SettingsView: View {
             .cornerRadius(30)
             .padding()
         }
+        .onChange(of: notificationsOn) { newValue in
+            NotificationManager.shared.requestAuthorization()
+        }
     }
     
     //MARK: - Views
